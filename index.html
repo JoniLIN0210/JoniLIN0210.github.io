@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joni Lin 林君如｜Portfolio</title>
+<meta name="description" content="Joni Lin（林君如）：做增长的市场人，也能把 AI 应用亲手做上线。">
+<style>
+@font-face{font-family:"Cormorant";src:url("assets/cormorant-garamond.woff2") format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Cormorant";src:url("assets/cormorant-garamond-italic.woff2") format("woff2");font-weight:300 700;font-style:italic;font-display:swap}
+:root{
+  --bg:#edf0f5;--ink:#16171c;--sub:#5d6070;--line:rgba(22,23,28,.12);
+  --cobalt:#2d4bff;--sun:#ffd84a;--pink:#ffc4d3;--sky:#d4e4ff;--white:#fff;
+  --sans:"Helvetica Neue","PingFang SC","Segoe UI","Microsoft YaHei",Arial,sans-serif;
+  --serif:"Cormorant","Times New Roman",serif;
+  --gap:14px;--r:28px;--ease:cubic-bezier(.7,0,.2,1);--out:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{display:block;max-width:100%}
+ul{list-style:none}
+::selection{background:var(--cobalt);color:#fff}
+.it{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+.cn:empty{display:none}
+
+/* ───────── 首页卡片 ───────── */
+.board{height:100vh;height:100svh;padding:var(--gap);display:grid;gap:var(--gap);
+  grid-template-columns:minmax(0,1.18fr) minmax(0,1fr) minmax(0,.92fr) minmax(0,1.05fr);grid-template-rows:1fr 1fr 1fr;
+  grid-template-areas:"intro intro photo stat" "intro intro photo why" "work work exp cont"}
+.tile{min-width:0;position:relative;border-radius:var(--r);padding:clamp(18px,1.9vw,30px);overflow:hidden;background:var(--white);
+  display:flex;flex-direction:column;justify-content:space-between;
+  opacity:0;transform:translateY(18px) scale(.985);transition:transform .5s var(--out),box-shadow .5s var(--out)}
+.ready .tile{animation:rise .9s var(--out) forwards;animation-delay:calc(var(--i) * 70ms)}
+@keyframes rise{to{opacity:1;transform:none}}
+.tile.go{cursor:pointer}
+.tile.go:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(30,40,90,.28)}
+.lab{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.lab .n{font-family:var(--serif);font-style:italic;font-size:17px;letter-spacing:0;text-transform:none}
+.plus{width:42px;height:42px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;flex:none;transition:transform .5s var(--out),background .3s,color .3s}
+.plus::before{content:"";width:14px;height:14px;background:linear-gradient(currentColor,currentColor) center/100% 1.4px no-repeat,linear-gradient(currentColor,currentColor) center/1.4px 100% no-repeat}
+.tile.go:hover .plus{transform:rotate(90deg)}
+.t-title{font-size:clamp(30px,3vw,50px);line-height:1;letter-spacing:-.04em;font-weight:500}
+.t-sub{margin-top:8px;font-size:13px;letter-spacing:.2em;opacity:.7}
+
+/* 简介 */
+.intro{grid-area:intro;--i:0}
+.intro .top{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--sub)}
+.lang{border:1px solid var(--line);border-radius:99px;padding:6px 15px;font-size:12px;letter-spacing:.1em;transition:.25s}
+.lang:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.intro h1{font-weight:500;font-size:clamp(64px,8.6vw,148px);line-height:.86;letter-spacing:-.06em;margin-left:-.04em}
+.intro h1 .it{font-weight:300;letter-spacing:-.03em;color:var(--cobalt);font-size:1.08em}
+.who{display:flex;gap:16px;align-items:baseline;margin-top:20px;font-size:14px;letter-spacing:.42em;color:var(--sub)}
+.who i{font-style:normal;letter-spacing:.14em;opacity:.75}
+.intro .line{margin-top:clamp(16px,2.6vh,30px);font-size:clamp(17px,1.5vw,23px);line-height:1.5;letter-spacing:-.005em;max-width:24em}
+.intro .line em{font-style:normal;color:var(--cobalt)}
+html[lang="en"] .intro .line{font-family:var(--serif);font-size:clamp(22px,1.95vw,30px);line-height:1.25}
+html[lang="en"] .intro .line em{font-style:italic}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{font-size:12.5px;padding:5px 13px;border-radius:99px;background:var(--bg);color:var(--ink)}
+.hint{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--sub);letter-spacing:.06em}
+.hint i{width:7px;height:7px;border-radius:50%;background:var(--cobalt);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(45,75,255,.45)}100%{box-shadow:0 0 0 12px rgba(45,75,255,0)}}
+
+/* 照片 */
+.photo{grid-area:photo;--i:1;padding:0;justify-content:flex-end;
+  background:radial-gradient(ellipse 70% 55% at 50% 38%,#fdfdff 0%,#eef2f9 45%,#dbe3f1 100%)}
+.photo::after{content:"";position:absolute;left:8%;right:8%;bottom:-6%;height:16%;border-radius:50%;background:radial-gradient(closest-side,rgba(60,75,120,.22),transparent);z-index:0}
+.photo img{position:absolute;z-index:1;left:50%;bottom:0;height:88%;
+  -webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent 100%);mask-image:linear-gradient(to bottom,#000 78%,transparent 100%);width:auto;max-width:none;transform:translateX(-50%);transition:transform .8s var(--out)}
+.photo:hover img{transform:translateX(-50%) scale(1.035)}
+.bubble{position:absolute;top:18px;left:18px;right:18px;z-index:2;background:#fff;border-radius:18px 18px 18px 4px;padding:9px 14px;font-size:13px;line-height:1.45;
+  transform-origin:0 100%;transform:scale(.6);opacity:0;transition:.45s var(--out)}
+.photo:hover .bubble,.photo.say .bubble{transform:none;opacity:1}
+
+/* 数字 */
+.stat{grid-area:stat;--i:2;background:var(--sky);cursor:pointer}
+.stat .big{font-weight:500;font-size:clamp(42px,4.4vw,74px);line-height:.9;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.stat .big small{font-size:.45em;letter-spacing:0;margin-left:2px}
+.stat .cap{margin-top:8px;font-size:13px;line-height:1.5;min-height:3em;color:#2b3350}
+.dots{display:flex;gap:6px}
+.dots i{width:18px;height:3px;border-radius:2px;background:rgba(22,23,28,.18);overflow:hidden;position:relative}
+.dots i.on::after{content:"";position:absolute;inset:0;background:var(--ink);transform-origin:0 50%;animation:fill 4s linear forwards}
+.dots i.done{background:var(--ink)}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* 其他卡片 */
+.why{grid-area:why;--i:3;background:var(--sun)}
+.work{grid-area:work;--i:4;background:var(--cobalt);color:#fff}
+.work .list{display:flex;flex-direction:column;gap:2px;font-size:13.5px;opacity:.85}
+.work .list b{font-weight:500;margin-right:8px;opacity:.6;font-family:var(--serif);font-style:italic;font-size:15px}
+.work .peek{position:absolute;right:10%;top:58%;width:min(40%,340px);height:auto;border-radius:10px;transform:translateY(-46%) rotate(5deg);box-shadow:0 24px 50px -10px rgba(0,0,40,.45);transition:transform .7s var(--out)}
+.work:hover .peek{transform:translateY(-54%) rotate(1deg) scale(1.04)}
+.work .txt{position:relative;z-index:1}
+.exp{grid-area:exp;--i:5}
+.exp .yrs{font-weight:500;font-size:clamp(40px,4vw,66px);line-height:.9;letter-spacing:-.05em}
+.exp .yrs .it{font-size:.62em;letter-spacing:0;color:var(--cobalt)}
+.exp .co{font-size:12.5px;color:var(--sub);margin-top:6px}
+.cont{grid-area:cont;--i:6;background:var(--pink)}
+.cont .mail{font-size:12.5px;opacity:.75;word-break:break-all}
+
+/* ───────── 展开页 ───────── */
+.sheet{position:fixed;z-index:20;display:none;overflow:hidden;border-radius:var(--r)}
+.sheet.open{display:block}
+.sheet .x{position:absolute;top:22px;right:22px;z-index:3;width:50px;height:50px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;opacity:0;transition:opacity .3s,transform .5s var(--out)}
+.sheet .x::before{content:"";width:16px;height:16px;background:linear-gradient(currentColor,currentColor) center/100% 1.4px no-repeat,linear-gradient(currentColor,currentColor) center/1.4px 100% no-repeat;transform:rotate(45deg)}
+.sheet .x:hover{transform:rotate(90deg)}
+:focus{outline:none}:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px}
+.sheet.show .x{opacity:1}
+.scroller{position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;padding:clamp(26px,4vw,64px) clamp(22px,5vw,88px)}
+.st{opacity:0;transform:translateY(16px);transition:opacity .6s var(--out),transform .6s var(--out)}
+.sheet.show .st{opacity:1;transform:none;transition-delay:calc(var(--d,0) * 70ms + 60ms)}
+.panels{display:none}
+.ph{display:flex;align-items:baseline;gap:14px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase}
+.ph .n{font-family:var(--serif);font-style:italic;font-size:20px;letter-spacing:0;text-transform:none}
+.ph-title{font-weight:500;font-size:clamp(46px,6.4vw,104px);line-height:.95;letter-spacing:-.05em;margin-top:14px}
+.ph-title .it{font-weight:300;letter-spacing:-.025em}
+.ph-sub{margin-top:14px;font-size:15.5px;max-width:36em;opacity:.78}
+.sheet.work{color:#fff}
+
+/* 优势：逐张翻看 */
+.wy{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr);gap:clamp(24px,5vw,90px);margin-top:clamp(30px,5vh,60px);align-items:start}
+.wy-n{font-weight:500;font-size:clamp(110px,16vw,250px);line-height:.8;letter-spacing:-.07em;font-variant-numeric:tabular-nums}
+.deck{position:relative;min-height:330px;cursor:pointer}
+.card{position:absolute;inset:0 0 auto 0;background:#fff;border-radius:22px;padding:clamp(24px,2.8vw,40px);
+  transition:transform .7s var(--ease),opacity .5s;transform-origin:50% 0}
+.card h3{font-weight:500;font-size:clamp(23px,2.2vw,34px);line-height:1.25;letter-spacing:-.02em}
+.card p{margin-top:14px;font-size:15.5px;color:#3c3e48}
+.card .proof{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
+.card .proof b{color:var(--ink);font-weight:600;letter-spacing:.1em;margin-right:4px}
+.card[data-pos="0"]{z-index:4;transform:none}
+.card[data-pos="1"]{z-index:3;transform:translateY(16px) scale(.95);opacity:.75}
+.card[data-pos="2"]{z-index:2;transform:translateY(30px) scale(.9);opacity:.45}
+.card[data-pos="3"]{z-index:1;transform:translateY(42px) scale(.85);opacity:.2}
+.card[data-pos="-1"]{z-index:5;transform:translate(-30%,-40px) rotate(-8deg);opacity:0;pointer-events:none}
+.ctl{display:flex;align-items:center;gap:14px;margin-top:clamp(70px,9vh,100px)}
+.ctl .bars{display:flex;gap:6px;flex:1}
+.ctl .bars i{height:3px;flex:1;max-width:64px;border-radius:2px;background:rgba(22,23,28,.18);transition:background .4s}
+.ctl .bars i.on{background:var(--ink)}
+.rb{width:52px;height:52px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;font-size:18px;transition:.25s}
+.rb:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ctl small{font-size:12px;letter-spacing:.1em;opacity:.6}
+
+/* 作品：标签切换 */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:clamp(26px,4vh,44px)}
+.tabs button{padding:10px 20px;border-radius:99px;border:1px solid rgba(255,255,255,.4);font-size:14px;transition:.25s}
+.tabs button:hover{border-color:#fff}
+.tabs button.on{background:#fff;color:var(--cobalt);border-color:#fff}
+.wk{position:relative;margin-top:clamp(26px,4vh,44px)}
+.wp{display:none;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,5vw,90px);align-items:center}
+.wp.on{display:grid;animation:swap .6s var(--out)}
+@keyframes swap{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
+.wp h3{font-weight:500;font-size:clamp(32px,3.5vw,56px);line-height:1;letter-spacing:-.04em}
+.wp .cnm{margin-top:10px;font-size:13px;letter-spacing:.3em;opacity:.7}
+.wp .lede{margin-top:18px;font-size:16px;opacity:.92}
+.wp ul{margin-top:14px}
+.wp li{position:relative;padding-left:18px;margin-top:8px;font-size:14.5px;opacity:.85}
+.wp li::before{content:"";position:absolute;left:0;top:.85em;width:8px;height:1px;background:currentColor}
+.wp li b{font-weight:600}
+.nums{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.25)}
+.nums b{display:block;font-weight:500;font-size:clamp(30px,2.8vw,44px);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.nums span{display:block;margin-top:6px;font-size:12px;letter-spacing:.08em;opacity:.7}
+.out{display:inline-flex;align-items:center;gap:10px;margin-top:24px;padding:11px 20px;border-radius:99px;background:#fff;color:var(--cobalt);font-size:14px;font-weight:500;transition:.25s}
+.out:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,40,.25)}
+.out i{font-style:normal}
+.stack{position:relative;aspect-ratio:1.45;cursor:pointer}
+.stack img{position:absolute;height:auto;width:82%;border-radius:12px;box-shadow:0 24px 60px rgba(0,0,40,.35);transition:transform .8s var(--ease),z-index 0s .35s}
+.stack img:nth-child(1){left:0;top:0}
+.stack img:nth-child(2){right:0;bottom:0;width:62%}
+.stack.flip img:nth-child(1){transform:translate(10%,14%) scale(.9);z-index:0}
+.stack.flip img:nth-child(2){transform:translate(-14%,-22%) scale(1.25);z-index:2}
+.tap{margin-top:12px;font-size:12px;letter-spacing:.1em;opacity:.65;text-align:right}
+.rules{background:#fff;color:var(--ink);border-radius:22px;padding:8px clamp(18px,2.4vw,32px)}
+.rule{border-bottom:1px solid var(--line)}
+.rule:last-child{border-bottom:0}
+.rule button{width:100%;display:grid;grid-template-columns:36px 1fr 24px;align-items:center;padding:17px 0;text-align:left;font-size:16.5px;font-weight:500}
+.rule button i{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--cobalt)}
+.rule button span:last-child{font-size:20px;font-weight:300;transition:transform .4s var(--out);justify-self:end}
+.rule.on button span:last-child{transform:rotate(45deg)}
+.rule .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--out)}
+.rule.on .ans{grid-template-rows:1fr}
+.rule .ans p{overflow:hidden;padding-left:36px;font-size:14px;color:var(--sub)}
+.rule.on .ans p{padding-bottom:16px}
+.mx{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:22px;padding:clamp(20px,2.6vw,36px)}
+.mx .cap{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.14em;opacity:.8;margin-bottom:22px}
+.g75{display:grid;grid-template-columns:repeat(7,1fr);gap:clamp(8px,1.2vw,16px)}
+.g75 i{aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.4);transition:background .4s,border-color .4s,transform .4s var(--out)}
+.g75 i.on{background:#fff;border-color:#fff;transform:scale(.62)}
+.mx .row{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.25);font-size:13.5px}
+.mx .again{padding:9px 16px;border-radius:99px;border:1px solid rgba(255,255,255,.55);font-size:13px;white-space:nowrap;transition:.25s}
+.mx .again:hover{background:#fff;color:var(--cobalt)}
+.minis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.mini{background:#fff;color:var(--ink);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:8px;transition:transform .4s var(--out)}
+.mini:hover{transform:translateY(-4px)}
+.mini small{font-size:11.5px;letter-spacing:.16em;color:var(--cobalt)}
+.mini h4{font-size:18px;font-weight:600;line-height:1.35}
+.mini p{font-size:13.5px;color:var(--sub)}
+.mini a{margin-top:auto;font-size:13px;font-weight:500;color:var(--cobalt)}
+
+/* 经历：手风琴 */
+.xp{margin-top:clamp(30px,5vh,56px);border-top:1px solid var(--ink)}
+.xr{border-bottom:1px solid var(--line)}
+.xr>button{width:100%;display:grid;grid-template-columns:minmax(120px,1fr) minmax(0,2.2fr) minmax(0,1.6fr) 44px;gap:20px;align-items:center;padding:24px 0;text-align:left}
+.xr .yr{font-family:var(--serif);font-size:clamp(20px,1.8vw,26px);font-variant-numeric:lining-nums}
+.xr .co{color:var(--ink);font-weight:500;font-size:clamp(19px,1.8vw,26px);letter-spacing:-.02em;line-height:1.25}
+.xr .ro{font-size:14px;color:var(--sub)}
+.xr .pl{width:44px;height:44px;border-radius:50%;background:var(--bg);display:grid;place-items:center;transition:transform .5s var(--out),background .3s}
+.xr .pl::before{content:"";width:13px;height:13px;background:linear-gradient(currentColor,currentColor) center/100% 1.4px no-repeat,linear-gradient(currentColor,currentColor) center/1.4px 100% no-repeat}
+.xr>button:hover .pl{background:var(--sky)}
+.xr.on .pl{transform:rotate(45deg);background:var(--cobalt);color:#fff}
+.xb{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--out)}
+.xr.on .xb{grid-template-rows:1fr}
+.xb>div{overflow:hidden}
+.xb .in{display:grid;grid-template-columns:minmax(120px,1fr) minmax(0,3.8fr) 44px;gap:20px;padding-bottom:28px}
+.xb .ctx{grid-column:2;font-size:13.5px;color:var(--sub);margin-bottom:8px}
+.xb ul{grid-column:2}
+.xb li{position:relative;padding-left:18px;margin-bottom:8px;font-size:15px;color:#33353f}
+.xb li::before{content:"";position:absolute;left:0;top:.85em;width:8px;height:1px;background:var(--cobalt)}
+.xb li b{font-weight:600;color:var(--ink)}
+.kit{margin-top:clamp(40px,6vh,64px)}
+.kit h4{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sub);margin-bottom:16px}
+.kit .grp{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.kit .grp span{padding:7px 14px;border-radius:99px;background:var(--bg);font-size:13.5px;transition:.25s}
+.kit .grp span:hover{background:var(--sky)}
+.kit .grp em{font-style:normal;font-size:12px;letter-spacing:.12em;color:var(--cobalt);padding:7px 6px 7px 0;min-width:7.5em}
+
+/* 联系 */
+.cx{min-height:calc(100% - 20px);display:flex;flex-direction:column}
+.cx h2{font-weight:500;font-size:clamp(56px,9.6vw,168px);line-height:.9;letter-spacing:-.06em;margin-top:clamp(30px,8vh,90px)}
+.cx h2 .it{font-weight:300;letter-spacing:-.03em}
+.cx .cn2{margin-top:18px;font-size:16px;letter-spacing:.12em;opacity:.7}
+.copy{display:inline-flex;align-items:center;gap:16px;margin-top:clamp(30px,6vh,64px);padding:16px 18px 16px 26px;border-radius:99px;background:#fff;font-size:clamp(17px,1.7vw,24px);font-variant-numeric:lining-nums;align-self:flex-start;transition:.3s var(--out)}
+.copy:hover{transform:translateY(-3px);box-shadow:0 14px 30px -12px rgba(120,20,60,.35)}
+.copy em{font-style:normal;font-size:12.5px;letter-spacing:.08em;padding:8px 14px;border-radius:99px;background:var(--ink);color:#fff;transition:.3s}
+.copy.ok em{background:var(--cobalt)}
+.lk{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.lk a{padding:10px 18px;border-radius:99px;border:1px solid rgba(22,23,28,.3);font-size:14px;transition:.25s}
+.lk a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.cx .fine{margin-top:auto;padding-top:50px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;letter-spacing:.08em;opacity:.65}
+
+/* ───────── 窄屏 ───────── */
+@media (max-width:900px){
+  body{overflow:auto}
+  .board{height:auto;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto;
+    grid-template-areas:"intro intro" "photo stat" "photo why" "work work" "exp cont"}
+  .intro{gap:28px}
+  .intro h1{font-size:21vw}
+  .tile{min-height:200px}
+  .work{min-height:260px}
+  .work .peek{width:44%;right:5%}
+  .work .list{max-width:52%}
+  .wy{grid-template-columns:minmax(0,1fr)}
+  .ctl small{display:none}
+  .wy-n{font-size:30vw}
+  .deck{min-height:430px}
+  .wp,.wp.on{grid-template-columns:1fr}
+  .minis{grid-template-columns:1fr}
+  .xr>button{grid-template-columns:1fr 44px;gap:6px 14px}
+  .xr .yr,.xr .co,.xr .ro{grid-column:1}
+  .xr .pl{grid-row:1 / span 3;grid-column:2}
+  .xb .in{grid-template-columns:1fr}
+  .xb .ctx,.xb ul{grid-column:1}
+  .sheet .x{top:14px;right:14px;width:44px;height:44px}
+}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<main class="board" id="board">
+  <div class="tile intro">
+    <div class="top">
+      <span>Portfolio · 2026</span>
+      <button class="lang" id="lang" type="button">EN</button>
+    </div>
+    <div>
+      <h1>Joni <span class="it">Lin</span></h1>
+      <div class="who">林君如<i data-en="Shanghai">上海</i></div>
+      <p class="line" data-en="A marketer who grows the numbers, and <em>ships the AI product herself.</em>">做增长的市场人，也能把 AI 应用<em>亲手做上线</em>。</p>
+      <div class="chips"><span data-en="AI Product Operations">AI 产品运营</span><span data-en="AI Growth">AI 应用增长</span><span data-en="AI Content Strategy">AI 内容策略</span></div>
+    </div>
+    <div class="hint"><i></i><span data-en="Tap any card to open it">点击任意卡片，展开看看</span></div>
+  </div>
+
+  <div class="tile photo" id="photo">
+    <div class="bubble" data-en="Hi, I'm Joni. Six years in growth, now building with AI.">你好，我是 Joni。做了 6 年增长，现在用 AI 做产品。</div>
+    <img src="assets/joni-cut.webp" alt="Joni Lin" width="726" height="1200">
+  </div>
+
+  <div class="tile stat" id="stat">
+    <div class="lab"><span data-en="In numbers">关键数字</span><div class="dots" id="dots"><i></i><i></i><i></i><i></i></div></div>
+    <div><div class="big" id="bigN">118.6<small>%</small></div><div class="cap" id="capN"></div></div>
+  </div>
+
+  <div class="tile why go" data-open="why">
+    <div class="lab"><span class="n">01</span><span class="plus"></span></div>
+    <div>
+      <div class="t-title">Why me</div>
+      <div class="t-sub cn" data-en="">为什么是我</div>
+    </div>
+  </div>
+
+  <div class="tile work go" data-open="work">
+    <img class="peek" src="assets/work-yuedu.jpg" alt="" width="1440" height="900">
+    <div class="lab txt"><span class="n">02</span><span class="plus"></span></div>
+    <div class="txt">
+      <div class="t-title">Selected <span class="it">work</span></div>
+      <div class="t-sub cn" data-en="">做出来的东西</div>
+      <div class="list" style="margin-top:16px">
+        <span><b>a</b><span data-en="Reading Archive · own product">阅读档案馆 · 独立产品</span></span>
+        <span><b>b</b><span data-en="AI Skills · open source">AI Skills · 开源</span></span>
+        <span><b>c</b><span data-en="GEO · AI search visibility">GEO · 让 AI 搜索看见品牌</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tile exp go" data-open="exp">
+    <div class="lab"><span class="n">03</span><span class="plus"></span></div>
+    <div>
+      <div class="yrs">6 <span class="it">yrs</span></div>
+      <div class="t-title" style="font-size:clamp(22px,1.9vw,30px);margin-top:10px">Experience</div>
+      <div class="co">Innova · FoodTalks</div>
+    </div>
+  </div>
+
+  <div class="tile cont go" data-open="cont">
+    <div class="lab"><span class="n">04</span><span class="plus"></span></div>
+    <div>
+      <div class="t-title">Say <span class="it">hello</span></div>
+      <div class="mail" style="margin-top:8px">linjunru0210@gmail.com</div>
+    </div>
+  </div>
+</main>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true">
+  <button class="x" id="close" aria-label="Close"></button>
+  <div class="scroller" id="scroller"></div>
+</div>
+
+<div class="panels" id="panels">
+
+  <div data-panel="why">
+    <div class="ph st"><span class="n">01</span><span data-en="Strengths">优势</span></div>
+    <h2 class="ph-title st" style="--d:1">Why <span class="it">me</span></h2>
+    <div class="wy">
+      <div class="wy-n st" style="--d:2" id="wyN">01</div>
+      <div class="st" style="--d:3">
+        <div class="deck" id="deck">
+          <article class="card">
+            <h3 data-en="AI as daily infrastructure, not a demo">把 AI 用进日常，而不是停在演示</h3>
+            <p data-en="I mapped the work I repeat every week, wrote down how each task should be done, and turned it into Skills any AI tool can follow. The system moved from Claude to Codex without losing a single rule.">我把每周重复的工作逐项梳理，写清楚“这件事应该怎么做”，沉淀成任何 AI 工具都能照着执行的 Skill。这套体系从 Claude 迁到 Codex，规则一条没丢。</p>
+            <div class="proof" data-en="<b>PROOF</b> 12 tasks → 9 workflows → one system with source rules, quality gates and draft / submit / publish permissions"><b>证据</b> 12 项任务 → 9 个工作流 → 一套带来源规则、质量关卡和“草稿 / 提交 / 发布”权限分级的体系</div>
+          </article>
+          <article class="card">
+            <h3 data-en="I check what the model says">对 AI 的产出较真</h3>
+            <p data-en="Generated is not the same as done. Every claim needs a source, every quote must be found in the original, every list is checked for leaks before it goes out. This is the habit behind evaluation work.">“生成了”不等于“做完了”。每条结论要有出处，每句引用要能在原文里找到，每份名单发出前要查泄漏。这正是做模型评测需要的习惯。</p>
+            <div class="proof" data-en="<b>PROOF</b> Claim-by-claim check tables · 7 questions × 5 AI platforms re-tested · zero-leak email exclusion rules"><b>证据</b> 报告转文章逐条核对表 · “7 个问题 × 5 个 AI 平台”定期复测 · 邮件排除规则零泄漏</div>
+          </article>
+          <article class="card">
+            <h3 data-en="Growth measured in results">用结果说话的增长</h3>
+            <p data-en="Six years of owning the number: content, email, events and community. I segment the audience, read the data, and change the plan when the data says so.">6 年都在对结果负责：内容、邮件、展会、社群。先把用户分层，再看数据，数据说要改就改。</p>
+            <div class="proof" data-en="<b>PROOF</b> Sales leads +118.6% YoY · topic emails turned 2.9% of recipients into leads · FoodTalks traffic 10× in one month"><b>证据</b> 销售线索同比 +118.6% · 主题邮件把 2.9% 的收件人转化为线索 · FoodTalks 单月流量增长 10 倍</div>
+          </article>
+          <article class="card">
+            <h3 data-en="I can build it, and make it look good">自己能做出来，也做得好看</h3>
+            <p data-en="I break a product idea into small steps an AI coding tool can deliver and I can verify. Design, front end, back end, payment and launch were all done by me. This page was made the same way.">我能把产品想法拆成 AI 编程工具做得出、我验得了的小迭代。设计、前端、后端、收费、上线都是我一个人完成的。你正在看的这个页面也是这么做出来的。</p>
+            <div class="proof" data-en="<b>PROOF</b> Reading Archive: a live product with paid orders and its own visual language"><b>证据</b> 阅读档案馆：线上产品、真实付费订单、一套完整的视觉语言</div>
+          </article>
+        </div>
+        <div class="ctl">
+          <div class="bars" id="bars"><i class="on"></i><i></i><i></i><i></i></div>
+          <small data-en="Tap the card">点卡片翻下一张</small>
+          <button class="rb" id="prev" aria-label="Previous">←</button>
+          <button class="rb" id="next" aria-label="Next">→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-panel="work">
+    <div class="ph st"><span class="n">02</span><span data-en="Work">作品</span></div>
+    <h2 class="ph-title st" style="--d:1">Selected <span class="it">work</span></h2>
+    <div class="tabs st" style="--d:2" id="tabs">
+      <button class="on">Reading Archive</button><button>AI Skills</button><button>GEO</button><button data-en="More">更多</button>
+    </div>
+    <div class="wk st" style="--d:3">
+
+      <div class="wp on">
+        <div>
+          <h3>Reading Archive</h3>
+          <div class="cnm cn" data-en="">阅读档案馆 · 独立产品 · 2026.06 – 至今</div>
+          <p class="lede" data-en="A web app that turns WeChat Reading data into a personal archive: a wall of book spines, reading stats, monthly reports and share images.">把微信读书的数据变成一座个人阅读档案馆：书架墙、阅读统计、月度报告和分享图。</p>
+          <ul>
+            <li data-en="<b>Built alone with Claude and Codex:</b> design, HTML / CSS / JS front end, Cloudflare Workers, KV and D1 back end."><b>用 Claude / Codex 独立完成：</b>产品设计、前端，以及 Cloudflare Workers / KV / D1 后端。</li>
+            <li data-en="<b>Monetized:</b> free preview plus one-time unlock, license keys and server-side checks. 10+ paid orders with almost no promotion."><b>跑通收费：</b>“免费预览 + 买断”，激活码加服务端校验，几乎零推广成交 10+ 单。</li>
+            <li data-en="<b>In progress:</b> an LLM-written annual reading letter, with a quote check so every quoted line exists in the user's own notes."><b>进行中：</b>LLM 生成的“年度阅读回信”，原句核对保证每句引用都出自用户自己的笔记。</li>
+          </ul>
+          <div class="nums">
+            <div><b data-count="19806">19,806</b><span data-en="views, one post">单篇笔记浏览</span></div>
+            <div><b data-count="1560">1,560</b><span data-en="comments">条评论</span></div>
+            <div><b data-count="1271">1,271</b><span data-en="saves">次收藏</span></div>
+          </div>
+          <a class="out" href="https://yuedudanganguan.com" target="_blank" rel="noopener">yuedudanganguan.com <i>↗</i></a>
+        </div>
+        <div>
+          <div class="stack" id="stack">
+            <img src="assets/work-yuedu.jpg" alt="阅读档案馆首页" width="1440" height="900">
+            <img src="assets/work-report.jpg" alt="年度阅读报告" width="1100" height="618">
+          </div>
+          <div class="tap" data-en="Tap to switch screens">点击切换画面</div>
+        </div>
+      </div>
+
+      <div class="wp">
+        <div>
+          <h3>AI Skills for a one-person marketing team</h3>
+          <div class="cnm cn" data-en="">一人市场团队的 AI Skills · GitHub 开源</div>
+          <p class="lede" data-en="Most “AI for marketing” material is a pile of prompts: easy to write, unreliable to run. I write down how the job should be done, so the AI meets the same standard every time and I can check that it did.">大多数“AI 做营销”的资料是一堆提示词，写起来容易，但不可靠。我把“这件事应该怎么做”写清楚，让 AI 每次按同一标准做，我也能检查它有没有做到。</p>
+          <ul>
+            <li data-en="<b>Four complete Skills</b> with test cases: report-to-article, GEO publishing, email lists, localization."><b>4 个完整 Skill</b>，各带测试用例：报告转文章、GEO 发布、邮件名单、文档本地化。</li>
+            <li data-en="<b>Written in English</b> with fictional companies, plus a method guide on guardrails and measuring impact."><b>英文撰写</b>，示例全部虚构，附护栏设计与效果衡量的方法文档。</li>
+          </ul>
+          <a class="out" href="https://github.com/JoniLIN0210/solo-marketer-ai-skills" target="_blank" rel="noopener">GitHub <i>↗</i></a>
+        </div>
+        <div class="rules" id="rules">
+          <div class="rule on"><button><i>1</i><span data-en="Write the rule once.">规则写一次。</span><span>+</span></button><div class="ans"><p data-en="If I have explained it to the AI twice, it belongs in a Skill.">同一件事给 AI 解释过两次，就该写进 Skill。</p></div></div>
+          <div class="rule"><button><i>2</i><span data-en="Facts need a source.">事实要有出处。</span><span>+</span></button><div class="ans"><p data-en="A number with no source is marked missing, never filled in.">找不到出处的数字标为缺失，不填补。</p></div></div>
+          <div class="rule"><button><i>3</i><span data-en="Preparing is not publishing.">准备不等于发布。</span><span>+</span></button><div class="ans"><p data-en="Drafting, submitting and publishing are separate permissions.">起草、提交、发布是不同的授权。</p></div></div>
+          <div class="rule"><button><i>4</i><span data-en="Generated is not done.">“生成了”不等于“做完了”。</span><span>+</span></button><div class="ans"><p data-en="Open the file, check the list for leaks, read back the platform status.">文件要打开检查，名单要查泄漏，平台状态要回读。</p></div></div>
+          <div class="rule"><button><i>5</i><span data-en="Fix the class, not the case.">改一类，不改一个。</span><span>+</span></button><div class="ans"><p data-en="One error found means checking every error of the same kind.">发现一个错误，就查同类的所有错误。</p></div></div>
+        </div>
+      </div>
+
+      <div class="wp">
+        <div>
+          <h3>Making a brand visible to AI search</h3>
+          <div class="cnm cn" data-en="">让品牌被 AI 搜索看见 · Innova · 主动发起</div>
+          <p class="lede" data-en="AI search engines could not see our brand: all the content sat inside WeChat. Nobody asked me to fix it; I started on my own.">我发现 AI 搜索“看不见”我们的品牌：内容都困在公众号里。没有人要求我做，是我自己发现、自己推动的。</p>
+          <ul>
+            <li data-en="<b>187 posts</b> on Zhihu, Baijiahao and Toutiao in about five weeks."><b>约 5 周 187 篇</b>，发布在知乎、百家号、头条。</li>
+            <li data-en="<b>A site built for machines to read:</b> llms.txt, sitemap, FAQ structured data, lead form, made with AI coding."><b>为机器可读而建的官网：</b>llms.txt、sitemap、FAQ 结构化数据、线索表单，用 AI 编程搭建。</li>
+            <li data-en="<b>Result:</b> Baidu branded search from no organic result to page one; Baidu ERNIE began citing our Zhihu content."><b>结果：</b>百度品牌词从无自然结果到首页覆盖，文心一言开始引用我们的知乎内容。</li>
+          </ul>
+        </div>
+        <div class="mx">
+          <div class="cap"><span data-en="7 QUESTIONS × 5 AI PLATFORMS">7 个问题 × 5 个 AI 平台</span><span data-en="RE-TEST">定期复测</span></div>
+          <div class="g75" id="g75"></div>
+          <div class="row"><span data-en="An illustration of the re-test method, not a score sheet.">复测方法示意，不代表每格的实际结果。</span><button class="again" id="again" data-en="Run again ↻">再测一次 ↻</button></div>
+        </div>
+      </div>
+
+      <div class="wp">
+        <div class="minis" style="grid-column:1 / -1">
+          <div class="mini"><small data-en="SIDE PROJECT">个人项目</small><h4 data-en="Film Journal">观影志</h4><p data-en="My Douban history rebuilt as a magazine-style film library with a yearly report.">把豆瓣观影记录做成杂志式的私人片库，带年度报告。</p><a href="https://jonilin0210.github.io/film-journal/" target="_blank" rel="noopener" data-en="Open ↗">打开看看 ↗</a></div>
+          <div class="mini"><small data-en="DATA PIPELINE">数据流程</small><h4 data-en="587-product database, localized">587 款饮品数据库英译</h4><p data-en="An AI-assisted Python pipeline that translated a China street-drink database into English against a controlled glossary.">用 AI 辅助的 Python 流程把中国现制饮品数据库译成英文，按受控术语表统一用词。</p></div>
+          <div class="mini"><small data-en="LIFECYCLE EMAIL">邮件运营</small><h4 data-en="A list builder with zero leaks">零泄漏的邮件名单</h4><p data-en="3,000+ contacts segmented by business type; customers, unsubscribes and blocklist excluded by rule and checked every send.">3,000+ 联系人按业务类型分层；客户、退订、黑名单按规则排除，每次发送前核查。</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div data-panel="exp">
+    <div class="ph st"><span class="n">03</span><span data-en="Experience">经历</span></div>
+    <h2 class="ph-title st" style="--d:1">Experience</h2>
+    <p class="ph-sub st cn" style="--d:2" data-en="">食品科学本科，行业媒体，再到全球数据公司。不变的是：从零把一件事搭起来，做到数字动为止。</p>
+    <div class="xp st" style="--d:3" id="xp">
+      <div class="xr on">
+        <button><span class="yr">2024 – <span data-en="now">至今</span></span><span class="co">Innova Market Insights</span><span class="ro" data-en="Marketing Lead, China">中国区市场负责人</span><span class="pl"></span></button>
+        <div class="xb"><div><div class="in">
+          <div class="ctx" data-en="Netherlands-based global F&amp;B data and trends company. Sole marketer for the China office.">总部位于荷兰的全球食品饮料数据与趋势研究公司；中国区唯一的市场人员。</div>
+          <ul>
+            <li data-en="Own content, leads, events and sales enablement for China. <b>Sales leads +118.6% YoY.</b>">独立负责中国区内容、线索、展会与销售支持。<b>销售线索同比增长 118.6%。</b></li>
+            <li data-en="Built the AI workflow system: <b>12 recurring tasks, 9 reusable Skills</b>, with source tracing and human sign-off.">搭建 AI 工作流体系：<b>12 项重复工作、9 个可复用 Skill</b>，带来源追溯和人工验收。</li>
+            <li data-en="Started GEO on my own initiative: <b>187 posts in five weeks</b> and a machine-readable website.">主动发起 GEO：<b>5 周 187 篇内容</b>，外加一个机器可读的中文官网。</li>
+            <li data-en="Topic emails converted <b>2.9% of recipients into leads</b> (26 of 889). Negotiated a <b>free 96 m² booth</b> and a sponsored 60 m² booth.">主题邮件把 <b>2.9% 的收件人转化为线索</b>（889 人中 26 人）；谈下 <b>96㎡ 免费展位</b>和 60㎡ 全额赞助展位。</li>
+          </ul>
+        </div></div></div>
+      </div>
+      <div class="xr">
+        <button><span class="yr">2020 – 2024</span><span class="co" data-en="FoodTalks (Simba Business Consulting)">FoodTalks（上海辛巴商务咨询）</span><span class="ro" data-en="Assistant to CEO · New Media · HR">总裁助理 · 新媒体运营 · 人事</span><span class="pl"></span></button>
+        <div class="xb"><div><div class="in">
+          <div class="ctx" data-en="Food &amp; beverage industry media and events company.">食品饮料行业媒体与会展公司。</div>
+          <ul>
+            <li data-en="Built FoodTalks' operations from scratch: <b>traffic 10× in one month</b>, 3.8M monthly page views, 650K+ unique visitors.">从 0 到 1 搭建 FoodTalks 运营体系：<b>单月流量增长 10 倍</b>，月均 PV 380 万、UV 65 万+。</li>
+            <li data-en="100+ original industry articles; ran a <b>35,000-member</b> WeChat community.">策划发布 100+ 篇原创内容，运营 <b>3.5 万+ 人</b>的行业社群。</li>
+            <li data-en="Managed <b>5 departments</b>; redesigned performance and workflows, tripling efficiency.">统筹 <b>5 个部门</b>，重新设计绩效与流程，运营效率提升 3 倍。</li>
+            <li data-en="Volunteer campaign: 67,000 reads, 3,854 sign-ups. As a first-time salesperson, <b>9 deals in 4 months</b>.">志愿者招募 6.7 万阅读、3,854 人报名；第一次做销售，<b>4 个月成交 9 单</b>。</li>
+          </ul>
+        </div></div></div>
+      </div>
+      <div class="xr">
+        <button><span class="yr">2016 – 2020</span><span class="co" data-en="Fujian Normal University">福建师范大学</span><span class="ro" data-en="B.Eng., Food Science">食品科学与工程 · 本科</span><span class="pl"></span></button>
+        <div class="xb"><div><div class="in">
+          <ul>
+            <li data-en="<b>iGEM International Gold Medal</b>: deputy team leader; project management, website and slides; presented at the finals in Boston."><b>iGEM 国际基因工程机器大赛国际金奖</b>：副队长，负责项目管理、网页与 PPT，赴波士顿决赛路演。</li>
+            <li data-en="Bronze, 4th China “Internet+” Innovation and Entrepreneurship Competition.">第四届中国“互联网+”创新创业大赛铜奖。</li>
+          </ul>
+        </div></div></div>
+      </div>
+    </div>
+    <div class="kit st" style="--d:4">
+      <h4 data-en="Toolbox">工具箱</h4>
+      <div class="grp"><em>AI</em><span>Claude</span><span>Codex</span><span>Cursor</span><span>ChatGPT</span><span>Gemini</span><span>DeepSeek</span><span data-en="Prompt &amp; context design">提示词与上下文设计</span><span data-en="Skill design">Skill 设计</span><span data-en="Output evaluation">输出核验与评测</span></div>
+      <div class="grp"><em data-en="BUILD">技术</em><span>HTML / CSS / JS</span><span>Python · pandas</span><span>Cloudflare Workers · KV · D1</span><span>Vercel</span></div>
+      <div class="grp"><em data-en="GROWTH">增长</em><span data-en="Segmentation">用户分层</span><span>GEO</span><span data-en="Lead nurturing">线索培育</span><span data-en="Funnel analysis">漏斗复盘</span><span data-en="Events">展会与项目</span></div>
+      <div class="grp"><em data-en="LANGUAGE">语言</em><span data-en="Chinese · native">中文 · 母语</span><span data-en="English · working proficiency">英语 · 工作语言</span></div>
+    </div>
+  </div>
+
+  <div data-panel="cont">
+    <div class="cx">
+      <div class="ph st"><span class="n">04</span><span data-en="Contact">联系</span></div>
+      <h2 class="st" style="--d:1">Let's build<br>something <span class="it">with AI.</span></h2>
+      <div class="cn2 cn st" style="--d:2" data-en="">一起做点 AI 的事。</div>
+      <button class="copy st" style="--d:3" id="copy"><span>linjunru0210@gmail.com</span><em data-en="Copy">复制</em></button>
+      <div class="lk st" style="--d:4">
+        <a href="mailto:linjunru0210@gmail.com" data-en="Write an email ↗">发邮件 ↗</a>
+        <a href="https://github.com/JoniLIN0210" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://yuedudanganguan.com" target="_blank" rel="noopener" data-en="Reading Archive ↗">阅读档案馆 ↗</a>
+        <a href="https://jonilin0210.github.io/film-journal/" target="_blank" rel="noopener" data-en="Film Journal ↗">观影志 ↗</a>
+      </div>
+      <div class="fine st" style="--d:5"><span>© 2026 Joni Lin · Shanghai</span><span data-en="Designed and built by me, with Claude">本页由我设计，与 Claude 协作完成</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement,$=function(s,c){return(c||document).querySelector(s)},$$=function(s,c){return[].slice.call((c||document).querySelectorAll(s))};
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lang='zh';
+
+  /* 中 / EN */
+  var nodes=$$('[data-en]');nodes.forEach(function(n){n.dataset.zh=n.innerHTML});
+  function setLang(l){
+    lang=l;nodes.forEach(function(n){n.innerHTML=l==='en'?n.dataset.en:n.dataset.zh});
+    root.lang=l==='en'?'en':'zh-CN';$('#lang').textContent=l==='en'?'中文':'EN';
+    try{localStorage.setItem('lang',l)}catch(e){}
+    $('#capN').textContent=lang==='en'?stats[si].en:stats[si].zh;
+  }
+  $('#lang').addEventListener('click',function(e){e.stopPropagation();setLang(lang==='en'?'zh':'en')});
+
+  /* 数字计数 */
+  function fmt(v,dec){return dec?v.toFixed(dec):Math.round(v).toLocaleString('en-US')}
+  function count(el,to,dec,suffix){
+    if(reduce){el.innerHTML=fmt(to,dec)+(suffix||'');return}
+    var t0=null,d=1100;
+    function step(t){t0=t0||t;var p=Math.min(1,(t-t0)/d),e=1-Math.pow(1-p,4);el.innerHTML=fmt(to*e,dec)+(suffix||'');if(p<1)requestAnimationFrame(step)}
+    requestAnimationFrame(step);
+  }
+
+  /* 数字卡：自动轮播 + 点击切换 */
+  var stats=[
+    {n:118.6,dec:1,s:'<small>%</small>',zh:'销售线索数量同比增长，中国区市场只有我一个人',en:'Year-over-year growth in sales leads, as the only marketer in China'},
+    {n:187,s:'',zh:'篇 GEO 内容约 5 周发完，品牌词上了百度首页',en:'GEO posts in about five weeks; branded search reached page one'},
+    {n:9,s:'',zh:'个可复用的 AI 工作流，由 12 项重复工作沉淀而来',en:'reusable AI workflows, distilled from 12 recurring tasks'},
+    {n:19806,s:'',zh:'次浏览，来自我的独立产品的一篇小红书笔记',en:'views on one Xiaohongshu post about my own product'}
+  ];
+  var si=0,timer=null,dots=$$('#dots i');
+  function showStat(i){
+    si=i;var s=stats[i];
+    $('#capN').textContent=lang==='en'?s.en:s.zh;
+    count($('#bigN'),s.n,s.dec,s.s);
+    dots.forEach(function(d,k){d.className=k<i?'done':''});
+    void dots[i].offsetWidth;dots[i].className='on';
+    clearTimeout(timer);timer=setTimeout(function(){showStat((si+1)%stats.length)},4000);
+  }
+  $('#stat').addEventListener('click',function(){showStat((si+1)%stats.length)});
+  $('#photo').addEventListener('click',function(){this.classList.toggle('say')});
+
+  /* 展开 / 收起 */
+  var sheet=$('#sheet'),scroller=$('#scroller'),store=$('#panels'),cur=null,curTile=null,busy=false;
+  function wide(){return innerWidth>900}
+  function target(){var m=wide()?10:0;return{top:m,left:m,width:innerWidth-2*m,height:innerHeight-2*m,r:wide()?28:0}}
+  function rectOf(el){var r=el.getBoundingClientRect();return{top:r.top,left:r.left,width:r.width,height:r.height,r:28}}
+  function css(o){return{top:o.top+'px',left:o.left+'px',width:o.width+'px',height:o.height+'px',borderRadius:o.r+'px'}}
+  function place(o){Object.assign(sheet.style,css(o))}
+  function open(key,tile,instant){
+    if(busy||cur)return;busy=true;cur=key;curTile=tile;
+    scroller.appendChild($('[data-panel="'+key+'"]',store));scroller.scrollTop=0;
+    sheet.style.background=getComputedStyle(tile).backgroundColor;
+    sheet.className='sheet open '+key;document.body.style.overflow='hidden';
+    var a=rectOf(tile),b=target();
+    enter(key);
+    if(instant||reduce){place(b);done()}else{
+      place(a);sheet.animate([css(a),css(b)],{duration:720,easing:'cubic-bezier(.7,0,.2,1)'}).onfinish=function(){place(b);done()};
+    }
+    function done(){sheet.classList.add('show');busy=false;$('#close').focus({preventScroll:true})}
+    if(location.hash!=='#'+key)history.pushState({k:key},'','#'+key);
+  }
+  function close(fromPop){
+    if(busy||!cur)return;busy=true;sheet.classList.remove('show');
+    setTimeout(function(){
+      var a=rectOf(curTile),b=target();
+      if(reduce){fin();return}
+      sheet.animate([css(b),css(a)],{duration:620,easing:'cubic-bezier(.7,0,.2,1)'}).onfinish=fin;
+    },reduce?0:220);
+    function fin(){sheet.className='sheet';store.appendChild(scroller.firstElementChild);cur=null;busy=false;document.body.style.overflow='';curTile.focus({preventScroll:true})}
+    if(!fromPop&&location.hash)history.pushState({},'',location.pathname+location.search);
+  }
+  $$('.tile.go').forEach(function(t){t.tabIndex=0;
+    t.addEventListener('click',function(){open(t.dataset.open,t)});
+    t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(t.dataset.open,t)}})});
+  $('#close').addEventListener('click',function(){close()});
+  addEventListener('popstate',function(){var k=location.hash.slice(1);if(cur&&!k)close(true);else if(!cur&&k){var t=$('[data-open="'+k+'"]');t&&open(k,t)}});
+  addEventListener('resize',function(){if(cur&&!busy)place(target())});
+  addEventListener('keydown',function(e){
+    if(!cur)return;
+    if(e.key==='Escape')close();
+    if(cur==='why'&&e.key==='ArrowRight')go(1);
+    if(cur==='why'&&e.key==='ArrowLeft')go(-1);
+  });
+  function enter(key){if(key==='why')go(0,true);if(key==='work')showTab(ti,true)}
+
+  /* 01 卡片堆 */
+  var cards=$$('#deck .card'),wi=0,bars=$$('#bars i'),N=cards.length;
+  function go(d,reset){
+    var prev=wi;wi=reset?0:(wi+d+N)%N;
+    cards.forEach(function(c,k){var p=(k-wi+N)%N;if(!reset&&d>0&&k===prev)p=-1;c.dataset.pos=p});
+    if(!reset&&d>0)setTimeout(function(){var c=cards[prev];if(c.dataset.pos==='-1'){c.style.transition='none';c.dataset.pos=N-1;void c.offsetWidth;c.style.transition=''}},650);
+    bars.forEach(function(b,k){b.classList.toggle('on',k<=wi)});
+    $('#wyN').textContent='0'+(wi+1);
+  }
+  go(0,true);
+  $('#deck').addEventListener('click',function(){go(1)});
+  $('#next').addEventListener('click',function(){go(1)});
+  $('#prev').addEventListener('click',function(){go(-1)});
+
+  /* 02 作品标签 */
+  var tabs=$$('#tabs button'),wps=$$('.wp'),ti=0;
+  function showTab(i,force){
+    if(i===ti&&!force)return;ti=i;
+    tabs.forEach(function(t,k){t.classList.toggle('on',k===i)});
+    wps.forEach(function(w,k){w.classList.toggle('on',k===i)});
+    $$('[data-count]',wps[i]).forEach(function(n){count(n,+n.dataset.count,0)});
+    if(i===2)runGrid();
+  }
+  tabs.forEach(function(t,k){t.addEventListener('click',function(){showTab(k)})});
+  $('#stack').addEventListener('click',function(){this.classList.toggle('flip')});
+  $$('#rules .rule').forEach(function(r){$('button',r).addEventListener('click',function(){var on=r.classList.contains('on');$$('#rules .rule').forEach(function(x){x.classList.remove('on')});if(!on)r.classList.add('on')})});
+  var g=$('#g75');for(var i=0;i<35;i++)g.appendChild(document.createElement('i'));
+  var gt=[];
+  function runGrid(){
+    gt.forEach(clearTimeout);gt=[];var ds=$$('i',g);ds.forEach(function(d){d.classList.remove('on')});
+    ds.forEach(function(d,k){gt.push(setTimeout(function(){d.classList.add('on')},300+((k%7)*5+Math.floor(k/7))*45))});
+  }
+  $('#again').addEventListener('click',runGrid);
+
+  /* 03 经历 */
+  $$('#xp .xr').forEach(function(r){$('button',r).addEventListener('click',function(){r.classList.toggle('on')})});
+
+  /* 04 复制邮箱 */
+  $('#copy').addEventListener('click',function(){
+    var b=this,em=$('em',b),mail='linjunru0210@gmail.com';
+    function ok(){em.textContent=lang==='en'?'Copied ✓':'已复制 ✓';b.classList.add('ok');setTimeout(function(){em.textContent=lang==='en'?'Copy':'复制';b.classList.remove('ok')},1800)}
+    if(navigator.clipboard)navigator.clipboard.writeText(mail).then(ok,function(){location.href='mailto:'+mail});else location.href='mailto:'+mail;
+  });
+
+  /* 启动 */
+  var q=/[?&]lang=(en|zh)/.exec(location.search),saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
+  if(q)setLang(q[1]);else if(saved==='en')setLang('en');
+  requestAnimationFrame(function(){root.classList.add('ready');showStat(0)});
+  var k0=location.hash.slice(1),t0=k0&&$('[data-open="'+k0+'"]');
+  if(t0)setTimeout(function(){open(k0,t0,true)},60);
+})();
+</script>
+</body>
+</html>
