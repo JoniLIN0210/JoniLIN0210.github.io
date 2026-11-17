@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Joni Lin 林君如｜Portfolio</title>
-<meta name="description" content="Joni Lin（林君如）：做增长的市场人，也能把 AI 应用亲手做上线。">
+<meta name="description" content="Joni Lin（林君如）：6 年增长经验的市场人，把 AI 做成每天在跑的工作流，也独立做出了有人付费的产品。">
 <style>
 @font-face{font-family:"Cormorant";src:url("assets/cormorant-garamond.woff2") format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
 @font-face{font-family:"Cormorant";src:url("assets/cormorant-garamond-italic.woff2") format("woff2");font-weight:300 700;font-style:italic;font-display:swap}
 :root{
   --bg:#edf0f5;--ink:#16171c;--sub:#5d6070;--line:rgba(22,23,28,.12);
-  --cobalt:#2d4bff;--sun:#ffd84a;--pink:#ffc4d3;--sky:#d4e4ff;--white:#fff;
+  --cobalt:#2d4bff;--sun:#ffd84a;--pink:#ffc4d3;--sky:#d4e4ff;--white:#fff;--mint:#1fbf75;
   --sans:"Helvetica Neue","PingFang SC","Segoe UI","Microsoft YaHei",Arial,sans-serif;
   --serif:"Cormorant","Times New Roman",serif;
   --gap:14px;--r:28px;--ease:cubic-bezier(.7,0,.2,1);--out:cubic-bezier(.2,.8,.2,1);
@@ -23,6 +23,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 img{display:block;max-width:100%}
 ul{list-style:none}
 ::selection{background:var(--cobalt);color:#fff}
+:focus{outline:none}:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px}
 .it{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
 .cn:empty{display:none}
 
@@ -39,54 +40,67 @@ ul{list-style:none}
 .tile.go:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(30,40,90,.28)}
 .lab{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
 .lab .n{font-family:var(--serif);font-style:italic;font-size:17px;letter-spacing:0;text-transform:none}
-.plus{width:42px;height:42px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;flex:none;transition:transform .5s var(--out),background .3s,color .3s}
+.plus{width:42px;height:42px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;flex:none;transition:transform .5s var(--out)}
 .plus::before{content:"";width:14px;height:14px;background:linear-gradient(currentColor,currentColor) center/100% 1.4px no-repeat,linear-gradient(currentColor,currentColor) center/1.4px 100% no-repeat}
 .tile.go:hover .plus{transform:rotate(90deg)}
 .t-title{font-size:clamp(30px,3vw,50px);line-height:1;letter-spacing:-.04em;font-weight:500}
 .t-sub{margin-top:8px;font-size:13px;letter-spacing:.2em;opacity:.7}
 
-/* 简介 */
-.intro{grid-area:intro;--i:0}
-.intro .top{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--sub)}
+/* 简介卡 */
+.intro{grid-area:intro;--i:0;--mx:70%;--my:20%;isolation:isolate}
+.intro::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(520px circle at var(--mx) var(--my),rgba(45,75,255,.09),transparent 60%),radial-gradient(380px circle at 92% 108%,rgba(255,196,211,.45),transparent 70%)}
+.intro .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--sub)}
+.mono{width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:16px;letter-spacing:0;text-transform:none}
+.right{display:flex;align-items:center;gap:10px}
+.status{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--sub);padding:6px 13px;border-radius:99px;background:var(--bg)}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 rgba(31,191,117,.5);animation:ping 2s infinite}
+@keyframes ping{to{box-shadow:0 0 0 9px rgba(31,191,117,0)}}
 .lang{border:1px solid var(--line);border-radius:99px;padding:6px 15px;font-size:12px;letter-spacing:.1em;transition:.25s}
 .lang:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-.intro h1{font-weight:500;font-size:clamp(64px,8.6vw,148px);line-height:.86;letter-spacing:-.06em;margin-left:-.04em}
+.intro h1{font-weight:500;font-size:clamp(60px,7.6vw,132px);line-height:.86;letter-spacing:-.06em;margin-left:-.04em}
 .intro h1 .it{font-weight:300;letter-spacing:-.03em;color:var(--cobalt);font-size:1.08em}
-.who{display:flex;gap:16px;align-items:baseline;margin-top:20px;font-size:14px;letter-spacing:.42em;color:var(--sub)}
-.who i{font-style:normal;letter-spacing:.14em;opacity:.75}
-.intro .line{margin-top:clamp(16px,2.6vh,30px);font-size:clamp(17px,1.5vw,23px);line-height:1.5;letter-spacing:-.005em;max-width:24em}
-.intro .line em{font-style:normal;color:var(--cobalt)}
-html[lang="en"] .intro .line{font-family:var(--serif);font-size:clamp(22px,1.95vw,30px);line-height:1.25}
-html[lang="en"] .intro .line em{font-style:italic}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.chips span{font-size:12.5px;padding:5px 13px;border-radius:99px;background:var(--bg);color:var(--ink)}
-.hint{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--sub);letter-spacing:.06em}
-.hint i{width:7px;height:7px;border-radius:50%;background:var(--cobalt);animation:pulse 1.8s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(45,75,255,.45)}100%{box-shadow:0 0 0 12px rgba(45,75,255,0)}}
+.intro h1 small{display:inline-block;margin-left:.5em;font-family:var(--sans);font-size:.13em;font-weight:400;letter-spacing:.45em;color:var(--sub);vertical-align:.6em}
+.role{display:flex;align-items:baseline;gap:.45em;margin-top:clamp(18px,2.6vh,30px);font-size:clamp(20px,1.85vw,30px);letter-spacing:-.01em;line-height:1.3}
+.slot{position:relative;display:inline-block;overflow:hidden;height:1.3em;vertical-align:bottom;color:var(--cobalt)}
+.slot b{display:inline-block;font-weight:500;transition:transform .5s var(--ease),opacity .5s}
+.slot b.out{transform:translateY(-110%);opacity:0}
+.slot b.pre{transform:translateY(110%);opacity:0;transition:none}
+html[lang="en"] .slot b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.12em}
+.bio{margin-top:12px;font-size:15px;color:var(--sub);max-width:34em}
+.facts3{display:grid;grid-template-columns:repeat(3,auto) 1fr;align-items:end;border-top:1px solid var(--line);padding-top:16px}
+.facts3>div:not(.hint){padding-right:clamp(16px,2.4vw,40px);margin-right:clamp(16px,2.4vw,40px);border-right:1px solid var(--line)}
+.facts3>div:nth-child(3){border-right:0}
+.facts3 b{display:block;font-weight:500;font-size:clamp(22px,2vw,32px);line-height:1;letter-spacing:-.03em}
+.facts3 b .it{font-size:.85em;color:var(--cobalt);margin-left:3px;font-weight:400}
+.facts3>div>span{display:block;margin-top:6px;font-size:12px;color:var(--sub);line-height:1.4}
+.hint{justify-self:end;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--sub);letter-spacing:.06em;white-space:nowrap}
+.hint em{font-style:normal;display:inline-block;animation:nudge 1.6s var(--out) infinite}
+@keyframes nudge{50%{transform:translate(3px,3px)}}
 
-/* 照片 */
+/* 照片卡 */
 .photo{grid-area:photo;--i:1;padding:0;justify-content:flex-end;
   background:radial-gradient(ellipse 70% 55% at 50% 38%,#fdfdff 0%,#eef2f9 45%,#dbe3f1 100%)}
 .photo::after{content:"";position:absolute;left:8%;right:8%;bottom:-6%;height:16%;border-radius:50%;background:radial-gradient(closest-side,rgba(60,75,120,.22),transparent);z-index:0}
-.photo img{position:absolute;z-index:1;left:50%;bottom:0;height:88%;
-  -webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent 100%);mask-image:linear-gradient(to bottom,#000 78%,transparent 100%);width:auto;max-width:none;transform:translateX(-50%);transition:transform .8s var(--out)}
-.photo:hover img{transform:translateX(-50%) scale(1.035)}
-.bubble{position:absolute;top:18px;left:18px;right:18px;z-index:2;background:#fff;border-radius:18px 18px 18px 4px;padding:9px 14px;font-size:13px;line-height:1.45;
-  transform-origin:0 100%;transform:scale(.6);opacity:0;transition:.45s var(--out)}
-.photo:hover .bubble,.photo.say .bubble{transform:none;opacity:1}
+.photo img{position:absolute;z-index:1;left:50%;bottom:0;height:88%;width:auto;max-width:none;transform:translateX(-50%);transition:transform .8s var(--out);
+  -webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent 100%);mask-image:linear-gradient(to bottom,#000 78%,transparent 100%)}
+.photo:hover img{transform:translateX(-50%) scale(1.03)}
+.photo .lab{position:absolute;z-index:2;top:clamp(18px,1.9vw,30px);left:clamp(18px,1.9vw,30px);right:clamp(18px,1.9vw,30px)}
+.photo .tag{position:absolute;z-index:2;left:clamp(18px,1.9vw,30px);bottom:clamp(18px,1.9vw,30px);padding:8px 14px;border-radius:99px;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:13px;font-weight:500}
 
-/* 数字 */
+/* 数字卡 */
 .stat{grid-area:stat;--i:2;background:var(--sky);cursor:pointer}
-.stat .big{font-weight:500;font-size:clamp(42px,4.4vw,74px);line-height:.9;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.stat .big{font-weight:500;font-size:clamp(40px,4.2vw,70px);line-height:.9;letter-spacing:-.05em;font-variant-numeric:tabular-nums;white-space:nowrap}
 .stat .big small{font-size:.45em;letter-spacing:0;margin-left:2px}
 .stat .cap{margin-top:8px;font-size:13px;line-height:1.5;min-height:3em;color:#2b3350}
-.dots{display:flex;gap:6px}
-.dots i{width:18px;height:3px;border-radius:2px;background:rgba(22,23,28,.18);overflow:hidden;position:relative}
+.dots{display:flex;gap:5px}
+.dots i{width:14px;height:3px;border-radius:2px;background:rgba(22,23,28,.18);overflow:hidden;position:relative}
 .dots i.on::after{content:"";position:absolute;inset:0;background:var(--ink);transform-origin:0 50%;animation:fill 4s linear forwards}
 .dots i.done{background:var(--ink)}
 @keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 
-/* 其他卡片 */
+/* 其他卡 */
 .why{grid-area:why;--i:3;background:var(--sun)}
 .work{grid-area:work;--i:4;background:var(--cobalt);color:#fff}
 .work .list{display:flex;flex-direction:column;gap:2px;font-size:13.5px;opacity:.85}
@@ -101,15 +115,15 @@ html[lang="en"] .intro .line em{font-style:italic}
 .cont{grid-area:cont;--i:6;background:var(--pink)}
 .cont .mail{font-size:12.5px;opacity:.75;word-break:break-all}
 
-/* ───────── 展开页 ───────── */
+/* ───────── 展开层 ───────── */
 .sheet{position:fixed;z-index:20;display:none;overflow:hidden;border-radius:var(--r)}
 .sheet.open{display:block}
 .sheet .x{position:absolute;top:22px;right:22px;z-index:3;width:50px;height:50px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;opacity:0;transition:opacity .3s,transform .5s var(--out)}
 .sheet .x::before{content:"";width:16px;height:16px;background:linear-gradient(currentColor,currentColor) center/100% 1.4px no-repeat,linear-gradient(currentColor,currentColor) center/1.4px 100% no-repeat;transform:rotate(45deg)}
 .sheet .x:hover{transform:rotate(90deg)}
-:focus{outline:none}:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px}
+.sheet .x:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(45,75,255,.18)}
 .sheet.show .x{opacity:1}
-.scroller{position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;padding:clamp(26px,4vw,64px) clamp(22px,5vw,88px)}
+.scroller{position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;padding:clamp(26px,4vw,64px) clamp(22px,5vw,88px) 80px}
 .st{opacity:0;transform:translateY(16px);transition:opacity .6s var(--out),transform .6s var(--out)}
 .sheet.show .st{opacity:1;transform:none;transition-delay:calc(var(--d,0) * 70ms + 60ms)}
 .panels{display:none}
@@ -117,55 +131,88 @@ html[lang="en"] .intro .line em{font-style:italic}
 .ph .n{font-family:var(--serif);font-style:italic;font-size:20px;letter-spacing:0;text-transform:none}
 .ph-title{font-weight:500;font-size:clamp(46px,6.4vw,104px);line-height:.95;letter-spacing:-.05em;margin-top:14px}
 .ph-title .it{font-weight:300;letter-spacing:-.025em}
-.ph-sub{margin-top:14px;font-size:15.5px;max-width:36em;opacity:.78}
+.ph-sub{margin-top:16px;font-size:16px;max-width:38em;opacity:.8}
 .sheet.work{color:#fff}
 
-/* 优势：逐张翻看 */
-.wy{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr);gap:clamp(24px,5vw,90px);margin-top:clamp(30px,5vh,60px);align-items:start}
-.wy-n{font-weight:500;font-size:clamp(110px,16vw,250px);line-height:.8;letter-spacing:-.07em;font-variant-numeric:tabular-nums}
-.deck{position:relative;min-height:330px;cursor:pointer}
+/* 00 关于我 */
+.ab{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.6fr);gap:clamp(30px,6vw,110px);margin-top:clamp(30px,5vh,56px);align-items:start}
+.ab-side{position:sticky;top:0}
+.ab-pic{border-radius:22px;overflow:hidden;aspect-ratio:4/5;position:relative;background:radial-gradient(ellipse 70% 55% at 50% 38%,#fff 0%,#e9eef7 55%,#d6dfef 100%)}
+.ab-pic img{position:absolute;left:50%;bottom:0;height:92%;width:auto;max-width:none;transform:translateX(-50%)}
+.ab-side dl{margin-top:20px;font-size:13.5px}
+.ab-side dl div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line)}
+.ab-side dt{color:var(--sub)}
+.ab-side dd{text-align:right;font-weight:500}
+.story p{font-size:clamp(17px,1.45vw,21px);line-height:1.75;letter-spacing:-.005em;margin-bottom:1.1em;color:#2a2c34}
+.story p:first-child{font-size:clamp(22px,2.1vw,32px);line-height:1.45;color:var(--ink);font-weight:500;letter-spacing:-.015em}
+html[lang="en"] .story p:first-child{font-family:var(--serif);font-weight:500;font-size:clamp(28px,2.6vw,40px);line-height:1.18}
+.story p mark{background:linear-gradient(transparent 62%,var(--sky) 62%);color:inherit}
+.how{margin-top:clamp(36px,5vh,56px)}
+.how h4,.life h4{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sub);margin-bottom:14px}
+.how ol{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.how li{background:#fff;border-radius:18px;padding:20px 22px}
+.how li b{display:block;font-weight:600;font-size:16px}
+.how li b i{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--cobalt);margin-right:8px;font-size:19px}
+.how li span{display:block;margin-top:6px;font-size:13.5px;color:var(--sub);line-height:1.6}
+.life{margin-top:clamp(30px,4vh,44px)}
+.life p{font-size:15px;color:#3c3e48}
+.life a{color:var(--cobalt);border-bottom:1px solid currentColor}
+
+/* 01 优势卡片堆 */
+.wy{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.6fr);gap:clamp(24px,5vw,90px);margin-top:clamp(30px,5vh,56px);align-items:start}
+.wy-n{font-weight:500;font-size:clamp(110px,15vw,240px);line-height:.8;letter-spacing:-.07em;font-variant-numeric:tabular-nums}
+.wy-k{margin-top:22px;font-size:13px;letter-spacing:.06em;opacity:.7;max-width:16em}
+.deck{position:relative;cursor:pointer;transition:height .5s var(--out)}
 .card{position:absolute;inset:0 0 auto 0;background:#fff;border-radius:22px;padding:clamp(24px,2.8vw,40px);
   transition:transform .7s var(--ease),opacity .5s;transform-origin:50% 0}
-.card h3{font-weight:500;font-size:clamp(23px,2.2vw,34px);line-height:1.25;letter-spacing:-.02em}
+.card .kk{font-size:11.5px;letter-spacing:.18em;color:var(--cobalt);font-weight:500}
+.card h3{margin-top:10px;font-weight:500;font-size:clamp(22px,2vw,31px);line-height:1.28;letter-spacing:-.02em}
+html[lang="en"] .card h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.4vw,37px);line-height:1.1;letter-spacing:-.01em}
 .card p{margin-top:14px;font-size:15.5px;color:#3c3e48}
-.card .proof{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
-.card .proof b{color:var(--ink);font-weight:600;letter-spacing:.1em;margin-right:4px}
-.card[data-pos="0"]{z-index:4;transform:none}
-.card[data-pos="1"]{z-index:3;transform:translateY(16px) scale(.95);opacity:.75}
-.card[data-pos="2"]{z-index:2;transform:translateY(30px) scale(.9);opacity:.45}
-.card[data-pos="3"]{z-index:1;transform:translateY(42px) scale(.85);opacity:.2}
-.card[data-pos="-1"]{z-index:5;transform:translate(-30%,-40px) rotate(-8deg);opacity:0;pointer-events:none}
-.ctl{display:flex;align-items:center;gap:14px;margin-top:clamp(70px,9vh,100px)}
+.card ul{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.card li{position:relative;padding-left:18px;font-size:13.5px;color:var(--sub);margin-top:6px}
+.card li::before{content:"";position:absolute;left:0;top:.8em;width:8px;height:1px;background:var(--cobalt)}
+.card li b{color:var(--ink);font-weight:600}
+.card[data-pos="0"]{z-index:5;transform:none}
+.card[data-pos="1"]{z-index:4;transform:translateY(16px) scale(.95);opacity:.75}
+.card[data-pos="2"]{z-index:3;transform:translateY(30px) scale(.9);opacity:.45}
+.card[data-pos="3"]{z-index:2;transform:translateY(42px) scale(.85);opacity:.2}
+.card[data-pos="4"]{z-index:1;transform:translateY(52px) scale(.8);opacity:0}
+.card[data-pos="-1"]{z-index:6;transform:translate(-30%,-40px) rotate(-8deg);opacity:0;pointer-events:none}
+.ctl{display:flex;align-items:center;gap:14px;margin-top:72px}
 .ctl .bars{display:flex;gap:6px;flex:1}
-.ctl .bars i{height:3px;flex:1;max-width:64px;border-radius:2px;background:rgba(22,23,28,.18);transition:background .4s}
+.ctl .bars i{height:3px;flex:1;max-width:56px;border-radius:2px;background:rgba(22,23,28,.18);transition:background .4s;cursor:pointer}
 .ctl .bars i.on{background:var(--ink)}
 .rb{width:52px;height:52px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;font-size:18px;transition:.25s}
 .rb:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 .ctl small{font-size:12px;letter-spacing:.1em;opacity:.6}
 
-/* 作品：标签切换 */
+/* 02 作品 */
 .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:clamp(26px,4vh,44px)}
 .tabs button{padding:10px 20px;border-radius:99px;border:1px solid rgba(255,255,255,.4);font-size:14px;transition:.25s}
 .tabs button:hover{border-color:#fff}
 .tabs button.on{background:#fff;color:var(--cobalt);border-color:#fff}
 .wk{position:relative;margin-top:clamp(26px,4vh,44px)}
-.wp{display:none;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,5vw,90px);align-items:center}
+.wp{display:none;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,90px);align-items:start}
 .wp.on{display:grid;animation:swap .6s var(--out)}
 @keyframes swap{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
-.wp h3{font-weight:500;font-size:clamp(32px,3.5vw,56px);line-height:1;letter-spacing:-.04em}
+.wp h3{font-weight:500;font-size:clamp(32px,3.4vw,54px);line-height:1;letter-spacing:-.04em}
 .wp .cnm{margin-top:10px;font-size:13px;letter-spacing:.3em;opacity:.7}
-.wp .lede{margin-top:18px;font-size:16px;opacity:.92}
-.wp ul{margin-top:14px}
-.wp li{position:relative;padding-left:18px;margin-top:8px;font-size:14.5px;opacity:.85}
-.wp li::before{content:"";position:absolute;left:0;top:.85em;width:8px;height:1px;background:currentColor}
-.wp li b{font-weight:600}
-.nums{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.25)}
-.nums b{display:block;font-weight:500;font-size:clamp(30px,2.8vw,44px);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.wp .lede{margin-top:18px;font-size:17px;line-height:1.6}
+html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.3}
+.cs{margin-top:22px;border-top:1px solid rgba(255,255,255,.25)}
+.cs div{display:grid;grid-template-columns:5.5em 1fr;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.cs dt{font-size:12px;letter-spacing:.16em;opacity:.65;padding-top:3px;text-transform:uppercase}
+.cs dd{font-size:14.5px;line-height:1.7;opacity:.92}
+.cs dd b{font-weight:600;opacity:1}
+.nums{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:22px}
+.nums b{display:block;font-weight:500;font-size:clamp(28px,2.6vw,42px);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
 .nums span{display:block;margin-top:6px;font-size:12px;letter-spacing:.08em;opacity:.7}
 .out{display:inline-flex;align-items:center;gap:10px;margin-top:24px;padding:11px 20px;border-radius:99px;background:#fff;color:var(--cobalt);font-size:14px;font-weight:500;transition:.25s}
 .out:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,40,.25)}
 .out i{font-style:normal}
-.stack{position:relative;aspect-ratio:1.45;cursor:pointer}
+.vis{position:sticky;top:0}
+.stack{position:relative;aspect-ratio:1.4;cursor:pointer}
 .stack img{position:absolute;height:auto;width:82%;border-radius:12px;box-shadow:0 24px 60px rgba(0,0,40,.35);transition:transform .8s var(--ease),z-index 0s .35s}
 .stack img:nth-child(1){left:0;top:0}
 .stack img:nth-child(2){right:0;bottom:0;width:62%}
@@ -173,9 +220,10 @@ html[lang="en"] .intro .line em{font-style:italic}
 .stack.flip img:nth-child(2){transform:translate(-14%,-22%) scale(1.25);z-index:2}
 .tap{margin-top:12px;font-size:12px;letter-spacing:.1em;opacity:.65;text-align:right}
 .rules{background:#fff;color:var(--ink);border-radius:22px;padding:8px clamp(18px,2.4vw,32px)}
+.rules .rh{display:flex;justify-content:space-between;padding:16px 0 12px;font-size:11.5px;letter-spacing:.16em;color:var(--sub);border-bottom:1px solid var(--ink)}
 .rule{border-bottom:1px solid var(--line)}
 .rule:last-child{border-bottom:0}
-.rule button{width:100%;display:grid;grid-template-columns:36px 1fr 24px;align-items:center;padding:17px 0;text-align:left;font-size:16.5px;font-weight:500}
+.rule button{width:100%;display:grid;grid-template-columns:36px 1fr 24px;align-items:center;padding:16px 0;text-align:left;font-size:16px;font-weight:500}
 .rule button i{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--cobalt)}
 .rule button span:last-child{font-size:20px;font-weight:300;transition:transform .4s var(--out);justify-self:end}
 .rule.on button span:last-child{transform:rotate(45deg)}
@@ -188,18 +236,18 @@ html[lang="en"] .intro .line em{font-style:italic}
 .g75{display:grid;grid-template-columns:repeat(7,1fr);gap:clamp(8px,1.2vw,16px)}
 .g75 i{aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.4);transition:background .4s,border-color .4s,transform .4s var(--out)}
 .g75 i.on{background:#fff;border-color:#fff;transform:scale(.62)}
-.mx .row{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.25);font-size:13.5px}
+.mx .row{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.25);font-size:13px}
 .mx .again{padding:9px 16px;border-radius:99px;border:1px solid rgba(255,255,255,.55);font-size:13px;white-space:nowrap;transition:.25s}
 .mx .again:hover{background:#fff;color:var(--cobalt)}
-.minis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.mini{background:#fff;color:var(--ink);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:8px;transition:transform .4s var(--out)}
+.minis{grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.mini{background:#fff;color:var(--ink);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:8px;transition:transform .4s var(--out)}
 .mini:hover{transform:translateY(-4px)}
 .mini small{font-size:11.5px;letter-spacing:.16em;color:var(--cobalt)}
 .mini h4{font-size:18px;font-weight:600;line-height:1.35}
 .mini p{font-size:13.5px;color:var(--sub)}
-.mini a{margin-top:auto;font-size:13px;font-weight:500;color:var(--cobalt)}
+.mini a{margin-top:auto;padding-top:6px;font-size:13px;font-weight:500;color:var(--cobalt)}
 
-/* 经历：手风琴 */
+/* 03 经历 */
 .xp{margin-top:clamp(30px,5vh,56px);border-top:1px solid var(--ink)}
 .xr{border-bottom:1px solid var(--line)}
 .xr>button{width:100%;display:grid;grid-template-columns:minmax(120px,1fr) minmax(0,2.2fr) minmax(0,1.6fr) 44px;gap:20px;align-items:center;padding:24px 0;text-align:left}
@@ -213,11 +261,12 @@ html[lang="en"] .intro .line em{font-style:italic}
 .xb{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--out)}
 .xr.on .xb{grid-template-rows:1fr}
 .xb>div{overflow:hidden}
-.xb .in{display:grid;grid-template-columns:minmax(120px,1fr) minmax(0,3.8fr) 44px;gap:20px;padding-bottom:28px}
-.xb .ctx{grid-column:2;font-size:13.5px;color:var(--sub);margin-bottom:8px}
-.xb ul{grid-column:2}
-.xb li{position:relative;padding-left:18px;margin-bottom:8px;font-size:15px;color:#33353f}
-.xb li::before{content:"";position:absolute;left:0;top:.85em;width:8px;height:1px;background:var(--cobalt)}
+.xb .in{display:grid;grid-template-columns:minmax(120px,1fr) minmax(0,3.8fr) 44px;gap:20px;padding-bottom:30px}
+.xb .ctx{grid-column:2;font-size:14px;color:var(--sub);margin-bottom:12px}
+.xb .grp{grid-column:2;display:grid;grid-template-columns:7em 1fr;gap:4px 18px;padding:12px 0;border-top:1px dashed var(--line)}
+.xb .grp>em{font-style:normal;font-size:12px;letter-spacing:.14em;color:var(--cobalt);font-weight:500;padding-top:3px}
+.xb li{position:relative;padding-left:16px;margin-bottom:6px;font-size:15px;color:#33353f}
+.xb li::before{content:"";position:absolute;left:0;top:.85em;width:7px;height:1px;background:var(--cobalt)}
 .xb li b{font-weight:600;color:var(--ink)}
 .kit{margin-top:clamp(40px,6vh,64px)}
 .kit h4{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sub);margin-bottom:16px}
@@ -226,12 +275,15 @@ html[lang="en"] .intro .line em{font-style:italic}
 .kit .grp span:hover{background:var(--sky)}
 .kit .grp em{font-style:normal;font-size:12px;letter-spacing:.12em;color:var(--cobalt);padding:7px 6px 7px 0;min-width:7.5em}
 
-/* 联系 */
+/* 04 联系 */
 .cx{min-height:calc(100% - 20px);display:flex;flex-direction:column}
 .cx h2{font-weight:500;font-size:clamp(56px,9.6vw,168px);line-height:.9;letter-spacing:-.06em;margin-top:clamp(30px,8vh,90px)}
 .cx h2 .it{font-weight:300;letter-spacing:-.03em}
-.cx .cn2{margin-top:18px;font-size:16px;letter-spacing:.12em;opacity:.7}
-.copy{display:inline-flex;align-items:center;gap:16px;margin-top:clamp(30px,6vh,64px);padding:16px 18px 16px 26px;border-radius:99px;background:#fff;font-size:clamp(17px,1.7vw,24px);font-variant-numeric:lining-nums;align-self:flex-start;transition:.3s var(--out)}
+.cx .cn2{margin-top:18px;font-size:17px;letter-spacing:.06em;opacity:.75}
+.look{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;font-size:13.5px}
+.look span{padding:6px 14px;border-radius:99px;background:rgba(255,255,255,.55)}
+.look em{font-style:normal;padding:6px 6px 6px 0;opacity:.7;letter-spacing:.06em}
+.copy{display:inline-flex;align-items:center;gap:16px;margin-top:clamp(28px,5vh,56px);padding:16px 18px 16px 26px;border-radius:99px;background:#fff;font-size:clamp(17px,1.7vw,24px);align-self:flex-start;transition:.3s var(--out)}
 .copy:hover{transform:translateY(-3px);box-shadow:0 14px 30px -12px rgba(120,20,60,.35)}
 .copy em{font-style:normal;font-size:12.5px;letter-spacing:.08em;padding:8px 14px;border-radius:99px;background:var(--ink);color:#fff;transition:.3s}
 .copy.ok em{background:var(--cobalt)}
@@ -241,27 +293,43 @@ html[lang="en"] .intro .line em{font-style:italic}
 .cx .fine{margin-top:auto;padding-top:50px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;letter-spacing:.08em;opacity:.65}
 
 /* ───────── 窄屏 ───────── */
+@media (max-width:1180px) and (min-width:901px){
+  .status span{display:none}
+  .status{padding:9px}
+  .facts3{grid-template-columns:repeat(3,auto)}
+  .hint{display:none}
+}
 @media (max-width:900px){
   body{overflow:auto}
   .board{height:auto;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto;
     grid-template-areas:"intro intro" "photo stat" "photo why" "work work" "exp cont"}
-  .intro{gap:28px}
-  .intro h1{font-size:21vw}
+  .intro{gap:30px}
+  .intro h1{font-size:20vw}
+  .intro h1 small{display:block;margin:14px 0 0;font-size:14px;vertical-align:0}
+  .status span{display:none}.status{padding:9px}
+  .facts3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .facts3>div:not(.hint){padding-right:12px;margin-right:12px}
+  .hint{display:none}
   .tile{min-height:200px}
   .work{min-height:260px}
   .work .peek{width:44%;right:5%}
   .work .list{max-width:52%}
-  .wy{grid-template-columns:minmax(0,1fr)}
+  .ab,.wy{grid-template-columns:minmax(0,1fr)}
+  .ab-side{position:static}
+  .ab-pic{max-width:280px}
+  .how ol{grid-template-columns:1fr}
+  .wy-n{font-size:28vw}
+  .wy-k{display:none}
   .ctl small{display:none}
-  .wy-n{font-size:30vw}
-  .deck{min-height:430px}
-  .wp,.wp.on{grid-template-columns:1fr}
+  .wp,.wp.on{grid-template-columns:minmax(0,1fr)}
+  .vis{position:static}
   .minis{grid-template-columns:1fr}
   .xr>button{grid-template-columns:1fr 44px;gap:6px 14px}
   .xr .yr,.xr .co,.xr .ro{grid-column:1}
   .xr .pl{grid-row:1 / span 3;grid-column:2}
   .xb .in{grid-template-columns:1fr}
-  .xb .ctx,.xb ul{grid-column:1}
+  .xb .ctx,.xb .grp{grid-column:1}
+  .xb .grp{grid-template-columns:1fr}
   .sheet .x{top:14px;right:14px;width:44px;height:44px}
 }
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
@@ -270,27 +338,35 @@ html[lang="en"] .intro .line em{font-style:italic}
 <body>
 
 <main class="board" id="board">
-  <div class="tile intro">
+  <div class="tile intro" id="intro">
     <div class="top">
-      <span>Portfolio · 2026</span>
-      <button class="lang" id="lang" type="button">EN</button>
+      <div class="brand"><span class="mono">JL</span><span>Portfolio · 2026</span></div>
+      <div class="right">
+        <div class="status"><i></i><span data-en="Open to AI roles · Shanghai">在看 AI 方向机会 · 上海</span></div>
+        <button class="lang" id="lang" type="button">EN</button>
+      </div>
     </div>
     <div>
-      <h1>Joni <span class="it">Lin</span></h1>
-      <div class="who">林君如<i data-en="Shanghai">上海</i></div>
-      <p class="line" data-en="A marketer who grows the numbers, and <em>ships the AI product herself.</em>">做增长的市场人，也能把 AI 应用<em>亲手做上线</em>。</p>
-      <div class="chips"><span data-en="AI Product Operations">AI 产品运营</span><span data-en="AI Growth">AI 应用增长</span><span data-en="AI Content Strategy">AI 内容策略</span></div>
+      <h1>Joni <span class="it">Lin</span><small>林君如</small></h1>
+      <div class="role"><span data-en="I'm a">我是</span><span class="slot"><b id="slot">增长型市场人</b></span></div>
+      <p class="bio" data-en="I work where business meets AI: I know users and growth, and I can build AI into things that run every day, can be checked, and earn money.">我站在业务和 AI 之间：懂用户、懂增长，也能亲手把 AI 做成每天在跑、经得起检查、能赚到钱的东西。</p>
     </div>
-    <div class="hint"><i></i><span data-en="Tap any card to open it">点击任意卡片，展开看看</span></div>
+    <div class="facts3">
+      <div><b>6 <span class="it" data-en="yrs">年</span></b><span data-en="growth, content<br>and team lead">增长、内容<br>与团队管理</span></div>
+      <div><b>9</b><span data-en="AI workflows<br>running daily">个每天在跑的<br>AI 工作流</span></div>
+      <div><b>1</b><span data-en="product I built<br>that people pay for">款自己做、<br>有人付费的产品</span></div>
+      <div class="hint"><span data-en="Tap a card to open">点击卡片展开</span><em>↘</em></div>
+    </div>
   </div>
 
-  <div class="tile photo" id="photo">
-    <div class="bubble" data-en="Hi, I'm Joni. Six years in growth, now building with AI.">你好，我是 Joni。做了 6 年增长，现在用 AI 做产品。</div>
-    <img src="assets/joni-cut.webp" alt="Joni Lin" width="726" height="1200">
+  <div class="tile photo go" id="photo" data-open="about" data-bg="#eef2f9">
+    <div class="lab"><span class="n">00</span><span class="plus"></span></div>
+    <img src="assets/joni-cut.webp" alt="Joni Lin" width="727" height="1200">
+    <span class="tag" data-en="About me">关于我</span>
   </div>
 
   <div class="tile stat" id="stat">
-    <div class="lab"><span data-en="In numbers">关键数字</span><div class="dots" id="dots"><i></i><i></i><i></i><i></i></div></div>
+    <div class="lab"><span data-en="In numbers">关键数字</span><div class="dots" id="dots"><i></i><i></i><i></i><i></i><i></i></div></div>
     <div><div class="big" id="bigN">118.6<small>%</small></div><div class="cap" id="capN"></div></div>
   </div>
 
@@ -298,7 +374,7 @@ html[lang="en"] .intro .line em{font-style:italic}
     <div class="lab"><span class="n">01</span><span class="plus"></span></div>
     <div>
       <div class="t-title">Why me</div>
-      <div class="t-sub cn" data-en="">为什么是我</div>
+      <div class="t-sub cn" data-en="">五个理由</div>
     </div>
   </div>
 
@@ -309,8 +385,8 @@ html[lang="en"] .intro .line em{font-style:italic}
       <div class="t-title">Selected <span class="it">work</span></div>
       <div class="t-sub cn" data-en="">做出来的东西</div>
       <div class="list" style="margin-top:16px">
-        <span><b>a</b><span data-en="Reading Archive · own product">阅读档案馆 · 独立产品</span></span>
-        <span><b>b</b><span data-en="AI Skills · open source">AI Skills · 开源</span></span>
+        <span><b>a</b><span data-en="Reading Archive · my own paid product">阅读档案馆 · 独立付费产品</span></span>
+        <span><b>b</b><span data-en="AI Skills · open source">AI Skills · 开源方法</span></span>
         <span><b>c</b><span data-en="GEO · AI search visibility">GEO · 让 AI 搜索看见品牌</span></span>
       </div>
     </div>
@@ -321,7 +397,7 @@ html[lang="en"] .intro .line em{font-style:italic}
     <div>
       <div class="yrs">6 <span class="it">yrs</span></div>
       <div class="t-title" style="font-size:clamp(22px,1.9vw,30px);margin-top:10px">Experience</div>
-      <div class="co">Innova · FoodTalks</div>
+      <div class="co">Innova · FoodTalks · iGEM</div>
     </div>
   </div>
 
@@ -341,37 +417,107 @@ html[lang="en"] .intro .line em{font-style:italic}
 
 <div class="panels" id="panels">
 
+  <!-- ═════ 00 关于我 ═════ -->
+  <div data-panel="about">
+    <div class="ph st"><span class="n">00</span><span data-en="About">关于我</span></div>
+    <h2 class="ph-title st" style="--d:1">About <span class="it">me</span></h2>
+    <div class="ab">
+      <div class="ab-side st" style="--d:2">
+        <div class="ab-pic"><img src="assets/joni-cut.webp" alt="Joni Lin" width="727" height="1200"></div>
+        <dl>
+          <div><dt data-en="Name">姓名</dt><dd>Joni Lin · 林君如</dd></div>
+          <div><dt data-en="Based in">所在地</dt><dd data-en="Shanghai">上海</dd></div>
+          <div><dt data-en="Now">现在</dt><dd data-en="Marketing Lead, China · Innova">Innova 中国区市场负责人</dd></div>
+          <div><dt data-en="Studied">专业</dt><dd data-en="Food Science (B.Eng.)">食品科学与工程 · 本科</dd></div>
+          <div><dt data-en="Languages">语言</dt><dd data-en="Chinese · English">中文 · 英语</dd></div>
+        </dl>
+      </div>
+      <div class="st" style="--d:3">
+        <div class="story">
+          <p data-en="I started in a lab coat and ended up building products with AI. The thread in between: I find a real problem, build the thing from zero, and stay until the numbers move.">我从食品科学出发，一路走到用 AI 做产品。中间串起来的那条线是：找到真问题，从零把事情搭起来，一直做到数字真的动起来。</p>
+          <p data-en="After graduating I skipped the lab and joined FoodTalks, a food-industry media company, as a marketing assistant with no experience. Within two years I had <mark>five raises and two promotions</mark>, and by the end I was running five departments and 25 people as assistant to the CEO and HR manager. There I learned growth the hard way: I took the website to 10× traffic in a month, built communities of 30,000+ people, and stood up a 200-person part-time team.">毕业后我没有进实验室，而是以市场专员的身份进了食品行业媒体 FoodTalks。0 经验入职，两年里<mark>加薪 5 次、晋升 2 次</mark>，最后以总裁助理兼人事经理的身份分管 5 个部门、25 个人。那几年我在一线学会了增长：一个月把网站流量做到 10 倍，把社群做到 3 万多人，也搭起过一支 200 多人的兼职团队。</p>
+          <p data-en="In 2024 I joined Innova Market Insights, a Netherlands-based global data company, as <mark>the only marketer in China</mark>. One person had to do the work of a whole team, so I started using AI seriously: not asking it the odd question, but writing down how every recurring task should be done and turning that into workflows the AI follows and I sign off. Leads grew 118.6% that year.">2024 年我加入荷兰的全球数据公司 Innova Market Insights，成为<mark>中国区唯一的市场人</mark>。一个人要撑起一整支市场团队，我开始认真地用 AI：不是偶尔问一问，而是把每一项重复工作写成规则，做成 AI 照着执行、我来验收的工作流。那一年，销售线索增长了 118.6%。</p>
+          <p data-en="Then using AI was no longer enough. With Claude and Codex I designed and built my own product, the Reading Archive, and real users paid for it. Now I want to bring this mix of growth sense, AI workflow design and hands-on building to an AI team, and work on products used by far more people.">再后来，“用” AI 已经不够了。我用 Claude 和 Codex 从零设计、开发了自己的产品“阅读档案馆”，真实用户为它付了钱。现在，我想把增长判断、AI 工作流设计和动手能力这三样东西带进一个 AI 团队，去做被更多人使用的产品。</p>
+        </div>
+        <div class="how">
+          <h4 data-en="How I work">我的工作方式</h4>
+          <ol>
+            <li><b><i>1</i><span data-en="Find the real problem first">先找真问题</span></b><span data-en="GEO started because I noticed AI search could not see us, not because someone assigned it.">GEO 项目就是因为我发现 AI 搜索看不见我们，而不是有人布置给我。</span></li>
+            <li><b><i>2</i><span data-en="Write the standard down">把标准写下来</span></b><span data-en="What counts as done, which sources count, what must never go public. Then AI and people can both follow it.">什么算做完、哪些来源算数、什么绝不能公开。写清楚了，AI 和人都能照着做。</span></li>
+            <li><b><i>3</i><span data-en="Ship small, read the data">小步上线，看数据</span></b><span data-en="Every product feature and campaign goes out small, gets measured, then gets changed.">产品功能和营销活动都先小范围上线，看数据再改，不在没效果的方向上恋战。</span></li>
+            <li><b><i>4</i><span data-en="Check before I hand over">交付前自己先验</span></b><span data-en="I open the file, test the list, read back the live page. Generated is not the same as done.">文件要打开、名单要测、线上页面要回读。“生成了”不等于“做完了”。</span></li>
+          </ol>
+        </div>
+        <div class="life">
+          <h4 data-en="Outside work">工作之外</h4>
+          <p data-en="A heavy reader and film lover. Both habits turned into side projects: the <a href='https://yuedudanganguan.com' target='_blank' rel='noopener'>Reading Archive</a> and a magazine-style <a href='https://jonilin0210.github.io/film-journal/' target='_blank' rel='noopener'>Film Journal</a> of 283 films from 34 countries.">爱读书，也爱看电影，两个爱好都被我做成了作品：<a href="https://yuedudanganguan.com" target="_blank" rel="noopener">阅读档案馆</a>，和一本收录 283 部、来自 34 个国家和地区影片的<a href="https://jonilin0210.github.io/film-journal/" target="_blank" rel="noopener">观影志</a>。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═════ 01 优势 ═════ -->
   <div data-panel="why">
     <div class="ph st"><span class="n">01</span><span data-en="Strengths">优势</span></div>
     <h2 class="ph-title st" style="--d:1">Why <span class="it">me</span></h2>
     <div class="wy">
-      <div class="wy-n st" style="--d:2" id="wyN">01</div>
+      <div class="st" style="--d:2"><div class="wy-n" id="wyN">01</div><div class="wy-k" data-en="Five reasons, each backed by work that is already live.">五个理由，每一条都有已经上线的东西作证。</div></div>
       <div class="st" style="--d:3">
         <div class="deck" id="deck">
           <article class="card">
-            <h3 data-en="AI as daily infrastructure, not a demo">把 AI 用进日常，而不是停在演示</h3>
-            <p data-en="I mapped the work I repeat every week, wrote down how each task should be done, and turned it into Skills any AI tool can follow. The system moved from Claude to Codex without losing a single rule.">我把每周重复的工作逐项梳理，写清楚“这件事应该怎么做”，沉淀成任何 AI 工具都能照着执行的 Skill。这套体系从 Claude 迁到 Codex，规则一条没丢。</p>
-            <div class="proof" data-en="<b>PROOF</b> 12 tasks → 9 workflows → one system with source rules, quality gates and draft / submit / publish permissions"><b>证据</b> 12 项任务 → 9 个工作流 → 一套带来源规则、质量关卡和“草稿 / 提交 / 发布”权限分级的体系</div>
+            <div class="kk" data-en="AI WORKFLOWS">AI 工作流</div>
+            <h3 data-en="I turn AI into a system that runs every day, not a one-off demo">把 AI 变成每天在跑的系统，而不是一次性的演示</h3>
+            <p data-en="Most people stop at asking AI questions. I broke down everything a one-person marketing team repeats each week, wrote the standard, sources and no-go zones for each task, and turned them into Skills that any AI tool can follow. Tools change; the rules stay. The whole system moved from Claude to Codex without losing a single one.">很多人用 AI 停在“问一问”。我把一个人的市场部每周重复的工作逐项拆开，写清每件事的标准、可用来源和禁区，做成任何 AI 工具都能照着执行的 Skill。工具会换，规则留下：整套体系从 Claude 迁到 Codex，一条没丢。</p>
+            <ul>
+              <li data-en="<b>12 recurring tasks → 9 Skills → 1 routed system</b>"><b>12 项重复任务 → 9 个 Skill → 1 套带路由的体系</b></li>
+              <li data-en="Each Skill has source rules, quality gates and draft / submit / publish permission levels">每个 Skill 都有来源规则、质量关卡和“草稿 / 提交 / 发布”三级权限</li>
+              <li data-en="The method is open-sourced in English on GitHub">方法已用英文开源到 GitHub</li>
+            </ul>
           </article>
           <article class="card">
-            <h3 data-en="I check what the model says">对 AI 的产出较真</h3>
-            <p data-en="Generated is not the same as done. Every claim needs a source, every quote must be found in the original, every list is checked for leaks before it goes out. This is the habit behind evaluation work.">“生成了”不等于“做完了”。每条结论要有出处，每句引用要能在原文里找到，每份名单发出前要查泄漏。这正是做模型评测需要的习惯。</p>
-            <div class="proof" data-en="<b>PROOF</b> Claim-by-claim check tables · 7 questions × 5 AI platforms re-tested · zero-leak email exclusion rules"><b>证据</b> 报告转文章逐条核对表 · “7 个问题 × 5 个 AI 平台”定期复测 · 邮件排除规则零泄漏</div>
+            <div class="kk" data-en="EVALUATION">评测意识</div>
+            <h3 data-en="I design the checks instead of trusting the output">对 AI 的输出较真：设计检查，而不是相信结果</h3>
+            <p data-en="Models invent numbers, quietly overstep, and treat “generated” as “done”. For every kind of output I design a check: claims must match the source, quotes must exist in the user's own notes, lists are tested for leaks before anything is sent. It is the habit that model evaluation and AI product quality depend on.">模型会编数字、会悄悄越权，也会把“生成了”当成“做完了”。我给每类产出都设计了检查方式：结论要对得上原文，引用要能在用户自己的笔记里找到，名单发出前要测泄漏。这正是模型评测和 AI 产品质量最需要的习惯。</p>
+            <ul>
+              <li data-en="Report-to-article: <b>claim-by-claim check table</b> and tiered disclosure rules">报告转文章：<b>逐条核对表</b>加信息分级公开规则</li>
+              <li data-en="GEO: a <b>7 questions × 5 AI platforms</b> re-test on a schedule">GEO：<b>“7 个问题 × 5 个 AI 平台”</b>定期复测</li>
+              <li data-en="AI reading letter: quote check, plus a 30–50 sample test for faithfulness, personalization and cost per report">AI 年度阅读回信：原句核对，再用 30–50 条样本评测忠实度、个性化和单份成本</li>
+            </ul>
           </article>
           <article class="card">
-            <h3 data-en="Growth measured in results">用结果说话的增长</h3>
-            <p data-en="Six years of owning the number: content, email, events and community. I segment the audience, read the data, and change the plan when the data says so.">6 年都在对结果负责：内容、邮件、展会、社群。先把用户分层，再看数据，数据说要改就改。</p>
-            <div class="proof" data-en="<b>PROOF</b> Sales leads +118.6% YoY · topic emails turned 2.9% of recipients into leads · FoodTalks traffic 10× in one month"><b>证据</b> 销售线索同比 +118.6% · 主题邮件把 2.9% 的收件人转化为线索 · FoodTalks 单月流量增长 10 倍</div>
+            <div class="kk" data-en="GROWTH">增长</div>
+            <h3 data-en="Six years of owning the number">6 年一直在对增长结果负责</h3>
+            <p data-en="From industry media to a global data company, I have always owned results that can be counted: traffic, followers, leads, conversion. I segment the audience first, read the data, and change course when the data says so, rather than staying loyal to channels that do not work.">从行业媒体到全球数据公司，我负责的一直是能被量化的结果：流量、粉丝、线索、转化。我习惯先给用户分层、再看数据，数据说要改就改，不在没效果的渠道上恋战。</p>
+            <ul>
+              <li data-en="Innova: <b>2,153 leads in 2024, up 118.6%</b> from 985 the year before">Innova：<b>2024 年销售线索 2,153 个，同比增长 118.6%</b>（上一年 985 个）</li>
+              <li data-en="FoodTalks: <b>10× traffic in one month</b>, then 3.8M monthly page views and 650K+ visitors">FoodTalks：<b>一个月流量涨 10 倍</b>，之后稳定在月均 PV 380 万、UV 65 万+</li>
+              <li data-en="Topic emails turned <b>2.9% of recipients into leads</b> (26 of 889)">主题邮件把 <b>2.9% 的收件人变成线索</b>（889 人中 26 人）</li>
+            </ul>
           </article>
           <article class="card">
-            <h3 data-en="I can build it, and make it look good">自己能做出来，也做得好看</h3>
-            <p data-en="I break a product idea into small steps an AI coding tool can deliver and I can verify. Design, front end, back end, payment and launch were all done by me. This page was made the same way.">我能把产品想法拆成 AI 编程工具做得出、我验得了的小迭代。设计、前端、后端、收费、上线都是我一个人完成的。你正在看的这个页面也是这么做出来的。</p>
-            <div class="proof" data-en="<b>PROOF</b> Reading Archive: a live product with paid orders and its own visual language"><b>证据</b> 阅读档案馆：线上产品、真实付费订单、一套完整的视觉语言</div>
+            <div class="kk" data-en="BUILDING">动手能力</div>
+            <h3 data-en="From an idea to a live product people pay for">从一个想法，到上线，再到有人付钱</h3>
+            <p data-en="I break a product idea into small steps that an AI coding tool can deliver and I can verify, then walk the whole path alone: requirements, design, front end, back end, payment and tracking. Taste is one of my strengths; people screenshot and share what I make.">我能把产品想法拆成 AI 编程工具做得出、我也验得了的小迭代，从需求、设计、前后端，到收费和数据埋点，一个人走完全程。审美是我的长项：我做的东西，用户愿意截图分享。</p>
+            <ul>
+              <li data-en="Reading Archive: designed and built alone, full stack on Cloudflare">阅读档案馆：独立设计开发，Cloudflare 全栈部署</li>
+              <li data-en="One Xiaohongshu post: <b>19,806 views, 1,560 comments</b>, many asking for the link">一篇小红书笔记 <b>19,806 次浏览、1,560 条评论</b>，大量用户主动要链接</li>
+              <li data-en="<b>10+ paid orders</b> with almost no promotion. This page was built the same way.">几乎零推广成交 <b>10+ 单</b>。你正在看的这个页面也是这样做出来的</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="kk" data-en="LEADERSHIP">管理与资源</div>
+            <h3 data-en="I have led teams, won resources, and I learn fast">带过团队、谈得下资源，也学得很快</h3>
+            <p data-en="I joined FoodTalks with no experience and got five raises and two promotions in two years, eventually running five departments and 25 people. At Innova I work alone between global HQ and the China sales team, and at the negotiating table I have won the company free space at the industry's biggest trade shows.">我 0 经验入职 FoodTalks，两年里加薪 5 次、晋升 2 次，最多同时分管 5 个部门、25 个人。在 Innova，我一个人连接荷兰总部和中国销售团队，也能在谈判桌上为公司争取到行业头部展会的免费展位。</p>
+            <ul>
+              <li data-en="FBIF: a <b>free 96 m² booth</b>, the largest in Innova China's history">FBIF：<b>96㎡ 免费展位</b>，中国区史上面积最大</li>
+              <li data-en="Anuga China: a 60 m² booth fully sponsored, build and travel included, plus speaking and livestream slots">Anuga China：60㎡ 全额赞助展位，含搭建与差旅，并拿到演讲和直播权益</li>
+              <li data-en="Built a 200+ person part-time team; redesigned workflows for <b>3× efficiency</b>">组建 200+ 人兼职团队；重设流程与考核，<b>运营效率提升 3 倍</b></li>
+            </ul>
           </article>
         </div>
         <div class="ctl">
-          <div class="bars" id="bars"><i class="on"></i><i></i><i></i><i></i></div>
-          <small data-en="Tap the card">点卡片翻下一张</small>
+          <div class="bars" id="bars"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+          <small data-en="Tap the card or use ← →">点卡片或用 ← → 翻页</small>
           <button class="rb" id="prev" aria-label="Previous">←</button>
           <button class="rb" id="next" aria-label="Next">→</button>
         </div>
@@ -379,6 +525,7 @@ html[lang="en"] .intro .line em{font-style:italic}
     </div>
   </div>
 
+  <!-- ═════ 02 作品 ═════ -->
   <div data-panel="work">
     <div class="ph st"><span class="n">02</span><span data-en="Work">作品</span></div>
     <h2 class="ph-title st" style="--d:1">Selected <span class="it">work</span></h2>
@@ -391,20 +538,22 @@ html[lang="en"] .intro .line em{font-style:italic}
         <div>
           <h3>Reading Archive</h3>
           <div class="cnm cn" data-en="">阅读档案馆 · 独立产品 · 2026.06 – 至今</div>
-          <p class="lede" data-en="A web app that turns WeChat Reading data into a personal archive: a wall of book spines, reading stats, monthly reports and share images.">把微信读书的数据变成一座个人阅读档案馆：书架墙、阅读统计、月度报告和分享图。</p>
-          <ul>
-            <li data-en="<b>Built alone with Claude and Codex:</b> design, HTML / CSS / JS front end, Cloudflare Workers, KV and D1 back end."><b>用 Claude / Codex 独立完成：</b>产品设计、前端，以及 Cloudflare Workers / KV / D1 后端。</li>
-            <li data-en="<b>Monetized:</b> free preview plus one-time unlock, license keys and server-side checks. 10+ paid orders with almost no promotion."><b>跑通收费：</b>“免费预览 + 买断”，激活码加服务端校验，几乎零推广成交 10+ 单。</li>
-            <li data-en="<b>In progress:</b> an LLM-written annual reading letter, with a quote check so every quoted line exists in the user's own notes."><b>进行中：</b>LLM 生成的“年度阅读回信”，原句核对保证每句引用都出自用户自己的笔记。</li>
-          </ul>
+          <p class="lede" data-en="A product I designed, built, launched and sold on my own: it turns years of WeChat Reading data into a personal archive you can actually look back on.">一款我独立设计、开发、上线并卖出去的产品：把多年的微信读书数据，变成一座真正能回看的个人阅读档案馆。</p>
+          <dl class="cs">
+            <div><dt data-en="Problem">起点</dt><dd data-en="Heavy readers log hundreds of books in WeChat Reading, but the app gives them no way to see the shape of their reading over the years.">重度读者在微信读书里读了几百本书，却没有办法回看自己多年的阅读脉络。</dd></div>
+            <div><dt data-en="Build">做法</dt><dd data-en="A wall of book spines, reading stats, monthly reports, a content map, share images and highlight export to Word. Built with Claude and Codex in small, testable steps: HTML / CSS / JS front end, <b>Cloudflare Workers, KV and D1</b> back end, Browser Rendering for share images, Turnstile against abuse.">做了书架墙、阅读统计、月度报告、内容地图、分享图，以及划线与想法导出 Word。用 Claude / Codex 拆成可验收的小迭代完成：HTML / CSS / JS 前端，<b>Cloudflare Workers、KV、D1</b> 后端，Browser Rendering 生成分享图，Turnstile 防刷。</dd></div>
+            <div><dt data-en="Monetize">商业化</dt><dd data-en="One post drew a flood of link requests, so I designed <b>free preview + one-time unlock</b>: license keys, server-side entitlement checks, and a visit → sync → activation funnel tracked in D1.">一篇笔记的评论区挤满了要链接的人，我据此设计了<b>“免费预览 + 买断完整版”</b>：激活码授权、服务端权益校验，并在 D1 里追踪“访问 → 同步 → 激活”漏斗。</dd></div>
+            <div><dt data-en="Next · AI">下一步</dt><dd data-en="An LLM-written annual reading letter: a two-step prompt plus a quote check, so every quoted line must exist in the user's own notes; model choice and cost decided on a 30–50 sample test set.">LLM 生成的“年度阅读回信”：两步提示词加原句核对，每句引用都必须能在用户自己的笔记里找到；用 30–50 条样本的评测来选模型、算单份成本。</dd></div>
+          </dl>
           <div class="nums">
             <div><b data-count="19806">19,806</b><span data-en="views, one post">单篇笔记浏览</span></div>
-            <div><b data-count="1560">1,560</b><span data-en="comments">条评论</span></div>
-            <div><b data-count="1271">1,271</b><span data-en="saves">次收藏</span></div>
+            <div><b data-count="1560">1,560</b><span data-en="comments">评论</span></div>
+            <div><b data-count="1962">1,962</b><span data-en="likes">点赞</span></div>
+            <div><b data-count="1271">1,271</b><span data-en="saves">收藏</span></div>
           </div>
           <a class="out" href="https://yuedudanganguan.com" target="_blank" rel="noopener">yuedudanganguan.com <i>↗</i></a>
         </div>
-        <div>
+        <div class="vis">
           <div class="stack" id="stack">
             <img src="assets/work-yuedu.jpg" alt="阅读档案馆首页" width="1440" height="900">
             <img src="assets/work-report.jpg" alt="年度阅读报告" width="1100" height="618">
@@ -417,19 +566,23 @@ html[lang="en"] .intro .line em{font-style:italic}
         <div>
           <h3>AI Skills for a one-person marketing team</h3>
           <div class="cnm cn" data-en="">一人市场团队的 AI Skills · GitHub 开源</div>
-          <p class="lede" data-en="Most “AI for marketing” material is a pile of prompts: easy to write, unreliable to run. I write down how the job should be done, so the AI meets the same standard every time and I can check that it did.">大多数“AI 做营销”的资料是一堆提示词，写起来容易，但不可靠。我把“这件事应该怎么做”写清楚，让 AI 每次按同一标准做，我也能检查它有没有做到。</p>
-          <ul>
-            <li data-en="<b>Four complete Skills</b> with test cases: report-to-article, GEO publishing, email lists, localization."><b>4 个完整 Skill</b>，各带测试用例：报告转文章、GEO 发布、邮件名单、文档本地化。</li>
-            <li data-en="<b>Written in English</b> with fictional companies, plus a method guide on guardrails and measuring impact."><b>英文撰写</b>，示例全部虚构，附护栏设计与效果衡量的方法文档。</li>
-          </ul>
+          <p class="lede" data-en="Prompts are easy to write and unreliable to run. I write down how the job should be done, so the AI meets the same standard every time, and I can check that it did.">提示词写起来容易，跑起来不可靠。我的做法是把“这件事应该怎么做”写清楚，让 AI 每次都按同一个标准做，我也能检查它有没有做到。</p>
+          <dl class="cs">
+            <div><dt data-en="Problem">起点</dt><dd data-en="I am the only marketer in China: content, leads, email, trade shows and sales material all land on one desk. Raw prompting failed in predictable ways: forgotten rules, invented numbers, actions nobody approved.">中国区市场只有我一个人：内容、线索、邮件、展会、销售物料都在一张桌子上。直接写提示词总会出同样的问题：忘规则、编数字、做没被批准的事。</dd></div>
+            <div><dt data-en="Build">做法</dt><dd data-en="Mapped 12 recurring tasks into <b>9 Skills</b>, then merged them into one routed system. Each Skill states its sources, bans competitor data, sets quality gates and separates draft / submit / publish permissions. When I moved from Claude to Codex, the rules came along intact.">梳理 12 项重复任务，沉淀为 <b>9 个 Skill</b>，再合并成一套带路由的体系。每个 Skill 写明可用来源、禁用竞品数据、设质量关卡，并把“草稿 / 提交 / 发布”分开授权。工具从 Claude 换到 Codex 时，规则完整迁移。</dd></div>
+            <div><dt data-en="Open source">开源</dt><dd data-en="Rewritten in English as <b>4 complete Skills</b> (report-to-article, GEO publishing, email lists, localization) with test cases, a method guide and fictional examples. Every file passed a sensitive-term scan before release.">用英文重写成 <b>4 个完整 Skill</b>（报告转文章、GEO 发布、邮件名单、文档本地化），配测试用例、方法文档和虚构公司示例；发布前每个文件都过了敏感信息扫描。</dd></div>
+          </dl>
           <a class="out" href="https://github.com/JoniLIN0210/solo-marketer-ai-skills" target="_blank" rel="noopener">GitHub <i>↗</i></a>
         </div>
-        <div class="rules" id="rules">
-          <div class="rule on"><button><i>1</i><span data-en="Write the rule once.">规则写一次。</span><span>+</span></button><div class="ans"><p data-en="If I have explained it to the AI twice, it belongs in a Skill.">同一件事给 AI 解释过两次，就该写进 Skill。</p></div></div>
-          <div class="rule"><button><i>2</i><span data-en="Facts need a source.">事实要有出处。</span><span>+</span></button><div class="ans"><p data-en="A number with no source is marked missing, never filled in.">找不到出处的数字标为缺失，不填补。</p></div></div>
-          <div class="rule"><button><i>3</i><span data-en="Preparing is not publishing.">准备不等于发布。</span><span>+</span></button><div class="ans"><p data-en="Drafting, submitting and publishing are separate permissions.">起草、提交、发布是不同的授权。</p></div></div>
-          <div class="rule"><button><i>4</i><span data-en="Generated is not done.">“生成了”不等于“做完了”。</span><span>+</span></button><div class="ans"><p data-en="Open the file, check the list for leaks, read back the platform status.">文件要打开检查，名单要查泄漏，平台状态要回读。</p></div></div>
-          <div class="rule"><button><i>5</i><span data-en="Fix the class, not the case.">改一类，不改一个。</span><span>+</span></button><div class="ans"><p data-en="One error found means checking every error of the same kind.">发现一个错误，就查同类的所有错误。</p></div></div>
+        <div class="vis">
+          <div class="rules" id="rules">
+            <div class="rh"><span data-en="FIVE PRINCIPLES">五条原则</span><span data-en="TAP TO OPEN">点击展开</span></div>
+            <div class="rule on"><button><i>1</i><span data-en="Write the rule once.">规则写一次。</span><span>+</span></button><div class="ans"><p data-en="If I have explained something to the AI twice, it belongs in a Skill.">同一件事给 AI 解释过两次，就该写进 Skill。</p></div></div>
+            <div class="rule"><button><i>2</i><span data-en="Facts need a source.">事实要有出处。</span><span>+</span></button><div class="ans"><p data-en="A number with no source is marked missing, never filled in.">找不到出处的数字标为缺失，绝不填补。</p></div></div>
+            <div class="rule"><button><i>3</i><span data-en="Preparing is not publishing.">准备不等于发布。</span><span>+</span></button><div class="ans"><p data-en="Drafting, saving, submitting, publishing and changing live settings are five different permissions.">起草、存草稿、提交、发布、改线上配置，是五种不同的授权。</p></div></div>
+            <div class="rule"><button><i>4</i><span data-en="Generated is not done.">“生成了”不等于“做完了”。</span><span>+</span></button><div class="ans"><p data-en="Open the file, check the list for leaks, read back the platform status.">文件要打开检查，名单要查泄漏，平台状态要回读。</p></div></div>
+            <div class="rule"><button><i>5</i><span data-en="Fix the class, not the case.">改一类，不改一个。</span><span>+</span></button><div class="ans"><p data-en="One error found means checking for every error of the same kind.">发现一个错误，就去查同类的所有错误。</p></div></div>
+          </div>
         </div>
       </div>
 
@@ -437,92 +590,120 @@ html[lang="en"] .intro .line em{font-style:italic}
         <div>
           <h3>Making a brand visible to AI search</h3>
           <div class="cnm cn" data-en="">让品牌被 AI 搜索看见 · Innova · 主动发起</div>
-          <p class="lede" data-en="AI search engines could not see our brand: all the content sat inside WeChat. Nobody asked me to fix it; I started on my own.">我发现 AI 搜索“看不见”我们的品牌：内容都困在公众号里。没有人要求我做，是我自己发现、自己推动的。</p>
-          <ul>
-            <li data-en="<b>187 posts</b> on Zhihu, Baijiahao and Toutiao in about five weeks."><b>约 5 周 187 篇</b>，发布在知乎、百家号、头条。</li>
-            <li data-en="<b>A site built for machines to read:</b> llms.txt, sitemap, FAQ structured data, lead form, made with AI coding."><b>为机器可读而建的官网：</b>llms.txt、sitemap、FAQ 结构化数据、线索表单，用 AI 编程搭建。</li>
-            <li data-en="<b>Result:</b> Baidu branded search from no organic result to page one; Baidu ERNIE began citing our Zhihu content."><b>结果：</b>百度品牌词从无自然结果到首页覆盖，文心一言开始引用我们的知乎内容。</li>
-          </ul>
+          <p class="lede" data-en="Nobody assigned this. I noticed that AI search could not see us, and fixed it.">这件事没有人布置。是我发现 AI 搜索“看不见”我们，然后自己把它解决了。</p>
+          <dl class="cs">
+            <div><dt data-en="Problem">起点</dt><dd data-en="Almost all our content lived inside WeChat, a closed ecosystem that AI search engines such as Kimi, DeepSeek and ERNIE cannot crawl. When prospects asked AI about our field, we were hard to find.">品牌内容几乎都在公众号里，而公众号是封闭生态，Kimi、DeepSeek、文心这些 AI 搜索抓取不到。潜在客户用 AI 搜行业问题时，我们很难出现在答案里。</dd></div>
+            <div><dt data-en="Build">做法</dt><dd data-en="Published <b>187 posts in about five weeks</b> on Zhihu, Baijiahao and Toutiao. Built a Chinese website with AI coding, made for machines to read: llms.txt, sitemap, FAQ structured data, plus a demo-request form and lead back end.">约 <b>5 周在知乎、百家号、头条发布 187 篇</b>内容；用 AI 编程搭了一个“为机器可读而建”的中文官网：llms.txt、sitemap、FAQ 结构化数据，外加预约演示表单和线索后台。</dd></div>
+            <div><dt data-en="Measure">衡量</dt><dd data-en="Designed a <b>7 questions × 5 AI platforms</b> re-test to track whether and how the brand is mentioned over time.">设计了 <b>“7 个问题 × 5 个 AI 平台”</b>的复测表，定期追踪品牌有没有被提到、怎么被提到。</dd></div>
+            <div><dt data-en="Result">结果</dt><dd data-en="Baidu branded search went from <b>no organic result to page-one coverage</b>, and Baidu ERNIE began citing our Zhihu content.">百度品牌词从<b>没有自然结果到首页覆盖</b>，文心一言开始引用我们的知乎内容。</dd></div>
+          </dl>
         </div>
-        <div class="mx">
-          <div class="cap"><span data-en="7 QUESTIONS × 5 AI PLATFORMS">7 个问题 × 5 个 AI 平台</span><span data-en="RE-TEST">定期复测</span></div>
-          <div class="g75" id="g75"></div>
-          <div class="row"><span data-en="An illustration of the re-test method, not a score sheet.">复测方法示意，不代表每格的实际结果。</span><button class="again" id="again" data-en="Run again ↻">再测一次 ↻</button></div>
+        <div class="vis">
+          <div class="mx">
+            <div class="cap"><span data-en="7 QUESTIONS × 5 AI PLATFORMS">7 个问题 × 5 个 AI 平台</span><span data-en="RE-TEST">定期复测</span></div>
+            <div class="g75" id="g75"></div>
+            <div class="row"><span data-en="An illustration of the method, not a score sheet.">复测方法示意，不代表每格实际结果。</span><button class="again" id="again" data-en="Run again ↻">再测一次 ↻</button></div>
+          </div>
         </div>
       </div>
 
       <div class="wp">
-        <div class="minis" style="grid-column:1 / -1">
-          <div class="mini"><small data-en="SIDE PROJECT">个人项目</small><h4 data-en="Film Journal">观影志</h4><p data-en="My Douban history rebuilt as a magazine-style film library with a yearly report.">把豆瓣观影记录做成杂志式的私人片库，带年度报告。</p><a href="https://jonilin0210.github.io/film-journal/" target="_blank" rel="noopener" data-en="Open ↗">打开看看 ↗</a></div>
-          <div class="mini"><small data-en="DATA PIPELINE">数据流程</small><h4 data-en="587-product database, localized">587 款饮品数据库英译</h4><p data-en="An AI-assisted Python pipeline that translated a China street-drink database into English against a controlled glossary.">用 AI 辅助的 Python 流程把中国现制饮品数据库译成英文，按受控术语表统一用词。</p></div>
-          <div class="mini"><small data-en="LIFECYCLE EMAIL">邮件运营</small><h4 data-en="A list builder with zero leaks">零泄漏的邮件名单</h4><p data-en="3,000+ contacts segmented by business type; customers, unsubscribes and blocklist excluded by rule and checked every send.">3,000+ 联系人按业务类型分层；客户、退订、黑名单按规则排除，每次发送前核查。</p></div>
+        <div class="minis">
+          <div class="mini"><small data-en="SIDE PROJECT">个人项目</small><h4 data-en="Film Journal">观影志</h4><p data-en="My Douban history, 283 films from 34 countries, rebuilt as a magazine-style library with a yearly report.">把豆瓣上看过的 283 部、来自 34 个国家和地区的影视，排成一本杂志式私人片库，带年度报告。</p><a href="https://jonilin0210.github.io/film-journal/" target="_blank" rel="noopener" data-en="Open ↗">打开看看 ↗</a></div>
+          <div class="mini"><small data-en="DATA PIPELINE">数据流程</small><h4 data-en="587-product database, localized">587 款饮品数据库英译</h4><p data-en="An AI-assisted Python pipeline that translated a China fresh-drink database into English against a controlled glossary, so every term reads the same way.">用 AI 辅助的 Python 流程，把中国现制饮品数据库译成英文，按受控术语表统一用词，保证同一个词全库一个译法。</p></div>
+          <div class="mini"><small data-en="LIFECYCLE EMAIL">邮件运营</small><h4 data-en="A list builder with zero leaks">零泄漏的邮件名单</h4><p data-en="3,000+ contacts segmented by business type and topic. Customers, unsubscribes and the blocklist are excluded by rule and verified before every send.">3,000+ 联系人按业务类型和主题分层；客户、退订、黑名单按规则排除，每次发送前都核查到零泄漏。</p></div>
+          <div class="mini"><small data-en="LEAD CAPTURE">获客页面</small><h4 data-en="Gated report pages">报告节选与线索收集页</h4><p data-en="Lightweight pages built with AI that put report excerpts behind a form, connecting content marketing, lead capture and sales follow-up.">借助 AI 做的轻量页面：报告节选加内容门控和线索表单，把内容营销、获客和销售跟进连成一条线。</p></div>
+          <div class="mini"><small data-en="PROTOTYPE">产品原型</small><h4 data-en="WeChat mini program">微信小程序原型</h4><p data-en="A personal food library with a spin-the-wheel picker, from requirements and interaction flow to pages and submission notes, built with Cursor and Codex.">“个人食物库 + 转盘选择”小程序，从需求定义、交互流程到页面实现和提交说明，用 Cursor / Codex 完成。</p></div>
+          <div class="mini"><small data-en="IN PROGRESS">筹备中</small><h4 data-en="A podcast, with AI in the loop">播客，AI 全程参与</h4><p data-en="AI helps with show positioning, interview outlines, transcripts and the editing workflow. The first interview is recorded.">用 AI 辅助节目定位、访谈提纲、录音整理和剪辑流程设计，已完成首轮采访录音。</p></div>
         </div>
       </div>
 
     </div>
   </div>
 
+  <!-- ═════ 03 经历 ═════ -->
   <div data-panel="exp">
     <div class="ph st"><span class="n">03</span><span data-en="Experience">经历</span></div>
     <h2 class="ph-title st" style="--d:1">Experience</h2>
-    <p class="ph-sub st cn" style="--d:2" data-en="">食品科学本科，行业媒体，再到全球数据公司。不变的是：从零把一件事搭起来，做到数字动为止。</p>
+    <p class="ph-sub st" style="--d:2" data-en="Food science, then industry media, then a global data company. The constant: I build things from zero and stay until the numbers move.">食品科学本科，行业媒体，再到全球数据公司。不变的是：从零把一件事搭起来，一直做到数字动为止。</p>
     <div class="xp st" style="--d:3" id="xp">
       <div class="xr on">
         <button><span class="yr">2024 – <span data-en="now">至今</span></span><span class="co">Innova Market Insights</span><span class="ro" data-en="Marketing Lead, China">中国区市场负责人</span><span class="pl"></span></button>
         <div class="xb"><div><div class="in">
-          <div class="ctx" data-en="Netherlands-based global F&amp;B data and trends company. Sole marketer for the China office.">总部位于荷兰的全球食品饮料数据与趋势研究公司；中国区唯一的市场人员。</div>
-          <ul>
-            <li data-en="Own content, leads, events and sales enablement for China. <b>Sales leads +118.6% YoY.</b>">独立负责中国区内容、线索、展会与销售支持。<b>销售线索同比增长 118.6%。</b></li>
-            <li data-en="Built the AI workflow system: <b>12 recurring tasks, 9 reusable Skills</b>, with source tracing and human sign-off.">搭建 AI 工作流体系：<b>12 项重复工作、9 个可复用 Skill</b>，带来源追溯和人工验收。</li>
-            <li data-en="Started GEO on my own initiative: <b>187 posts in five weeks</b> and a machine-readable website.">主动发起 GEO：<b>5 周 187 篇内容</b>，外加一个机器可读的中文官网。</li>
-            <li data-en="Topic emails converted <b>2.9% of recipients into leads</b> (26 of 889). Negotiated a <b>free 96 m² booth</b> and a sponsored 60 m² booth.">主题邮件把 <b>2.9% 的收件人转化为线索</b>（889 人中 26 人）；谈下 <b>96㎡ 免费展位</b>和 60㎡ 全额赞助展位。</li>
-          </ul>
+          <div class="ctx" data-en="Netherlands-based global food &amp; beverage data and trends company. As the only marketer in China, I own strategy and execution end to end: trade shows, digital, content, email, brand and sales enablement, plus budget and vendors, working with global HQ and the China sales team.">总部位于荷兰的全球食品饮料数据与趋势研究公司。作为中国区唯一的市场人，我从策略到执行全面负责：展会、数字营销、内容、邮件、品牌与销售支持，以及预算和供应商管理，并与荷兰总部、中国销售团队协作。</div>
+          <div class="grp"><em data-en="GROWTH">增长</em><ul>
+            <li data-en="<b>2,153 sales leads in 2024, up 118.6%</b> from 985 in 2023, through data-led changes to content, email and events."><b>2024 年销售线索 2,153 个，比 2023 年的 985 个增长 118.6%</b>，靠的是用数据持续调整内容、邮件和展会策略。</li>
+            <li data-en="Segmented 3,000+ contacts by business type and topic with zero-leak exclusion rules; topic emails converted <b>2.9% of recipients into leads</b> (26 of 889).">3,000+ 联系人按业务类型和主题分层，排除规则零泄漏；主题邮件把 <b>2.9% 的收件人转化为线索</b>（889 人中 26 人）。</li>
+          </ul></div>
+          <div class="grp"><em data-en="AI">AI</em><ul>
+            <li data-en="Built the AI workflow system behind the team's output: <b>12 recurring tasks, 9 reusable Skills</b>, with source tracing, a ban on competitor data and human sign-off.">搭建支撑日常产出的 AI 工作流体系：<b>12 项重复任务、9 个可复用 Skill</b>，带来源追溯、竞品数据禁用和人工验收。</li>
+            <li data-en="Started GEO on my own initiative: <b>187 posts in five weeks</b> and a machine-readable website; branded search reached page one.">主动发起 GEO：<b>5 周 187 篇内容</b>加一个机器可读的官网，品牌词进入百度首页。</li>
+            <li data-en="Built report-excerpt pages, gated content and lead forms with AI, connecting content, lead capture and sales follow-up.">借助 AI 做报告节选页、内容门控和线索收集页，把内容、获客与销售跟进连起来。</li>
+          </ul></div>
+          <div class="grp"><em data-en="NEGOTIATION">资源谈判</em><ul>
+            <li data-en="FBIF: a <b>free 96 m² booth</b>, the largest in Innova China's history.">FBIF：<b>96㎡ 免费展位</b>，Innova 中国区史上面积最大。</li>
+            <li data-en="Anuga China: a <b>fully sponsored 60 m² booth</b>, build and travel included, plus speaking and livestream slots.">Anuga China：<b>60㎡ 全额赞助展位</b>，含搭建与差旅，并争取到演讲、直播等权益。</li>
+          </ul></div>
         </div></div></div>
       </div>
       <div class="xr">
-        <button><span class="yr">2020 – 2024</span><span class="co" data-en="FoodTalks (Simba Business Consulting)">FoodTalks（上海辛巴商务咨询）</span><span class="ro" data-en="Assistant to CEO · New Media · HR">总裁助理 · 新媒体运营 · 人事</span><span class="pl"></span></button>
+        <button><span class="yr">2020 – 2024</span><span class="co" data-en="FoodTalks (Simba Business Consulting)">FoodTalks（上海辛巴商务咨询）</span><span class="ro" data-en="Marketing Assistant → Assistant to CEO &amp; HR Manager">市场专员 → 总裁助理兼人事经理</span><span class="pl"></span></button>
         <div class="xb"><div><div class="in">
-          <div class="ctx" data-en="Food &amp; beverage industry media and events company.">食品饮料行业媒体与会展公司。</div>
-          <ul>
-            <li data-en="Built FoodTalks' operations from scratch: <b>traffic 10× in one month</b>, 3.8M monthly page views, 650K+ unique visitors.">从 0 到 1 搭建 FoodTalks 运营体系：<b>单月流量增长 10 倍</b>，月均 PV 380 万、UV 65 万+。</li>
-            <li data-en="100+ original industry articles; ran a <b>35,000-member</b> WeChat community.">策划发布 100+ 篇原创内容，运营 <b>3.5 万+ 人</b>的行业社群。</li>
-            <li data-en="Managed <b>5 departments</b>; redesigned performance and workflows, tripling efficiency.">统筹 <b>5 个部门</b>，重新设计绩效与流程，运营效率提升 3 倍。</li>
-            <li data-en="Volunteer campaign: 67,000 reads, 3,854 sign-ups. As a first-time salesperson, <b>9 deals in 4 months</b>.">志愿者招募 6.7 万阅读、3,854 人报名；第一次做销售，<b>4 个月成交 9 单</b>。</li>
-          </ul>
+          <div class="ctx" data-en="A well-known food-industry media and events company. Joined with no experience; <b>five raises and two promotions in two years</b>.">食品行业知名的媒体与会展公司。0 经验入职，<b>两年内加薪 5 次、晋升 2 次</b>。</div>
+          <div class="grp"><em data-en="GROWTH">平台增长</em><ul>
+            <li data-en="Launched the FoodTalks food-news site from zero after market and competitor research: <b>10× traffic in one month</b> with zero ad spend.">经过市场调研和竞品分析，从 0 到 1 推广 FoodTalks 食品资讯网，<b>0 投放一个月流量增长 10 倍</b>。</li>
+            <li data-en="Grew it into a leading industry media site through SEO, original content and an operations system: <b>3.8M monthly page views, 650K+ visitors</b>.">通过 SEO、原创内容和运营体系，把网站做成行业头部媒体：<b>月均 PV 380 万、UV 65 万+</b>。</li>
+          </ul></div>
+          <div class="grp"><em data-en="CONTENT">内容与社群</em><ul>
+            <li data-en="Planned 100+ exclusive rankings and trend reports, widely cited in the industry, with a data-based content scorecard.">策划发布 100+ 篇独家榜单和趋势内容，被行业广泛引用，并建立数据化的内容评估机制。</li>
+            <li data-en="Built two topic communities from zero with a referral SOP: <b>150+ WeChat groups, 30,000+ members</b>. A new WeChat account gained 2,000 followers in two weeks and later passed 70,000.">从 0 建立两大主题社群并制定裂变 SOP：<b>150+ 个微信群、3 万+ 人</b>；新开的公众号两周涨粉 2,000+，后来做到 7 万+。</li>
+            <li data-en="FBIF 2023 volunteer campaign: <b>3,854 sign-ups</b>, 2,000+ more than the year before; 437 admitted; 66,000+ reads. All project records.">统筹 FBIF 2023 志愿者招募：<b>3,854 人报名</b>，比往年多 2,000+，录取 437 人，推文阅读 6.6 万+，均创项目历史新高。</li>
+          </ul></div>
+          <div class="grp"><em data-en="MANAGEMENT">组织管理</em><ul>
+            <li data-en="Oversaw <b>5 departments and 25 direct reports</b>: HR, admin, media, marketing and project management.">分管人事、行政、媒体、市场、项目管理 <b>5 个部门，直接管理 25 人</b>。</li>
+            <li data-en="Proposed replacing some full-time roles with part-time ones and built a <b>200+ person part-time team</b>, cutting labor cost and solving urgent staffing.">提出用兼职岗替代部分全职岗，组建 <b>200+ 人的兼职团队</b>，降低人力成本，也解决了临时用人难题。</li>
+            <li data-en="Redesigned role splits, incentives and workflows for <b>3× operating efficiency</b>; hired 16 people while recruiting part-time, often beating full-time HR targets; closed 9 sales deals in 4 months as a first-time salesperson.">重建运营分工、奖惩与流程，<b>运营效率提升 3 倍</b>；兼职参与招聘发出 16 个 offer，业绩多次超过全职 HR；第一次做销售，4 个月成交 9 单。</li>
+          </ul></div>
         </div></div></div>
       </div>
       <div class="xr">
-        <button><span class="yr">2016 – 2020</span><span class="co" data-en="Fujian Normal University">福建师范大学</span><span class="ro" data-en="B.Eng., Food Science">食品科学与工程 · 本科</span><span class="pl"></span></button>
+        <button><span class="yr">2016 – 2020</span><span class="co" data-en="Fujian Normal University">福建师范大学</span><span class="ro" data-en="B.Eng., Food Science and Engineering">食品科学与工程 · 本科</span><span class="pl"></span></button>
         <div class="xb"><div><div class="in">
-          <ul>
-            <li data-en="<b>iGEM International Gold Medal</b>: deputy team leader; project management, website and slides; presented at the finals in Boston."><b>iGEM 国际基因工程机器大赛国际金奖</b>：副队长，负责项目管理、网页与 PPT，赴波士顿决赛路演。</li>
-            <li data-en="Bronze, 4th China “Internet+” Innovation and Entrepreneurship Competition.">第四届中国“互联网+”创新创业大赛铜奖。</li>
-          </ul>
+          <div class="grp"><em data-en="AWARDS">奖项</em><ul>
+            <li data-en="<b>iGEM 2018 International Gold Medal</b> (343 teams worldwide). As deputy team leader I ran project management and meetings, built the team website and slides, and presented at the finals in Boston."><b>2018 iGEM 国际基因工程机器大赛国际金奖</b>（全球 343 支队伍）。作为 FJNU-China 副队长，负责项目管理、主持会议，独立完成网页与 PPT，赴美国波士顿完成决赛路演。</li>
+            <li data-en="Bronze, 4th China “Internet+” Innovation and Entrepreneurship Competition; Gold, Fujian Women Students' Innovation and Entrepreneurship Competition.">第四届中国“互联网+”创新创业大赛铜奖；福建女大学生创新创业大赛金奖。</li>
+          </ul></div>
+          <div class="grp"><em data-en="CAMPUS">校园</em><ul>
+            <li data-en="As class league secretary, raised sponsorship for a charity sale that took 300+ pre-orders in one day and earned 3,000+ yuan; the project was named a university top-100 project and featured in the campus newspaper.">担任团支书，拉赞助举办爱心义卖，一天收到 300+ 份预定、收入 3,000+ 元，获“校百佳”立项并被校报专题报道。</li>
+          </ul></div>
         </div></div></div>
       </div>
     </div>
     <div class="kit st" style="--d:4">
       <h4 data-en="Toolbox">工具箱</h4>
-      <div class="grp"><em>AI</em><span>Claude</span><span>Codex</span><span>Cursor</span><span>ChatGPT</span><span>Gemini</span><span>DeepSeek</span><span data-en="Prompt &amp; context design">提示词与上下文设计</span><span data-en="Skill design">Skill 设计</span><span data-en="Output evaluation">输出核验与评测</span></div>
-      <div class="grp"><em data-en="BUILD">技术</em><span>HTML / CSS / JS</span><span>Python · pandas</span><span>Cloudflare Workers · KV · D1</span><span>Vercel</span></div>
-      <div class="grp"><em data-en="GROWTH">增长</em><span data-en="Segmentation">用户分层</span><span>GEO</span><span data-en="Lead nurturing">线索培育</span><span data-en="Funnel analysis">漏斗复盘</span><span data-en="Events">展会与项目</span></div>
-      <div class="grp"><em data-en="LANGUAGE">语言</em><span data-en="Chinese · native">中文 · 母语</span><span data-en="English · working proficiency">英语 · 工作语言</span></div>
+      <div class="grp"><em>AI</em><span>Claude</span><span>Codex</span><span>Cursor</span><span>ChatGPT</span><span>Gemini</span><span>DeepSeek</span><span data-en="Prompt &amp; context design">提示词与上下文设计</span><span data-en="Skill / workflow design">Skill 与工作流设计</span><span data-en="Output evaluation">输出核验与评测</span></div>
+      <div class="grp"><em data-en="BUILD">技术</em><span>HTML / CSS / JS</span><span>Python · pandas · openpyxl</span><span>Cloudflare Workers · KV · D1</span><span>Vercel</span><span data-en="WeChat mini programs">微信小程序</span></div>
+      <div class="grp"><em data-en="GROWTH">增长</em><span data-en="Segmentation">用户分层</span><span>GEO / SEO</span><span data-en="Community &amp; referral">社群与裂变</span><span data-en="Lead nurturing">线索培育</span><span data-en="Funnel analysis">漏斗复盘</span><span data-en="Events">展会与活动</span></div>
+      <div class="grp"><em data-en="DESIGN">设计</em><span data-en="Visual &amp; interaction">视觉与交互</span><span data-en="Data visualization">数据可视化</span><span>Photoshop</span><span>Premiere</span><span>InDesign</span></div>
+      <div class="grp"><em data-en="LANGUAGE">语言证书</em><span data-en="Chinese · native">中文 · 母语</span><span data-en="English · working proficiency, CET-6">英语 · 工作语言，CET-6</span><span data-en="Business English speaking certificate">商务英语口语证书</span><span data-en="NCRE Level 2, C">计算机二级 C 语言</span></div>
     </div>
   </div>
 
+  <!-- ═════ 04 联系 ═════ -->
   <div data-panel="cont">
     <div class="cx">
       <div class="ph st"><span class="n">04</span><span data-en="Contact">联系</span></div>
       <h2 class="st" style="--d:1">Let's build<br>something <span class="it">with AI.</span></h2>
-      <div class="cn2 cn st" style="--d:2" data-en="">一起做点 AI 的事。</div>
-      <button class="copy st" style="--d:3" id="copy"><span>linjunru0210@gmail.com</span><em data-en="Copy">复制</em></button>
-      <div class="lk st" style="--d:4">
+      <div class="cn2 st" style="--d:2" data-en="If your team is turning AI into real products and real growth, I would love to talk.">如果你的团队正在把 AI 做成真正的产品和增长，我很想聊聊。</div>
+      <div class="look st" style="--d:3"><em data-en="Looking for">我在找</em><span data-en="AI Product Operations">AI 产品运营</span><span data-en="AI Growth">AI 应用增长</span><span data-en="AI Content Strategy">AI 内容策略</span><span data-en="Shanghai or remote">上海 / 远程</span></div>
+      <button class="copy st" style="--d:4" id="copy"><span>linjunru0210@gmail.com</span><em data-en="Copy">复制</em></button>
+      <div class="lk st" style="--d:5">
         <a href="mailto:linjunru0210@gmail.com" data-en="Write an email ↗">发邮件 ↗</a>
         <a href="https://github.com/JoniLIN0210" target="_blank" rel="noopener">GitHub ↗</a>
         <a href="https://yuedudanganguan.com" target="_blank" rel="noopener" data-en="Reading Archive ↗">阅读档案馆 ↗</a>
         <a href="https://jonilin0210.github.io/film-journal/" target="_blank" rel="noopener" data-en="Film Journal ↗">观影志 ↗</a>
       </div>
-      <div class="fine st" style="--d:5"><span>© 2026 Joni Lin · Shanghai</span><span data-en="Designed and built by me, with Claude">本页由我设计，与 Claude 协作完成</span></div>
+      <div class="fine st" style="--d:6"><span>© 2026 Joni Lin · Shanghai</span><span data-en="Designed and built by me, with Claude">本页由我设计，与 Claude 协作完成</span></div>
     </div>
   </div>
 </div>
@@ -540,10 +721,26 @@ html[lang="en"] .intro .line em{font-style:italic}
     root.lang=l==='en'?'en':'zh-CN';$('#lang').textContent=l==='en'?'中文':'EN';
     try{localStorage.setItem('lang',l)}catch(e){}
     $('#capN').textContent=lang==='en'?stats[si].en:stats[si].zh;
+    $('#slot').textContent=roles[lang][ri%roles[lang].length];
+    if(cur==='why')fitDeck();
   }
   $('#lang').addEventListener('click',function(e){e.stopPropagation();setLang(lang==='en'?'zh':'en')});
 
-  /* 数字计数 */
+  /* 角色轮换 */
+  var roles={zh:['增长型市场人','AI 工作流搭建者','独立产品作者','食品科学出身的跨界者'],en:['growth marketer','AI workflow builder','indie product maker','food scientist turned builder']},ri=0;
+  setInterval(function(){
+    if(document.hidden)return;
+    var s=$('#slot');ri++;
+    if(reduce){s.textContent=roles[lang][ri%roles[lang].length];return}
+    s.classList.add('out');
+    setTimeout(function(){s.textContent=roles[lang][ri%roles[lang].length];s.className='pre';void s.offsetWidth;s.className=''},450);
+  },2600);
+
+  /* 简介卡光斑 */
+  var intro=$('#intro');
+  intro.addEventListener('pointermove',function(e){var r=intro.getBoundingClientRect();intro.style.setProperty('--mx',(e.clientX-r.left)+'px');intro.style.setProperty('--my',(e.clientY-r.top)+'px')});
+
+  /* 计数 */
   function fmt(v,dec){return dec?v.toFixed(dec):Math.round(v).toLocaleString('en-US')}
   function count(el,to,dec,suffix){
     if(reduce){el.innerHTML=fmt(to,dec)+(suffix||'');return}
@@ -552,24 +749,24 @@ html[lang="en"] .intro .line em{font-style:italic}
     requestAnimationFrame(step);
   }
 
-  /* 数字卡：自动轮播 + 点击切换 */
+  /* 数字卡 */
   var stats=[
-    {n:118.6,dec:1,s:'<small>%</small>',zh:'销售线索数量同比增长，中国区市场只有我一个人',en:'Year-over-year growth in sales leads, as the only marketer in China'},
-    {n:187,s:'',zh:'篇 GEO 内容约 5 周发完，品牌词上了百度首页',en:'GEO posts in about five weeks; branded search reached page one'},
-    {n:9,s:'',zh:'个可复用的 AI 工作流，由 12 项重复工作沉淀而来',en:'reusable AI workflows, distilled from 12 recurring tasks'},
-    {n:19806,s:'',zh:'次浏览，来自我的独立产品的一篇小红书笔记',en:'views on one Xiaohongshu post about my own product'}
+    {n:118.6,dec:1,s:'<small>%</small>',zh:'销售线索同比增长：2024 年 2,153 个，上一年 985 个',en:'Growth in sales leads: 2,153 in 2024, up from 985'},
+    {n:187,s:'',zh:'篇 GEO 内容约 5 周发完，品牌词进入百度首页',en:'GEO posts in about five weeks; branded search reached page one'},
+    {n:19806,s:'',zh:'次浏览，来自我的独立产品的一篇小红书笔记',en:'views on one Xiaohongshu post about my own product'},
+    {n:380,s:'<small>万</small>',en_s:'<small>M</small>',en_n:3.8,zh:'FoodTalks 月均 PV，从 0 到 1 做起来的行业媒体',en:'monthly page views at FoodTalks, a media site I grew from zero'},
+    {n:96,s:'<small>㎡</small>',zh:'谈下的 FBIF 免费展位，Innova 中国区史上最大',en:'free FBIF booth I negotiated, the largest in Innova China history'}
   ];
   var si=0,timer=null,dots=$$('#dots i');
   function showStat(i){
-    si=i;var s=stats[i];
-    $('#capN').textContent=lang==='en'?s.en:s.zh;
-    count($('#bigN'),s.n,s.dec,s.s);
+    si=i;var s=stats[i],en=lang==='en';
+    $('#capN').textContent=en?s.en:s.zh;
+    if(en&&s.en_n)count($('#bigN'),s.en_n,1,s.en_s);else count($('#bigN'),s.n,s.dec,s.s);
     dots.forEach(function(d,k){d.className=k<i?'done':''});
     void dots[i].offsetWidth;dots[i].className='on';
     clearTimeout(timer);timer=setTimeout(function(){showStat((si+1)%stats.length)},4000);
   }
   $('#stat').addEventListener('click',function(){showStat((si+1)%stats.length)});
-  $('#photo').addEventListener('click',function(){this.classList.toggle('say')});
 
   /* 展开 / 收起 */
   var sheet=$('#sheet'),scroller=$('#scroller'),store=$('#panels'),cur=null,curTile=null,busy=false;
@@ -581,14 +778,14 @@ html[lang="en"] .intro .line em{font-style:italic}
   function open(key,tile,instant){
     if(busy||cur)return;busy=true;cur=key;curTile=tile;
     scroller.appendChild($('[data-panel="'+key+'"]',store));scroller.scrollTop=0;
-    sheet.style.background=getComputedStyle(tile).backgroundColor;
+    sheet.style.background=tile.dataset.bg||getComputedStyle(tile).backgroundColor;
     sheet.className='sheet open '+key;document.body.style.overflow='hidden';
     var a=rectOf(tile),b=target();
     enter(key);
     if(instant||reduce){place(b);done()}else{
       place(a);sheet.animate([css(a),css(b)],{duration:720,easing:'cubic-bezier(.7,0,.2,1)'}).onfinish=function(){place(b);done()};
     }
-    function done(){sheet.classList.add('show');busy=false;$('#close').focus({preventScroll:true})}
+    function done(){sheet.classList.add('show');busy=false;if(key==='why')fitDeck();$('#close').focus({preventScroll:true})}
     if(location.hash!=='#'+key)history.pushState({k:key},'','#'+key);
   }
   function close(fromPop){
@@ -606,7 +803,7 @@ html[lang="en"] .intro .line em{font-style:italic}
     t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(t.dataset.open,t)}})});
   $('#close').addEventListener('click',function(){close()});
   addEventListener('popstate',function(){var k=location.hash.slice(1);if(cur&&!k)close(true);else if(!cur&&k){var t=$('[data-open="'+k+'"]');t&&open(k,t)}});
-  addEventListener('resize',function(){if(cur&&!busy)place(target())});
+  addEventListener('resize',function(){if(cur&&!busy){place(target());if(cur==='why')fitDeck()}});
   addEventListener('keydown',function(e){
     if(!cur)return;
     if(e.key==='Escape')close();
@@ -617,8 +814,9 @@ html[lang="en"] .intro .line em{font-style:italic}
 
   /* 01 卡片堆 */
   var cards=$$('#deck .card'),wi=0,bars=$$('#bars i'),N=cards.length;
-  function go(d,reset){
-    var prev=wi;wi=reset?0:(wi+d+N)%N;
+  function fitDeck(){var h=0;cards.forEach(function(c){h=Math.max(h,c.offsetHeight)});$('#deck').style.height=h+'px'}
+  function go(d,reset,to){
+    var prev=wi;wi=reset?0:(to!=null?to:(wi+d+N)%N);
     cards.forEach(function(c,k){var p=(k-wi+N)%N;if(!reset&&d>0&&k===prev)p=-1;c.dataset.pos=p});
     if(!reset&&d>0)setTimeout(function(){var c=cards[prev];if(c.dataset.pos==='-1'){c.style.transition='none';c.dataset.pos=N-1;void c.offsetWidth;c.style.transition=''}},650);
     bars.forEach(function(b,k){b.classList.toggle('on',k<=wi)});
@@ -628,8 +826,9 @@ html[lang="en"] .intro .line em{font-style:italic}
   $('#deck').addEventListener('click',function(){go(1)});
   $('#next').addEventListener('click',function(){go(1)});
   $('#prev').addEventListener('click',function(){go(-1)});
+  bars.forEach(function(b,k){b.addEventListener('click',function(){go(k>wi?1:-1,false,k)})});
 
-  /* 02 作品标签 */
+  /* 02 作品 */
   var tabs=$$('#tabs button'),wps=$$('.wp'),ti=0;
   function showTab(i,force){
     if(i===ti&&!force)return;ti=i;
