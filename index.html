@@ -4,15 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Joni Lin 林君如｜Portfolio</title>
-<meta name="description" content="Joni Lin（林君如）：6 年增长经验的市场人，把 AI 做成每天在跑的工作流，也独立做出了有人付费的产品。">
+<meta name="description" content="Joni Lin（林君如）：6 年市场与增长经验，Innova Market Insights 中国区市场负责人，用 AI 搭建工作流程，独立开发了付费产品“阅读档案馆”。">
 <style>
-@font-face{font-family:"Cormorant";src:url("assets/cormorant-garamond.woff2") format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
-@font-face{font-family:"Cormorant";src:url("assets/cormorant-garamond-italic.woff2") format("woff2");font-weight:300 700;font-style:italic;font-display:swap}
 :root{
   --bg:#edf0f5;--ink:#16171c;--sub:#5d6070;--line:rgba(22,23,28,.12);
   --cobalt:#2d4bff;--sun:#ffd84a;--pink:#ffc4d3;--sky:#d4e4ff;--white:#fff;--mint:#1fbf75;
   --sans:"Helvetica Neue","PingFang SC","Segoe UI","Microsoft YaHei",Arial,sans-serif;
-  --serif:"Cormorant","Times New Roman",serif;
+  --serif:var(--sans);
   --gap:14px;--r:28px;--ease:cubic-bezier(.7,0,.2,1);--out:cubic-bezier(.2,.8,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -67,7 +65,6 @@ ul{list-style:none}
 .slot b{display:inline-block;font-weight:500;transition:transform .5s var(--ease),opacity .5s}
 .slot b.out{transform:translateY(-110%);opacity:0}
 .slot b.pre{transform:translateY(110%);opacity:0;transition:none}
-html[lang="en"] .slot b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.12em}
 .bio{margin-top:12px;font-size:15px;color:var(--sub);max-width:34em}
 .facts3{display:grid;grid-template-columns:repeat(3,auto) 1fr;align-items:end;border-top:1px solid var(--line);padding-top:16px}
 .facts3>div:not(.hint){padding-right:clamp(16px,2.4vw,40px);margin-right:clamp(16px,2.4vw,40px);border-right:1px solid var(--line)}
@@ -145,7 +142,6 @@ html[lang="en"] .slot b{font-family:var(--serif);font-style:italic;font-weight:4
 .ab-side dd{text-align:right;font-weight:500}
 .story p{font-size:clamp(17px,1.45vw,21px);line-height:1.75;letter-spacing:-.005em;margin-bottom:1.1em;color:#2a2c34}
 .story p:first-child{font-size:clamp(22px,2.1vw,32px);line-height:1.45;color:var(--ink);font-weight:500;letter-spacing:-.015em}
-html[lang="en"] .story p:first-child{font-family:var(--serif);font-weight:500;font-size:clamp(28px,2.6vw,40px);line-height:1.18}
 .story p mark{background:linear-gradient(transparent 62%,var(--sky) 62%);color:inherit}
 .how{margin-top:clamp(36px,5vh,56px)}
 .how h4,.life h4{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sub);margin-bottom:14px}
@@ -167,7 +163,6 @@ html[lang="en"] .story p:first-child{font-family:var(--serif);font-weight:500;fo
   transition:transform .7s var(--ease),opacity .5s;transform-origin:50% 0}
 .card .kk{font-size:11.5px;letter-spacing:.18em;color:var(--cobalt);font-weight:500}
 .card h3{margin-top:10px;font-weight:500;font-size:clamp(22px,2vw,31px);line-height:1.28;letter-spacing:-.02em}
-html[lang="en"] .card h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,2.4vw,37px);line-height:1.1;letter-spacing:-.01em}
 .card p{margin-top:14px;font-size:15.5px;color:#3c3e48}
 .card ul{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
 .card li{position:relative;padding-left:18px;font-size:13.5px;color:var(--sub);margin-top:6px}
@@ -199,7 +194,6 @@ html[lang="en"] .card h3{font-family:var(--serif);font-weight:600;font-size:clam
 .wp h3{font-weight:500;font-size:clamp(32px,3.4vw,54px);line-height:1;letter-spacing:-.04em}
 .wp .cnm{margin-top:10px;font-size:13px;letter-spacing:.3em;opacity:.7}
 .wp .lede{margin-top:18px;font-size:17px;line-height:1.6}
-html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.3}
 .cs{margin-top:22px;border-top:1px solid rgba(255,255,255,.25)}
 .cs div{display:grid;grid-template-columns:5.5em 1fr;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.18)}
 .cs dt{font-size:12px;letter-spacing:.16em;opacity:.65;padding-top:3px;text-transform:uppercase}
@@ -212,12 +206,6 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
 .out:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,40,.25)}
 .out i{font-style:normal}
 .vis{position:sticky;top:0}
-.stack{position:relative;aspect-ratio:1.4;cursor:pointer}
-.stack img{position:absolute;height:auto;width:82%;border-radius:12px;box-shadow:0 24px 60px rgba(0,0,40,.35);transition:transform .8s var(--ease),z-index 0s .35s}
-.stack img:nth-child(1){left:0;top:0}
-.stack img:nth-child(2){right:0;bottom:0;width:62%}
-.stack.flip img:nth-child(1){transform:translate(10%,14%) scale(.9);z-index:0}
-.stack.flip img:nth-child(2){transform:translate(-14%,-22%) scale(1.25);z-index:2}
 .tap{margin-top:12px;font-size:12px;letter-spacing:.1em;opacity:.65;text-align:right}
 .rules{background:#fff;color:var(--ink);border-radius:22px;padding:8px clamp(18px,2.4vw,32px)}
 .rules .rh{display:flex;justify-content:space-between;padding:16px 0 12px;font-size:11.5px;letter-spacing:.16em;color:var(--sub);border-bottom:1px solid var(--ink)}
@@ -332,6 +320,56 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
   .xb .grp{grid-template-columns:1fr}
   .sheet .x{top:14px;right:14px;width:44px;height:44px}
 }
+
+/* 统一单一字体：强调只用颜色 */
+*{font-style:normal!important}
+.it{font-family:inherit!important;font-weight:inherit!important;letter-spacing:inherit!important;font-size:inherit!important;color:var(--cobalt)}
+.work .it,.sheet.work .it{color:rgba(255,255,255,.6)}
+.lab .n,.ph .n{font-size:13px;letter-spacing:.08em;font-weight:500}
+.exp .yrs .it{margin-left:.15em}
+
+/* 阅读档案馆画廊 */
+.wp-ra.on{display:block}
+.gal{width:min(100%,calc((100vh - 300px) * 1.6),1180px);margin:0 auto clamp(36px,6vh,64px)}
+.gal-main{position:relative;border-radius:18px;overflow:hidden;background:#f3f1ec;aspect-ratio:16/10;box-shadow:0 30px 70px -20px rgba(0,0,40,.5);cursor:zoom-in}
+.gal-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:opacity .45s var(--out)}
+.gal-main img.fade{opacity:0}
+.gal-nav{position:absolute;top:50%;width:54px;height:54px;margin-top:-27px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--ink);font-size:20px;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,40,.18);transition:.25s;z-index:2}
+.gal-nav:hover{background:var(--ink);color:#fff}
+.gal-nav.prev{left:18px}.gal-nav.next{right:18px}
+.gal-zoom{position:absolute;right:18px;bottom:18px;z-index:2;padding:8px 14px;border-radius:99px;background:rgba(22,23,28,.72);color:#fff;font-size:12.5px;letter-spacing:.06em}
+.gal-bar{display:flex;gap:18px;align-items:baseline;margin-top:16px}
+.gal-n{font-size:13px;letter-spacing:.1em;opacity:.7;font-variant-numeric:tabular-nums;flex:none}
+.gal-cap{font-size:15.5px}
+.gal-th{display:flex;gap:10px;margin-top:16px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.gal-th button{flex:none;width:112px;aspect-ratio:16/10;border-radius:8px;overflow:hidden;opacity:.5;outline:2px solid transparent;outline-offset:2px;transition:.25s}
+.gal-th button:hover{opacity:.85}
+.gal-th button.on{opacity:1;outline-color:#fff}
+.gal-th img{width:100%;height:100%;object-fit:cover;object-position:top}
+.ra-txt{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,5vw,90px);align-items:start}
+.ra-txt .cs{margin-top:0}
+.lb{position:fixed;inset:0;z-index:60;background:rgba(237,240,245,.96);display:none;align-items:center;justify-content:center;padding:48px 90px 70px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,40,.25)}
+.lb .gal-nav{position:fixed}
+.lb .lb-cap{position:fixed;left:0;right:0;bottom:22px;text-align:center;font-size:14px;color:var(--sub)}
+
+/* 关于我：学过的事 + 其他能力 */
+.learn{margin-top:clamp(36px,5vh,56px)}
+.learn h4,.also h4{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sub);margin-bottom:14px}
+.lg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.lg div{background:#fff;border-radius:18px;padding:18px 18px 16px;display:flex;flex-direction:column;transition:transform .35s var(--out),box-shadow .35s var(--out)}
+.lg div:hover{transform:translateY(-3px);box-shadow:0 14px 30px -16px rgba(30,40,90,.3)}
+.lg small{font-size:11px;letter-spacing:.12em;color:var(--cobalt);font-weight:500}
+.lg b{display:block;margin-top:8px;font-size:16px;font-weight:600;line-height:1.35}
+.lg span{display:block;margin-top:6px;font-size:13px;color:var(--sub);line-height:1.55}
+.also{margin-top:clamp(30px,4vh,44px)}
+.also dl{border-top:1px solid var(--ink)}
+.also dl div{display:grid;grid-template-columns:9em 1fr;gap:18px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.also dt{font-weight:600}
+.also dd{color:#3c3e48}
+@media (max-width:1180px){.lg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.ra-txt{grid-template-columns:minmax(0,1fr)}.also dl div{grid-template-columns:1fr;gap:2px}.gal-nav{width:42px;height:42px;margin-top:-21px}.gal-nav.prev{left:10px}.gal-nav.next{right:10px}.gal-zoom{display:none}.lb{padding:20px}.lb .gal-nav{display:none}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -349,7 +387,7 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
     <div>
       <h1>Joni <span class="it">Lin</span><small>林君如</small></h1>
       <div class="role"><span data-en="I'm a">我是</span><span class="slot"><b id="slot">增长型市场人</b></span></div>
-      <p class="bio" data-en="I work where business meets AI: I know users and growth, and I can build AI into things that run every day, can be checked, and earn money.">我站在业务和 AI 之间：懂用户、懂增长，也能亲手把 AI 做成每天在跑、经得起检查、能赚到钱的东西。</p>
+      <p class="bio" data-en="Six years in marketing and growth; now Marketing Lead, China at Innova Market Insights. At work I run content and lead generation on AI workflows I built. On my own time I taught myself to build with AI and shipped a paid product.">6 年市场与增长经验，现任 Innova Market Insights 中国区市场负责人。工作中，我用 AI 搭建了日常的内容与获客流程；工作之外，我自学 AI 编程，独立做出了一款付费产品。</p>
     </div>
     <div class="facts3">
       <div><b>6 <span class="it" data-en="yrs">年</span></b><span data-en="growth, content<br>and team lead">增长、内容<br>与团队管理</span></div>
@@ -374,12 +412,12 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
     <div class="lab"><span class="n">01</span><span class="plus"></span></div>
     <div>
       <div class="t-title">Why me</div>
-      <div class="t-sub cn" data-en="">五个理由</div>
+      <div class="t-sub cn" data-en="">五个方面</div>
     </div>
   </div>
 
   <div class="tile work go" data-open="work">
-    <img class="peek" src="assets/work-yuedu.jpg" alt="" width="1440" height="900">
+    <img class="peek" src="assets/work-shelf.jpg" alt="" width="1200" height="750">
     <div class="lab txt"><span class="n">02</span><span class="plus"></span></div>
     <div class="txt">
       <div class="t-title">Selected <span class="it">work</span></div>
@@ -434,23 +472,37 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
       </div>
       <div class="st" style="--d:3">
         <div class="story">
-          <p data-en="I started in a lab coat and ended up building products with AI. The thread in between: I find a real problem, build the thing from zero, and stay until the numbers move.">我从食品科学出发，一路走到用 AI 做产品。中间串起来的那条线是：找到真问题，从零把事情搭起来，一直做到数字真的动起来。</p>
-          <p data-en="After graduating I skipped the lab and joined FoodTalks, a food-industry media company, as a marketing assistant with no experience. Within two years I had <mark>five raises and two promotions</mark>, and by the end I was running five departments and 25 people as assistant to the CEO and HR manager. There I learned growth the hard way: I took the website to 10× traffic in a month, built communities of 30,000+ people, and stood up a 200-person part-time team.">毕业后我没有进实验室，而是以市场专员的身份进了食品行业媒体 FoodTalks。0 经验入职，两年里<mark>加薪 5 次、晋升 2 次</mark>，最后以总裁助理兼人事经理的身份分管 5 个部门、25 个人。那几年我在一线学会了增长：一个月把网站流量做到 10 倍，把社群做到 3 万多人，也搭起过一支 200 多人的兼职团队。</p>
-          <p data-en="In 2024 I joined Innova Market Insights, a Netherlands-based global data company, as <mark>the only marketer in China</mark>. One person had to do the work of a whole team, so I started using AI seriously: not asking it the odd question, but writing down how every recurring task should be done and turning that into workflows the AI follows and I sign off. Leads grew 118.6% that year.">2024 年我加入荷兰的全球数据公司 Innova Market Insights，成为<mark>中国区唯一的市场人</mark>。一个人要撑起一整支市场团队，我开始认真地用 AI：不是偶尔问一问，而是把每一项重复工作写成规则，做成 AI 照着执行、我来验收的工作流。那一年，销售线索增长了 118.6%。</p>
-          <p data-en="Then using AI was no longer enough. With Claude and Codex I designed and built my own product, the Reading Archive, and real users paid for it. Now I want to bring this mix of growth sense, AI workflow design and hands-on building to an AI team, and work on products used by far more people.">再后来，“用” AI 已经不够了。我用 Claude 和 Codex 从零设计、开发了自己的产品“阅读档案馆”，真实用户为它付了钱。现在，我想把增长判断、AI 工作流设计和动手能力这三样东西带进一个 AI 团队，去做被更多人使用的产品。</p>
+          <p data-en="I'm Joni Lin, based in Shanghai. I studied food science and engineering, and in six years of work I have done new media, marketing, HR, recruiting and sales. I now lead marketing for China at Innova Market Insights.">我是林君如（Joni），在上海工作。本科读食品科学与工程，工作 6 年，做过新媒体、市场、人事、招聘和销售，现在是 Innova Market Insights 中国区市场负责人。</p>
+          <p data-en="My first job was at FoodTalks, a food-industry media and events company. I joined with no experience as a marketing assistant, then became assistant to the CEO while also serving as <mark>new media operations manager</mark>, and later took on HR manager as well. Website growth, SEO, communities, WeChat publishing, recruiting, sales and team management: I learned each of them on the job, and each produced results. In two years I received <mark>five raises and two promotions</mark>.">第一份工作在食品行业媒体与会展公司 FoodTalks。我 0 经验入职，从市场专员做起，之后担任总裁助理，同时兼任<mark>新媒体运营经理</mark>，后来又兼任人事经理。网站推广、SEO、社群、公众号、招聘、销售、团队管理，都是我在这份工作里边做边学的，每一项都做出了结果。两年里，我<mark>加薪 5 次、晋升 2 次</mark>。</p>
+          <p data-en="In 2024 I joined Innova Market Insights, a well-known global market insights consultancy for the food and beverage industry. I am the only marketer in China, covering trade shows, content, email and sales support. To do all of it well on my own, I started using AI systematically: I turned recurring work into fixed processes that AI carries out and I check. In 2024, sales leads in China grew <mark>118.6%</mark>.">2024 年我加入 Innova Market Insights，这是全球食品饮料行业知名的市场咨询公司。中国区的市场工作由我一个人负责，包括展会、内容、邮件和销售支持。为了一个人把这些事做好，我开始系统地使用 AI：把重复的工作整理成固定流程，由 AI 按流程完成，我来检查。2024 年，中国区销售线索增长了 <mark>118.6%</mark>。</p>
+          <p data-en="Outside work, I taught myself to build software with AI and launched the Reading Archive as a paid product. I have also tried GEO, a WeChat mini program and a podcast. When a new tool or method appears, I build something with it myself and let the results tell me whether to keep going.">工作之外，我自学用 AI 写代码，独立做出了“阅读档案馆”并上线收费；也试过 GEO、微信小程序和播客。有新的工具和方法出来，我会先自己动手做一遍，再看结果决定要不要继续投入。</p>
         </div>
-        <div class="how">
-          <h4 data-en="How I work">我的工作方式</h4>
-          <ol>
-            <li><b><i>1</i><span data-en="Find the real problem first">先找真问题</span></b><span data-en="GEO started because I noticed AI search could not see us, not because someone assigned it.">GEO 项目就是因为我发现 AI 搜索看不见我们，而不是有人布置给我。</span></li>
-            <li><b><i>2</i><span data-en="Write the standard down">把标准写下来</span></b><span data-en="What counts as done, which sources count, what must never go public. Then AI and people can both follow it.">什么算做完、哪些来源算数、什么绝不能公开。写清楚了，AI 和人都能照着做。</span></li>
-            <li><b><i>3</i><span data-en="Ship small, read the data">小步上线，看数据</span></b><span data-en="Every product feature and campaign goes out small, gets measured, then gets changed.">产品功能和营销活动都先小范围上线，看数据再改，不在没效果的方向上恋战。</span></li>
-            <li><b><i>4</i><span data-en="Check before I hand over">交付前自己先验</span></b><span data-en="I open the file, test the list, read back the live page. Generated is not the same as done.">文件要打开、名单要测、线上页面要回读。“生成了”不等于“做完了”。</span></li>
-          </ol>
+        <div class="learn">
+          <h4 data-en="Learned from scratch, with results">从零学起，并做出结果</h4>
+          <div class="lg">
+            <div><small>FOODTALKS</small><b data-en="Website growth &amp; SEO">网站运营与 SEO</b><span data-en="3.8M monthly page views, 650K+ visitors">月均 PV 380 万、UV 65 万+</span></div>
+            <div><small>FOODTALKS</small><b data-en="Community building">社群运营</b><span data-en="150+ WeChat groups, 30,000+ members">150+ 个微信群、3 万+ 人</span></div>
+            <div><small>FOODTALKS</small><b data-en="WeChat publishing">公众号运营</b><span data-en="2,000 followers in two weeks, later 70,000+">新号两周涨粉 2,000+，后达 7 万+</span></div>
+            <div><small>FOODTALKS</small><b data-en="Recruiting">招聘</b><span data-en="16 hires; 3,854 volunteer sign-ups, a record">发出 16 个 offer；志愿者招募 3,854 人报名，创历史新高</span></div>
+            <div><small>FOODTALKS</small><b data-en="Sales">销售</b><span data-en="9 deals in my first four months of selling">第一次做销售，4 个月成交 9 单</span></div>
+            <div><small>FOODTALKS</small><b data-en="Team management">团队管理</b><span data-en="5 departments, 25 direct reports, a 200+ part-time team">分管 5 个部门、25 人，组建 200+ 人兼职团队</span></div>
+            <div><small>INNOVA</small><b>GEO</b><span data-en="187 posts in five weeks; branded search reached page one">5 周发布 187 篇，品牌词进入百度首页</span></div>
+            <div><small data-en="READING ARCHIVE">阅读档案馆</small><b data-en="Building with AI">AI 编程</b><span data-en="Shipped a paid product alone; 10+ orders">独立上线付费产品，成交 10+ 单</span></div>
+          </div>
+        </div>
+        <div class="also">
+          <h4 data-en="Other strengths">其他能力</h4>
+          <dl>
+            <div><dt data-en="Cross-team work">跨团队协作</dt><dd data-en="Work daily with global HQ and the China sales team; handle vendors and trade-show organisers myself.">日常与全球总部、中国销售团队协作，独立对接供应商和展会主办方。</dd></div>
+            <div><dt data-en="Negotiation">资源谈判</dt><dd data-en="Won a free 96 m² booth at FBIF, the largest in Innova China's history, and a fully sponsored 60 m² booth at Anuga China.">谈下 FBIF 96㎡ 免费展位（Innova 中国区史上面积最大）和 Anuga China 60㎡ 全额赞助展位。</dd></div>
+            <div><dt data-en="Design">审美与设计</dt><dd data-en="Designed the look and interaction of the Reading Archive and this site; fluent in Photoshop, Premiere and InDesign.">阅读档案馆和这个网站的视觉与交互由我完成；熟练使用 Photoshop、Premiere、InDesign。</dd></div>
+            <div><dt data-en="English">英文</dt><dd data-en="Read and translate English industry reports every day; my open-source project is written in English.">每天阅读、翻译英文行业报告；开源项目用英文撰写。</dd></div>
+            <div><dt data-en="Project management">项目管理</dt><dd data-en="Deputy leader of the FJNU-China iGEM team, which won an international gold medal among 343 teams.">大学时任 iGEM 团队副队长，负责项目管理，团队在 343 支队伍中获得国际金奖。</dd></div>
+          </dl>
         </div>
         <div class="life">
           <h4 data-en="Outside work">工作之外</h4>
-          <p data-en="A heavy reader and film lover. Both habits turned into side projects: the <a href='https://yuedudanganguan.com' target='_blank' rel='noopener'>Reading Archive</a> and a magazine-style <a href='https://jonilin0210.github.io/film-journal/' target='_blank' rel='noopener'>Film Journal</a> of 283 films from 34 countries.">爱读书，也爱看电影，两个爱好都被我做成了作品：<a href="https://yuedudanganguan.com" target="_blank" rel="noopener">阅读档案馆</a>，和一本收录 283 部、来自 34 个国家和地区影片的<a href="https://jonilin0210.github.io/film-journal/" target="_blank" rel="noopener">观影志</a>。</p>
+          <p data-en="I read a lot and watch a lot of films, and turned both into side projects: the <a href='https://yuedudanganguan.com' target='_blank' rel='noopener'>Reading Archive</a>, and a magazine-style <a href='https://jonilin0210.github.io/film-journal/' target='_blank' rel='noopener'>Film Journal</a> of 283 films from 34 countries.">爱读书，也爱看电影，两个爱好都做成了作品：<a href="https://yuedudanganguan.com" target="_blank" rel="noopener">阅读档案馆</a>，和一本收录 283 部、来自 34 个国家和地区影片的<a href="https://jonilin0210.github.io/film-journal/" target="_blank" rel="noopener">观影志</a>。</p>
         </div>
       </div>
     </div>
@@ -461,13 +513,13 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
     <div class="ph st"><span class="n">01</span><span data-en="Strengths">优势</span></div>
     <h2 class="ph-title st" style="--d:1">Why <span class="it">me</span></h2>
     <div class="wy">
-      <div class="st" style="--d:2"><div class="wy-n" id="wyN">01</div><div class="wy-k" data-en="Five reasons, each backed by work that is already live.">五个理由，每一条都有已经上线的东西作证。</div></div>
+      <div class="st" style="--d:2"><div class="wy-n" id="wyN">01</div><div class="wy-k" data-en="Five areas, each with concrete results.">五个方面，每条都附有具体结果。</div></div>
       <div class="st" style="--d:3">
         <div class="deck" id="deck">
           <article class="card">
             <div class="kk" data-en="AI WORKFLOWS">AI 工作流</div>
-            <h3 data-en="I turn AI into a system that runs every day, not a one-off demo">把 AI 变成每天在跑的系统，而不是一次性的演示</h3>
-            <p data-en="Most people stop at asking AI questions. I broke down everything a one-person marketing team repeats each week, wrote the standard, sources and no-go zones for each task, and turned them into Skills that any AI tool can follow. Tools change; the rules stay. The whole system moved from Claude to Codex without losing a single one.">很多人用 AI 停在“问一问”。我把一个人的市场部每周重复的工作逐项拆开，写清每件事的标准、可用来源和禁区，做成任何 AI 工具都能照着执行的 Skill。工具会换，规则留下：整套体系从 Claude 迁到 Codex，一条没丢。</p>
+            <h3 data-en="I built AI workflows I use every day">用 AI 搭起每天在用的工作流程</h3>
+            <p data-en="I listed every recurring task in my one-person marketing role, wrote down the standard, allowed sources and off-limits actions for each, and turned them into Skills an AI can follow. The system is in daily use and moved from Claude to Codex intact.">我把一个人负责的市场工作逐项梳理，为每项任务写清楚标准、可用来源和不能做的事，整理成 AI 可以照着执行的 Skill。这套流程在日常工作中稳定使用，并从 Claude 完整迁移到了 Codex。</p>
             <ul>
               <li data-en="<b>12 recurring tasks → 9 Skills → 1 routed system</b>"><b>12 项重复任务 → 9 个 Skill → 1 套带路由的体系</b></li>
               <li data-en="Each Skill has source rules, quality gates and draft / submit / publish permission levels">每个 Skill 都有来源规则、质量关卡和“草稿 / 提交 / 发布”三级权限</li>
@@ -475,9 +527,9 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
             </ul>
           </article>
           <article class="card">
-            <div class="kk" data-en="EVALUATION">评测意识</div>
-            <h3 data-en="I design the checks instead of trusting the output">对 AI 的输出较真：设计检查，而不是相信结果</h3>
-            <p data-en="Models invent numbers, quietly overstep, and treat “generated” as “done”. For every kind of output I design a check: claims must match the source, quotes must exist in the user's own notes, lists are tested for leaks before anything is sent. It is the habit that model evaluation and AI product quality depend on.">模型会编数字、会悄悄越权，也会把“生成了”当成“做完了”。我给每类产出都设计了检查方式：结论要对得上原文，引用要能在用户自己的笔记里找到，名单发出前要测泄漏。这正是模型评测和 AI 产品质量最需要的习惯。</p>
+            <div class="kk" data-en="EVALUATION">核验与评测</div>
+            <h3 data-en="I build checks for AI output">给 AI 的输出设计核对方法</h3>
+            <p data-en="AI can invent numbers or take actions nobody approved. For each kind of output I set a check: claims must match the source, quotes must be found in the user's own notes, and email lists are tested for missed exclusions before sending.">AI 会编造数字，也可能做出没被允许的操作。我为每类产出设计了核对方式：结论要能对上原文，引用要能在用户自己的笔记里找到，邮件名单发送前要检查有没有漏掉排除对象。</p>
             <ul>
               <li data-en="Report-to-article: <b>claim-by-claim check table</b> and tiered disclosure rules">报告转文章：<b>逐条核对表</b>加信息分级公开规则</li>
               <li data-en="GEO: a <b>7 questions × 5 AI platforms</b> re-test on a schedule">GEO：<b>“7 个问题 × 5 个 AI 平台”</b>定期复测</li>
@@ -486,8 +538,8 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
           </article>
           <article class="card">
             <div class="kk" data-en="GROWTH">增长</div>
-            <h3 data-en="Six years of owning the number">6 年一直在对增长结果负责</h3>
-            <p data-en="From industry media to a global data company, I have always owned results that can be counted: traffic, followers, leads, conversion. I segment the audience first, read the data, and change course when the data says so, rather than staying loyal to channels that do not work.">从行业媒体到全球数据公司，我负责的一直是能被量化的结果：流量、粉丝、线索、转化。我习惯先给用户分层、再看数据，数据说要改就改，不在没效果的渠道上恋战。</p>
+            <h3 data-en="Six years of measurable growth results">6 年都在负责可量化的增长结果</h3>
+            <p data-en="At a media company and then a market insights consultancy, I have been responsible for results measured in numbers: traffic, followers, leads and conversion. I segment the audience first, then adjust content and channels based on the data.">从行业媒体到市场咨询公司，我负责的都是能用数字衡量的结果：流量、粉丝、线索和转化。我会先给用户分层，再根据数据调整内容和渠道。</p>
             <ul>
               <li data-en="Innova: <b>2,153 leads in 2024, up 118.6%</b> from 985 the year before">Innova：<b>2024 年销售线索 2,153 个，同比增长 118.6%</b>（上一年 985 个）</li>
               <li data-en="FoodTalks: <b>10× traffic in one month</b>, then 3.8M monthly page views and 650K+ visitors">FoodTalks：<b>一个月流量涨 10 倍</b>，之后稳定在月均 PV 380 万、UV 65 万+</li>
@@ -496,22 +548,22 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
           </article>
           <article class="card">
             <div class="kk" data-en="BUILDING">动手能力</div>
-            <h3 data-en="From an idea to a live product people pay for">从一个想法，到上线，再到有人付钱</h3>
-            <p data-en="I break a product idea into small steps that an AI coding tool can deliver and I can verify, then walk the whole path alone: requirements, design, front end, back end, payment and tracking. Taste is one of my strengths; people screenshot and share what I make.">我能把产品想法拆成 AI 编程工具做得出、我也验得了的小迭代，从需求、设计、前后端，到收费和数据埋点，一个人走完全程。审美是我的长项：我做的东西，用户愿意截图分享。</p>
+            <h3 data-en="I can build a product and sell it">能独立把产品做出来，并卖出去</h3>
+            <p data-en="I split product requirements into small steps, build them with AI coding tools and test each one myself. For the Reading Archive I did everything alone, from requirements and design to front end, back end, payment and tracking. This site was built the same way.">我把产品需求拆成小的迭代，用 AI 编程工具逐步实现，每一步自己验收。阅读档案馆从需求、设计、前后端到收费和数据追踪，都是我一个人完成的；你现在看到的这个网站也是。</p>
             <ul>
               <li data-en="Reading Archive: designed and built alone, full stack on Cloudflare">阅读档案馆：独立设计开发，Cloudflare 全栈部署</li>
-              <li data-en="One Xiaohongshu post: <b>19,806 views, 1,560 comments</b>, many asking for the link">一篇小红书笔记 <b>19,806 次浏览、1,560 条评论</b>，大量用户主动要链接</li>
-              <li data-en="<b>10+ paid orders</b> with almost no promotion. This page was built the same way.">几乎零推广成交 <b>10+ 单</b>。你正在看的这个页面也是这样做出来的</li>
+              <li data-en="One Xiaohongshu post: <b>19,806 views, 1,560 comments</b>, many asking for the link">一篇小红书笔记 <b>19,806 次浏览、1,560 条评论</b>，很多人在评论区要链接</li>
+              <li data-en="<b>10+ paid orders</b> with almost no promotion">几乎没有推广，成交 <b>10+ 单</b></li>
             </ul>
           </article>
           <article class="card">
-            <div class="kk" data-en="LEADERSHIP">管理与资源</div>
-            <h3 data-en="I have led teams, won resources, and I learn fast">带过团队、谈得下资源，也学得很快</h3>
-            <p data-en="I joined FoodTalks with no experience and got five raises and two promotions in two years, eventually running five departments and 25 people. At Innova I work alone between global HQ and the China sales team, and at the negotiating table I have won the company free space at the industry's biggest trade shows.">我 0 经验入职 FoodTalks，两年里加薪 5 次、晋升 2 次，最多同时分管 5 个部门、25 个人。在 Innova，我一个人连接荷兰总部和中国销售团队，也能在谈判桌上为公司争取到行业头部展会的免费展位。</p>
+            <div class="kk" data-en="LEARNING">学习能力</div>
+            <h3 data-en="I learn fast and get results in new areas">学得快，换到新领域也能做出结果</h3>
+            <p data-en="I started my career with no experience. In my first job I took on marketing, new media, HR, recruiting and sales, learning each from scratch, and received five raises and two promotions in two years. At Innova I went on to teach myself GEO and AI coding, again with results.">我 0 经验进入职场，在第一份工作里先后做了市场、新媒体、人事、招聘和销售，每一项都是从头学起，两年里加薪 5 次、晋升 2 次。到 Innova 后，我又自学了 GEO 和 AI 编程，也都做出了结果。</p>
             <ul>
-              <li data-en="FBIF: a <b>free 96 m² booth</b>, the largest in Innova China's history">FBIF：<b>96㎡ 免费展位</b>，中国区史上面积最大</li>
-              <li data-en="Anuga China: a 60 m² booth fully sponsored, build and travel included, plus speaking and livestream slots">Anuga China：60㎡ 全额赞助展位，含搭建与差旅，并拿到演讲和直播权益</li>
-              <li data-en="Built a 200+ person part-time team; redesigned workflows for <b>3× efficiency</b>">组建 200+ 人兼职团队；重设流程与考核，<b>运营效率提升 3 倍</b></li>
+              <li data-en="First time selling: <b>9 deals in 4 months</b>">第一次做销售，<b>4 个月成交 9 单</b></li>
+              <li data-en="Oversaw <b>5 departments and 25 people</b>; built a 200+ part-time team">分管 <b>5 个部门、25 人</b>，组建 200+ 人兼职团队</li>
+              <li data-en="Won a <b>free 96 m² FBIF booth</b>, the largest in Innova China's history">谈下 <b>FBIF 96㎡ 免费展位</b>，Innova 中国区史上面积最大</li>
             </ul>
           </article>
         </div>
@@ -534,31 +586,31 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
     </div>
     <div class="wk st" style="--d:3">
 
-      <div class="wp on">
-        <div>
-          <h3>Reading Archive</h3>
-          <div class="cnm cn" data-en="">阅读档案馆 · 独立产品 · 2026.06 – 至今</div>
-          <p class="lede" data-en="A product I designed, built, launched and sold on my own: it turns years of WeChat Reading data into a personal archive you can actually look back on.">一款我独立设计、开发、上线并卖出去的产品：把多年的微信读书数据，变成一座真正能回看的个人阅读档案馆。</p>
+      <div class="wp wp-ra on">
+        <div class="gal" id="gal">
+          <div class="gal-main" id="galMain"><img id="galImg" src="assets/ra/01.webp" alt="" width="1600" height="1000"><button class="gal-nav prev" id="galPrev" aria-label="Previous">←</button><button class="gal-nav next" id="galNext" aria-label="Next">→</button><span class="gal-zoom" data-en="Click to enlarge">点击放大</span></div>
+          <div class="gal-bar"><span class="gal-n" id="galN">01 / 12</span><span class="gal-cap" id="galCap"></span></div>
+          <div class="gal-th" id="galTh"></div>
+        </div>
+        <div class="ra-txt">
+          <div>
+            <h3>Reading Archive</h3>
+            <div class="cnm cn" data-en="">阅读档案馆 · 独立产品 · 2026.06 – 至今</div>
+            <p class="lede" data-en="A product I designed, built, launched and charge for on my own. It turns WeChat Reading data into a personal reading archive.">我独立设计、开发、上线并收费的产品，把微信读书的阅读数据整理成一座个人阅读档案馆。</p>
+            <div class="nums">
+              <div><b data-count="19806">19,806</b><span data-en="views, one post">单篇笔记浏览</span></div>
+              <div><b data-count="1560">1,560</b><span data-en="comments">评论</span></div>
+              <div><b data-count="1962">1,962</b><span data-en="likes">点赞</span></div>
+              <div><b data-count="1271">1,271</b><span data-en="saves">收藏</span></div>
+            </div>
+            <a class="out" href="https://yuedudanganguan.com" target="_blank" rel="noopener">yuedudanganguan.com <i>↗</i></a>
+          </div>
           <dl class="cs">
-            <div><dt data-en="Problem">起点</dt><dd data-en="Heavy readers log hundreds of books in WeChat Reading, but the app gives them no way to see the shape of their reading over the years.">重度读者在微信读书里读了几百本书，却没有办法回看自己多年的阅读脉络。</dd></div>
-            <div><dt data-en="Build">做法</dt><dd data-en="A wall of book spines, reading stats, monthly reports, a content map, share images and highlight export to Word. Built with Claude and Codex in small, testable steps: HTML / CSS / JS front end, <b>Cloudflare Workers, KV and D1</b> back end, Browser Rendering for share images, Turnstile against abuse.">做了书架墙、阅读统计、月度报告、内容地图、分享图，以及划线与想法导出 Word。用 Claude / Codex 拆成可验收的小迭代完成：HTML / CSS / JS 前端，<b>Cloudflare Workers、KV、D1</b> 后端，Browser Rendering 生成分享图，Turnstile 防刷。</dd></div>
-            <div><dt data-en="Monetize">商业化</dt><dd data-en="One post drew a flood of link requests, so I designed <b>free preview + one-time unlock</b>: license keys, server-side entitlement checks, and a visit → sync → activation funnel tracked in D1.">一篇笔记的评论区挤满了要链接的人，我据此设计了<b>“免费预览 + 买断完整版”</b>：激活码授权、服务端权益校验，并在 D1 里追踪“访问 → 同步 → 激活”漏斗。</dd></div>
+            <div><dt data-en="Problem">起点</dt><dd data-en="WeChat Reading shows the record for each book, but makes it hard to look back on what you read over the years, how much, and how your taste changed.">微信读书能看到单本书的记录，但很难回看自己多年来读了什么、读了多少、偏好怎样变化。</dd></div>
+            <div><dt data-en="Build">做法</dt><dd data-en="A wall of book spines, reading stats, monthly and annual reports, a content map, share images and highlight export to Word. Built with Claude and Codex in small, testable steps: HTML / CSS / JS front end, <b>Cloudflare Workers, KV and D1</b> back end, Browser Rendering for share images, Turnstile against abuse.">做了书架墙、阅读统计、月度与年度报告、内容地图、分享图，以及划线与想法导出 Word。用 Claude / Codex 拆成可验收的小迭代完成：HTML / CSS / JS 前端，<b>Cloudflare Workers、KV、D1</b> 后端，Browser Rendering 生成分享图，Turnstile 防刷。</dd></div>
+            <div><dt data-en="Monetize">商业化</dt><dd data-en="Many commenters on one post asked for the link, so I designed <b>free preview + one-time unlock</b>: license keys, server-side entitlement checks, and a visit → sync → activation funnel tracked in D1.">一篇小红书笔记下很多人留言要链接。我据此设计了<b>“免费预览 + 买断完整版”</b>：激活码授权、服务端权益校验，并在 D1 里追踪“访问 → 同步 → 激活”漏斗。</dd></div>
             <div><dt data-en="Next · AI">下一步</dt><dd data-en="An LLM-written annual reading letter: a two-step prompt plus a quote check, so every quoted line must exist in the user's own notes; model choice and cost decided on a 30–50 sample test set.">LLM 生成的“年度阅读回信”：两步提示词加原句核对，每句引用都必须能在用户自己的笔记里找到；用 30–50 条样本的评测来选模型、算单份成本。</dd></div>
           </dl>
-          <div class="nums">
-            <div><b data-count="19806">19,806</b><span data-en="views, one post">单篇笔记浏览</span></div>
-            <div><b data-count="1560">1,560</b><span data-en="comments">评论</span></div>
-            <div><b data-count="1962">1,962</b><span data-en="likes">点赞</span></div>
-            <div><b data-count="1271">1,271</b><span data-en="saves">收藏</span></div>
-          </div>
-          <a class="out" href="https://yuedudanganguan.com" target="_blank" rel="noopener">yuedudanganguan.com <i>↗</i></a>
-        </div>
-        <div class="vis">
-          <div class="stack" id="stack">
-            <img src="assets/work-yuedu.jpg" alt="阅读档案馆首页" width="1440" height="900">
-            <img src="assets/work-report.jpg" alt="年度阅读报告" width="1100" height="618">
-          </div>
-          <div class="tap" data-en="Tap to switch screens">点击切换画面</div>
         </div>
       </div>
 
@@ -566,9 +618,9 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
         <div>
           <h3>AI Skills for a one-person marketing team</h3>
           <div class="cnm cn" data-en="">一人市场团队的 AI Skills · GitHub 开源</div>
-          <p class="lede" data-en="Prompts are easy to write and unreliable to run. I write down how the job should be done, so the AI meets the same standard every time, and I can check that it did.">提示词写起来容易，跑起来不可靠。我的做法是把“这件事应该怎么做”写清楚，让 AI 每次都按同一个标准做，我也能检查它有没有做到。</p>
+          <p class="lede" data-en="This comes from my daily work: I write down how each task should be done, so the AI does it to the same standard every time and I can check the result.">这套方法来自我的日常工作：把每项任务的做法写清楚，让 AI 每次按同样的标准完成，我也能据此检查结果。</p>
           <dl class="cs">
-            <div><dt data-en="Problem">起点</dt><dd data-en="I am the only marketer in China: content, leads, email, trade shows and sales material all land on one desk. Raw prompting failed in predictable ways: forgotten rules, invented numbers, actions nobody approved.">中国区市场只有我一个人：内容、线索、邮件、展会、销售物料都在一张桌子上。直接写提示词总会出同样的问题：忘规则、编数字、做没被批准的事。</dd></div>
+            <div><dt data-en="Problem">起点</dt><dd data-en="I handle all marketing in China alone: content, leads, email, trade shows and sales material. With ad-hoc prompts, the AI often forgot rules, invented numbers or took actions nobody approved.">中国区市场工作由我一个人负责，内容、线索、邮件、展会和销售物料都要做。只靠临时写提示词，AI 常会忘记规则、编造数字，或做出没被批准的操作。</dd></div>
             <div><dt data-en="Build">做法</dt><dd data-en="Mapped 12 recurring tasks into <b>9 Skills</b>, then merged them into one routed system. Each Skill states its sources, bans competitor data, sets quality gates and separates draft / submit / publish permissions. When I moved from Claude to Codex, the rules came along intact.">梳理 12 项重复任务，沉淀为 <b>9 个 Skill</b>，再合并成一套带路由的体系。每个 Skill 写明可用来源、禁用竞品数据、设质量关卡，并把“草稿 / 提交 / 发布”分开授权。工具从 Claude 换到 Codex 时，规则完整迁移。</dd></div>
             <div><dt data-en="Open source">开源</dt><dd data-en="Rewritten in English as <b>4 complete Skills</b> (report-to-article, GEO publishing, email lists, localization) with test cases, a method guide and fictional examples. Every file passed a sensitive-term scan before release.">用英文重写成 <b>4 个完整 Skill</b>（报告转文章、GEO 发布、邮件名单、文档本地化），配测试用例、方法文档和虚构公司示例；发布前每个文件都过了敏感信息扫描。</dd></div>
           </dl>
@@ -590,7 +642,7 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
         <div>
           <h3>Making a brand visible to AI search</h3>
           <div class="cnm cn" data-en="">让品牌被 AI 搜索看见 · Innova · 主动发起</div>
-          <p class="lede" data-en="Nobody assigned this. I noticed that AI search could not see us, and fixed it.">这件事没有人布置。是我发现 AI 搜索“看不见”我们，然后自己把它解决了。</p>
+          <p class="lede" data-en="A project I started myself after noticing that AI search rarely surfaced our brand. I worked on both content and the website.">这是我主动发起的项目：发现 AI 搜索很难找到我们的品牌后，我从内容和官网两方面做了调整。</p>
           <dl class="cs">
             <div><dt data-en="Problem">起点</dt><dd data-en="Almost all our content lived inside WeChat, a closed ecosystem that AI search engines such as Kimi, DeepSeek and ERNIE cannot crawl. When prospects asked AI about our field, we were hard to find.">品牌内容几乎都在公众号里，而公众号是封闭生态，Kimi、DeepSeek、文心这些 AI 搜索抓取不到。潜在客户用 AI 搜行业问题时，我们很难出现在答案里。</dd></div>
             <div><dt data-en="Build">做法</dt><dd data-en="Published <b>187 posts in about five weeks</b> on Zhihu, Baijiahao and Toutiao. Built a Chinese website with AI coding, made for machines to read: llms.txt, sitemap, FAQ structured data, plus a demo-request form and lead back end.">约 <b>5 周在知乎、百家号、头条发布 187 篇</b>内容；用 AI 编程搭了一个“为机器可读而建”的中文官网：llms.txt、sitemap、FAQ 结构化数据，外加预约演示表单和线索后台。</dd></div>
@@ -625,12 +677,12 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
   <div data-panel="exp">
     <div class="ph st"><span class="n">03</span><span data-en="Experience">经历</span></div>
     <h2 class="ph-title st" style="--d:1">Experience</h2>
-    <p class="ph-sub st" style="--d:2" data-en="Food science, then industry media, then a global data company. The constant: I build things from zero and stay until the numbers move.">食品科学本科，行业媒体，再到全球数据公司。不变的是：从零把一件事搭起来，一直做到数字动为止。</p>
+    <p class="ph-sub st" style="--d:2" data-en="New media, marketing, HR, recruiting and sales, each with results I can put numbers on.">做过新媒体、市场、人事、招聘和销售，每一段都有可以量化的结果。</p>
     <div class="xp st" style="--d:3" id="xp">
       <div class="xr on">
         <button><span class="yr">2024 – <span data-en="now">至今</span></span><span class="co">Innova Market Insights</span><span class="ro" data-en="Marketing Lead, China">中国区市场负责人</span><span class="pl"></span></button>
         <div class="xb"><div><div class="in">
-          <div class="ctx" data-en="Netherlands-based global food &amp; beverage data and trends company. As the only marketer in China, I own strategy and execution end to end: trade shows, digital, content, email, brand and sales enablement, plus budget and vendors, working with global HQ and the China sales team.">总部位于荷兰的全球食品饮料数据与趋势研究公司。作为中国区唯一的市场人，我从策略到执行全面负责：展会、数字营销、内容、邮件、品牌与销售支持，以及预算和供应商管理，并与荷兰总部、中国销售团队协作。</div>
+          <div class="ctx" data-en="A well-known global market insights consultancy for the food and beverage industry. As the only marketer in China, I handle trade shows, digital, content, email, brand and sales enablement, plus budget and vendors, working with global HQ and the China sales team.">全球食品饮料行业知名的市场咨询公司。我是中国区唯一的市场人员，负责展会、数字营销、内容、邮件、品牌与销售支持，以及预算和供应商管理，与全球总部和中国销售团队协作。</div>
           <div class="grp"><em data-en="GROWTH">增长</em><ul>
             <li data-en="<b>2,153 sales leads in 2024, up 118.6%</b> from 985 in 2023, through data-led changes to content, email and events."><b>2024 年销售线索 2,153 个，比 2023 年的 985 个增长 118.6%</b>，靠的是用数据持续调整内容、邮件和展会策略。</li>
             <li data-en="Segmented 3,000+ contacts by business type and topic with zero-leak exclusion rules; topic emails converted <b>2.9% of recipients into leads</b> (26 of 889).">3,000+ 联系人按业务类型和主题分层，排除规则零泄漏；主题邮件把 <b>2.9% 的收件人转化为线索</b>（889 人中 26 人）。</li>
@@ -647,10 +699,10 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
         </div></div></div>
       </div>
       <div class="xr">
-        <button><span class="yr">2020 – 2024</span><span class="co" data-en="FoodTalks (Simba Business Consulting)">FoodTalks（上海辛巴商务咨询）</span><span class="ro" data-en="Marketing Assistant → Assistant to CEO &amp; HR Manager">市场专员 → 总裁助理兼人事经理</span><span class="pl"></span></button>
+        <button><span class="yr">2020 – 2024</span><span class="co" data-en="FoodTalks (Simba Business Consulting)">FoodTalks（上海辛巴商务咨询）</span><span class="ro" data-en="Assistant to CEO · New Media Operations Manager · HR Manager">总裁助理 · 新媒体运营经理 · 人事经理</span><span class="pl"></span></button>
         <div class="xb"><div><div class="in">
-          <div class="ctx" data-en="A well-known food-industry media and events company. Joined with no experience; <b>five raises and two promotions in two years</b>.">食品行业知名的媒体与会展公司。0 经验入职，<b>两年内加薪 5 次、晋升 2 次</b>。</div>
-          <div class="grp"><em data-en="GROWTH">平台增长</em><ul>
+          <div class="ctx" data-en="A well-known food-industry media and events company. Joined with no experience as a marketing assistant, then became assistant to the CEO while also serving as new media operations manager and later HR manager; <b>five raises and two promotions in two years</b>.">食品行业知名的媒体与会展公司。0 经验以市场专员入职，后任总裁助理，兼任新媒体运营经理和人事经理；<b>两年内加薪 5 次、晋升 2 次</b>。</div>
+          <div class="grp"><em data-en="NEW MEDIA">新媒体与增长</em><ul>
             <li data-en="Launched the FoodTalks food-news site from zero after market and competitor research: <b>10× traffic in one month</b> with zero ad spend.">经过市场调研和竞品分析，从 0 到 1 推广 FoodTalks 食品资讯网，<b>0 投放一个月流量增长 10 倍</b>。</li>
             <li data-en="Grew it into a leading industry media site through SEO, original content and an operations system: <b>3.8M monthly page views, 650K+ visitors</b>.">通过 SEO、原创内容和运营体系，把网站做成行业头部媒体：<b>月均 PV 380 万、UV 65 万+</b>。</li>
           </ul></div>
@@ -694,7 +746,7 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
     <div class="cx">
       <div class="ph st"><span class="n">04</span><span data-en="Contact">联系</span></div>
       <h2 class="st" style="--d:1">Let's build<br>something <span class="it">with AI.</span></h2>
-      <div class="cn2 st" style="--d:2" data-en="If your team is turning AI into real products and real growth, I would love to talk.">如果你的团队正在把 AI 做成真正的产品和增长，我很想聊聊。</div>
+      <div class="cn2 st" style="--d:2" data-en="If your team is building AI products or AI-driven growth, I would be glad to hear from you.">如果你的团队在做 AI 产品或 AI 增长，欢迎联系我。</div>
       <div class="look st" style="--d:3"><em data-en="Looking for">我在找</em><span data-en="AI Product Operations">AI 产品运营</span><span data-en="AI Growth">AI 应用增长</span><span data-en="AI Content Strategy">AI 内容策略</span><span data-en="Shanghai or remote">上海 / 远程</span></div>
       <button class="copy st" style="--d:4" id="copy"><span>linjunru0210@gmail.com</span><em data-en="Copy">复制</em></button>
       <div class="lk st" style="--d:5">
@@ -723,11 +775,12 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
     $('#capN').textContent=lang==='en'?stats[si].en:stats[si].zh;
     $('#slot').textContent=roles[lang][ri%roles[lang].length];
     if(cur==='why')fitDeck();
+    if(typeof shots!=='undefined')$('#galCap').textContent=shots[gi][l==='en'?1:0];
   }
   $('#lang').addEventListener('click',function(e){e.stopPropagation();setLang(lang==='en'?'zh':'en')});
 
   /* 角色轮换 */
-  var roles={zh:['增长型市场人','AI 工作流搭建者','独立产品作者','食品科学出身的跨界者'],en:['growth marketer','AI workflow builder','indie product maker','food scientist turned builder']},ri=0;
+  var roles={zh:['增长型市场人','AI 工作流搭建者','独立产品开发者','一直在学新东西的人'],en:['growth marketer','AI workflow builder','indie product builder','fast learner']},ri=0;
   setInterval(function(){
     if(document.hidden)return;
     var s=$('#slot');ri++;
@@ -805,8 +858,11 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
   addEventListener('popstate',function(){var k=location.hash.slice(1);if(cur&&!k)close(true);else if(!cur&&k){var t=$('[data-open="'+k+'"]');t&&open(k,t)}});
   addEventListener('resize',function(){if(cur&&!busy){place(target());if(cur==='why')fitDeck()}});
   addEventListener('keydown',function(e){
+    if(lb.classList.contains('on')){if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowRight')showShot(gi+1);if(e.key==='ArrowLeft')showShot(gi-1);return}
     if(!cur)return;
     if(e.key==='Escape')close();
+    if(cur==='work'&&ti===0&&e.key==='ArrowRight')showShot(gi+1);
+    if(cur==='work'&&ti===0&&e.key==='ArrowLeft')showShot(gi-1);
     if(cur==='why'&&e.key==='ArrowRight')go(1);
     if(cur==='why'&&e.key==='ArrowLeft')go(-1);
   });
@@ -838,7 +894,44 @@ html[lang="en"] .wp .lede{font-family:var(--serif);font-size:22px;line-height:1.
     if(i===2)runGrid();
   }
   tabs.forEach(function(t,k){t.addEventListener('click',function(){showTab(k)})});
-  $('#stack').addEventListener('click',function(){this.classList.toggle('flip')});
+
+  /* 阅读档案馆画廊 */
+  var shots=[
+    ['书架墙：每本书按书封颜色排成书脊，整面书架一眼看完（示例数据）','Bookshelf wall: every book becomes a spine in its cover colour (sample data)'],
+    ['阅读统计：书架条目、读完数量、阅读时长和笔记数','Reading stats: books, finished, time read and notes'],
+    ['藏书构成与“我的书堆”：按类型和阅读进度整理','Collection by genre, and book piles by reading status'],
+    ['2026 年度阅读报告封面','Cover of the 2026 annual reading report'],
+    ['年度数字与“一年 365 格”阅读日历','Year in numbers and a 365-day reading calendar'],
+    ['这一年读过的作者，读得越多字越大','Authors of the year, sized by time spent'],
+    ['读得最久的书与年度之书','Books I spent longest on, and book of the year'],
+    ['书页里的世界：书来自哪些国家、哪些年代','Where and when the books come from'],
+    ['阅读人格：根据阅读习惯生成的四字母类型','Reading persona: a four-letter type from reading habits'],
+    ['精神上最接近的作家，附六维雷达图','The writer closest in spirit, with a six-axis radar'],
+    ['从第一本到最后一本：按月份排开的书封','First to last: every finished book by month'],
+    ['一键生成可分享的长图','One-tap long image for sharing']
+  ];
+  var gi=0,galImg=$('#galImg'),th=$('#galTh'),lb=document.createElement('div');
+  lb.className='lb';lb.innerHTML='<button class="gal-nav prev" aria-label="Previous">←</button><img alt=""><button class="gal-nav next" aria-label="Next">→</button><div class="lb-cap"></div>';
+  document.body.appendChild(lb);
+  function pad(n){return(n<10?'0':'')+n}
+  shots.forEach(function(s,k){var b=document.createElement('button');b.innerHTML='<img src="assets/ra/'+pad(k+1)+'-t.webp" alt="" loading="lazy">';b.addEventListener('click',function(){showShot(k)});th.appendChild(b)});
+  function showShot(k){
+    gi=(k+shots.length)%shots.length;var src='assets/ra/'+pad(gi+1)+'.webp';
+    galImg.classList.add('fade');
+    var im=new Image();im.onload=function(){galImg.src=src;galImg.classList.remove('fade')};im.src=src;
+    $('#galN').textContent=pad(gi+1)+' / '+shots.length;
+    $('#galCap').textContent=shots[gi][lang==='en'?1:0];
+    $$('button',th).forEach(function(b,i){b.classList.toggle('on',i===gi)});
+    var cur=$$('button',th)[gi];if(cur)th.scrollTo({left:cur.offsetLeft-th.clientWidth/2+56,behavior:'smooth'});
+    if(lb.classList.contains('on')){$('img',lb).src=src;$('.lb-cap',lb).textContent=$('#galCap').textContent}
+  }
+  $('#galPrev').addEventListener('click',function(e){e.stopPropagation();showShot(gi-1)});
+  $('#galNext').addEventListener('click',function(e){e.stopPropagation();showShot(gi+1)});
+  $('#galMain').addEventListener('click',function(){lb.classList.add('on');$('img',lb).src='assets/ra/'+pad(gi+1)+'.webp';$('.lb-cap',lb).textContent=$('#galCap').textContent});
+  $('.prev',lb).addEventListener('click',function(e){e.stopPropagation();showShot(gi-1)});
+  $('.next',lb).addEventListener('click',function(e){e.stopPropagation();showShot(gi+1)});
+  lb.addEventListener('click',function(){lb.classList.remove('on')});
+  showShot(0);
   $$('#rules .rule').forEach(function(r){$('button',r).addEventListener('click',function(){var on=r.classList.contains('on');$$('#rules .rule').forEach(function(x){x.classList.remove('on')});if(!on)r.classList.add('on')})});
   var g=$('#g75');for(var i=0;i<35;i++)g.appendChild(document.createElement('i'));
   var gt=[];
